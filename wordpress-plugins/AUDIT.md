@@ -258,12 +258,21 @@ block. Inline styles became classes with identical declarations. The `!important
 flags the original used to survive theme CSS were kept on exactly the
 declarations that carried them.
 
-One regression was caught during review and fixed before commit: an early draft
-of the print stylesheet set `display: none` on `.dp-app`, which is an **ancestor**
-of the certificate on the front end. The original hides the page with
-`visibility`, and `display: none` on an ancestor cannot be undone by a descendant
-rule — it would have printed a blank page. `app.css` now sets no `display` rules
-in print at all.
+Two regressions introduced by the rebuild were caught by testing and fixed
+before release:
+
+- An early draft of the print stylesheet set `display: none` on `.dp-app`, which
+  is an **ancestor** of the certificate on the front end. The original hides the
+  page with `visibility`, and `display: none` on an ancestor cannot be undone by
+  a descendant rule — it would have printed a blank page. `app.css` now sets no
+  `display` rules in print at all.
+- The view loader took a parameter named `$view` and called
+  `extract( $vars, EXTR_SKIP )`. EXTR_SKIP will not overwrite a variable that
+  already exists in scope, so the `view` key passed to `manager.php` was silently
+  shadowed by the view's own filename: the shell read `$view === 'manager'`,
+  matched neither `list` nor `security`, and fell through to the editor. The
+  front-end list and security tabs both rendered the certificate editor. The
+  loader's locals are now prefixed so view data cannot collide with them.
 
 ---
 
@@ -286,12 +295,18 @@ testing against code extracted verbatim from v6.4.9.
 | Layout CSS variables — custom values | **identical** |
 | Autoloader resolves all 18 classes | pass |
 | All 12 referenced views exist | pass |
+| Plugin boots against a WordPress stub; 24 hooks + shortcode all callable | pass |
+| Eight screens render: login, editor, list (teacher), default tab, list (admin), 2FA, layout, wp-admin editor | pass |
 
 The CSV fixture deliberately exercises the awkward cases: mangled diacritics
 (`Shk?lqyesh?m` → `Shkëlqyeshëm`), the `Shumë mirë` placeholder round-trip, bare
 and parenthesised point values, decimal formatting, `FALSE` sentinels, category
 rows carrying stray values that must be blanked, the column-0 subject fallback,
 and registry normalisation (`123 / 2024` → `123/2024`).
+
+The render pass boots the plugin against a WordPress stub and asserts each
+screen contains the markup it is supposed to. That is what caught the view
+shadowing bug above, which no amount of linting would have surfaced.
 
 **Not covered by these tests**, and worth a pass on a staging site: the rendered
 A4 sheet against a printed reference copy, the 2FA enrolment round-trip against a
