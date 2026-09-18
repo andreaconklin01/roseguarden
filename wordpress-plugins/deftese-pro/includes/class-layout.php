@@ -170,6 +170,41 @@ final class Layout {
 	}
 
 	/**
+	 * Validate a submitted settings form and persist it.
+	 *
+	 * @param array<string,mixed> $input Raw form values.
+	 * @return array<string,mixed> The values that were stored.
+	 */
+	public static function save( array $input ): array {
+		$clean = self::sanitize( $input );
+
+		update_option( self::OPTION, $clean );
+
+		return $clean;
+	}
+
+	/**
+	 * Capability required to change the printed layout.
+	 *
+	 * Kept at the manager capability to match the 6.x screen, so existing roles
+	 * keep the access they have today. Note that this is site-wide print
+	 * configuration: anyone who can edit a certificate can change the margins of
+	 * every certificate the site produces. Tightening it is a one-liner:
+	 *
+	 *     add_filter( 'deftese_layout_capability', fn() => 'manage_options' );
+	 *
+	 * @return string Capability name.
+	 */
+	public static function capability(): string {
+		/**
+		 * Filters the capability required to edit the certificate layout.
+		 *
+		 * @param string $capability Default: the manager capability (`edit_posts`).
+		 */
+		return (string) apply_filters( 'deftese_layout_capability', Access::capability() );
+	}
+
+	/**
 	 * Build the `:root` custom-property block for the certificate sheet.
 	 *
 	 * @return string CSS declarations, already escaped for inline output.

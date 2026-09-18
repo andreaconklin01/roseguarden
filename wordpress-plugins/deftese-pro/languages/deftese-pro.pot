@@ -2,7 +2,7 @@
 # This file is distributed under the GPL-2.0-or-later license.
 msgid ""
 msgstr ""
-"Project-Id-Version: Deftese PRO 7.0.0\n"
+"Project-Id-Version: Deftese PRO 7.1.0\n"
 "Report-Msgid-Bugs-To: https://example.org/deftese-pro\n"
 "POT-Creation-Date: 2026-09-18T00:00:00+00:00\n"
 "MIME-Version: 1.0\n"
@@ -233,6 +233,26 @@ msgstr ""
 msgid "Ju nuk keni akses."
 msgstr ""
 
+#: includes/class-layout-screen.php:64 includes/class-layout-screen.php:65
+msgid "Dizajni i Fletës"
+msgstr ""
+
+#: includes/class-layout-screen.php:105
+msgid "Zgjidh Logon / Sfondin"
+msgstr ""
+
+#: includes/class-layout-screen.php:106
+msgid "Përdor këtë imazh"
+msgstr ""
+
+#: includes/class-layout-screen.php:107
+msgid "Kujdes: Shuma e Kolonës 1 dhe 6 është 100% ose më shumë. Nuk ka vend për kolonat e tjera!"
+msgstr ""
+
+#: includes/class-layout-screen.php:118 includes/class-overview.php:38
+msgid "Ju nuk keni akses për të parë këtë faqe."
+msgstr ""
+
 #: includes/class-list-view.php:85
 msgid "Fshi rekordet e zgjedhura?"
 msgstr ""
@@ -309,23 +329,19 @@ msgstr ""
 msgid "Sipas Kujdestarit"
 msgstr ""
 
-#: includes/class-overview.php:38
-msgid "Ju nuk keni akses për të parë këtë faqe."
-msgstr ""
-
-#: includes/class-overview.php:152
+#: includes/class-overview.php:148
 msgid "— Pa shkollë të specifikuar —"
 msgstr ""
 
-#: includes/class-overview.php:157
+#: includes/class-overview.php:153
 msgid "— Pa vit shkollor —"
 msgstr ""
 
-#: includes/class-overview.php:162
+#: includes/class-overview.php:158
 msgid "— Pa kujdestar të specifikuar —"
 msgstr ""
 
-#: includes/class-overview.php:175
+#: includes/class-overview.php:171
 msgid "Përdorues i panjohur (ID: %d)"
 msgstr ""
 
@@ -539,6 +555,218 @@ msgstr ""
 
 #: includes/views/editor.php:116
 msgid "Anulo"
+msgstr ""
+
+#: includes/views/layout-settings.php:16
+msgid "Dëftesë PRO — Menaxheri i Dizajnit"
+msgstr ""
+
+#: includes/views/layout-settings.php:21
+msgid "Dëftesë PRO:"
+msgstr ""
+
+#: includes/views/layout-settings.php:21
+msgid "Të gjitha konfigurimet u ruajtën me sukses!"
+msgstr ""
+
+#: includes/views/layout-settings.php:31
+msgid "Hapësirat e Fletës A4 (Margins)"
+msgstr ""
+
+#: includes/views/layout-settings.php:35
+msgid "Lart (Top)"
+msgstr ""
+
+#: includes/views/layout-settings.php:36
+msgid "Poshtë (Bottom)"
+msgstr ""
+
+#: includes/views/layout-settings.php:37
+msgid "Majtas (Left)"
+msgstr ""
+
+#: includes/views/layout-settings.php:38
+msgid "Djathtas (Right)"
+msgstr ""
+
+#: includes/views/layout-settings.php:45
+msgid "Tipografia dhe Ngjyrat"
+msgstr ""
+
+#: includes/views/layout-settings.php:49
+msgid "Ngjyra Kryesore (Titujt)"
+msgstr ""
+
+#: includes/views/layout-settings.php:53
+msgid "Ngjyra e Sfondit (Letrës)"
+msgstr ""
+
+#: includes/views/layout-settings.php:57
+msgid "Teksti: Titulli (DËFTESË)"
+msgstr ""
+
+#: includes/views/layout-settings.php:58
+msgid "Teksti: Tabela (Baza)"
+msgstr ""
+
+#: includes/views/layout-settings.php:65
+msgid "Hapësirat e Seksioneve"
+msgstr ""
+
+#: includes/views/layout-settings.php:67
+msgid "Rregulloni distancat (në pixel) mes pjesëve kryesore të dëftesës."
+msgstr ""
+
+#: includes/views/layout-settings.php:71
+msgid "Pjesa e Sipërme"
+msgstr ""
+
+#: includes/views/layout-settings.php:74
+msgid "Top 1 (Koka ➝ Titulli)"
+msgstr ""
+
+#: includes/views/layout-settings.php:75
+msgid "Top 2 (Titulli ➝ Nëntitulli)"
+msgstr ""
+
+#: includes/views/layout-settings.php:76
+msgid "Top 3 (Nëntitulli ➝ Të Dhënat)"
+msgstr ""
+
+#: includes/views/layout-settings.php:77
+msgid "Top 4 (Të Dhënat ➝ Tabela)"
+msgstr ""
+
+#: includes/views/layout-settings.php:83
+msgid "Pjesa e Poshtme"
+msgstr ""
+
+#: includes/views/layout-settings.php:86
+msgid "Bottom 1 (Tabela ➝ Nënshkrimet)"
+msgstr ""
+
+#: includes/views/layout-settings.php:87
+msgid "Bottom 2 (Nënshkrimet ➝ Vërejtja)"
+msgstr ""
+
+#: includes/views/layout-settings.php:88
+msgid "Bottom 3 (Pas Vërejtjes / Fundi)"
+msgstr ""
+
+#: includes/views/layout-settings.php:97
+msgid "Përmasat e Tabelës & Vërejtjeve"
+msgstr ""
+
+#: includes/views/layout-settings.php:101
+msgid "Lartësia e Rreshtit"
+msgstr ""
+
+#: includes/views/layout-settings.php:102
+msgid "Hapësira e Qelizave Y (Brenda)"
+msgstr ""
+
+#: includes/views/layout-settings.php:105
+msgid "Gjerësia mes vijave vertikale (Vërejtje)"
+msgstr ""
+
+#: includes/views/layout-settings.php:109
+msgid "Rregullon distancën mes vijave vertikale në anën e djathtë, ku shkruhen komentet."
+msgstr ""
+
+#: includes/views/layout-settings.php:113
+msgid "Hapësira e Rreshtave të Vogla"
+msgstr ""
+
+#: includes/views/layout-settings.php:117
+msgid "Distanca ndërmjet rreshtave në kokën e faqes dhe te nënshkrimet."
+msgstr ""
+
+#: includes/views/layout-settings.php:121
+msgid "Trashësia e Kornizës"
+msgstr ""
+
+#: includes/views/layout-settings.php:123
+msgid "Tabela (Jashtë)"
+msgstr ""
+
+#: includes/views/layout-settings.php:127
+msgid "Qelizat (Brenda)"
+msgstr ""
+
+#: includes/views/layout-settings.php:133
+msgid "Gjerësia e Kolonave (%)"
+msgstr ""
+
+#: includes/views/layout-settings.php:138
+msgid "Kol 1 (Lëndët)"
+msgstr ""
+
+#: includes/views/layout-settings.php:139
+msgid "Kol 2 (VI)"
+msgstr ""
+
+#: includes/views/layout-settings.php:140
+msgid "Kol 3 (VII)"
+msgstr ""
+
+#: includes/views/layout-settings.php:141
+msgid "Kol 4 (VIII)"
+msgstr ""
+
+#: includes/views/layout-settings.php:142
+msgid "Kol 5 (IX)"
+msgstr ""
+
+#: includes/views/layout-settings.php:143
+msgid "Kol 6 (Testi)"
+msgstr ""
+
+#: includes/views/layout-settings.php:157
+msgid "Kolonat e klasave ndahen automatikisht nga hapësira e mbetur, por mund t\\'i ndryshoni edhe manualisht."
+msgstr ""
+
+#: includes/views/layout-settings.php:166
+msgid "Vula / Logo e Sfondit (Watermark)"
+msgstr ""
+
+#: includes/views/layout-settings.php:170
+msgid "Ngarko Imazhin"
+msgstr ""
+
+#: includes/views/layout-settings.php:173
+msgid "Kërko ose Ngarko"
+msgstr ""
+
+#: includes/views/layout-settings.php:174
+msgid "Hiq"
+msgstr ""
+
+#: includes/views/layout-settings.php:181
+msgid "Madhësia e Logos"
+msgstr ""
+
+#: includes/views/layout-settings.php:182
+msgid "Pozicioni Horiz. (X)"
+msgstr ""
+
+#: includes/views/layout-settings.php:182 includes/views/layout-settings.php:183
+msgid "50% = Qendër"
+msgstr ""
+
+#: includes/views/layout-settings.php:183
+msgid "Pozicioni Vertik. (Y)"
+msgstr ""
+
+#: includes/views/layout-settings.php:184
+msgid "Dukshmëria (Opacity)"
+msgstr ""
+
+#: includes/views/layout-settings.php:184
+msgid "Rekomandohet 10% deri 20% për një watermark të butë."
+msgstr ""
+
+#: includes/views/layout-settings.php:193
+msgid "Ruaj të Gjitha Parametrat"
 msgstr ""
 
 #: includes/views/list.php:71

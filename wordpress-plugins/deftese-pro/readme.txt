@@ -4,7 +4,7 @@ Tags: certificates, school, education, a4, print, csv
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 7.0.0
+Stable tag: 7.1.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,13 +22,20 @@ never need to see the WordPress dashboard.
 * Per-user row-level ownership: editors only see their own records
 * Administrator overview grouped by user, school, year or class teacher
 * TOTP two-factor authentication (RFC 6238), no external service required
-* Full layout control through the companion Layout & Margin Manager plugin
+* Built-in layout manager: margins, row heights, column widths, section
+  spacing, typography, borders, colours and a background watermark
 
 == Installation ==
 
-1. Upload the `deftese-pro` folder to `/wp-content/plugins/`.
+1. Upload the `deftese-pro` folder to `/wp-content/plugins/`, or install the
+   zip through Plugins > Add New > Upload Plugin.
 2. Activate the plugin.
 3. Create a page containing the `[deftese_manager]` shortcode.
+
+Everything is in this one plugin. If you are upgrading from 6.x, deactivate and
+delete the old "Dëftesë PRO" and "Layout & Margin Manager" plugins first; your
+certificates and layout settings are stored in the database and are picked up
+automatically.
 
 The manager page is what non-administrators are redirected to, so it must exist
 before the access gate has any effect.
@@ -46,6 +53,13 @@ Yes. Return false from the `deftese_gate_frontend` filter for the requests you
 want to let through.
 
 == Changelog ==
+
+= 7.1.0 =
+* The layout manager is now part of this plugin, so a single install provides
+  the full feature set. It stands down automatically if a standalone layout
+  plugin is still active, so no duplicate menu appears during an upgrade.
+* Layout settings are read and written through one schema, removing the last
+  place where the two plugins could disagree about defaults or units.
 
 = 7.0.0 =
 * Rebuilt from a single 2,900-line file into a namespaced, autoloaded structure.

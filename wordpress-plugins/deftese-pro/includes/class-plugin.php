@@ -67,6 +67,7 @@ final class Plugin {
 		Assets::register();
 		Ajax::register();
 		Admin::register();
+		Layout_Screen::register();
 		Frontend::register();
 
 		/**

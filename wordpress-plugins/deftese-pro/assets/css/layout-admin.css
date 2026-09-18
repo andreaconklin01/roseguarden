@@ -3,6 +3,7 @@
  *
  * Sits inside wp-admin, so it borrows the admin palette rather than importing
  * the front-end token set, and only styles what the core admin CSS does not.
+ * Loaded solely on the layout screen, so it never touches the rest of wp-admin.
  */
 
 .dpl-wrap {

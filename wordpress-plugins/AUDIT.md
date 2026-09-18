@@ -3,7 +3,10 @@
 Source reviewed: `dft/dft.php` (2,886 lines, v6.4.9) and `dftlayt/dftlayt.php`
 (394 lines, v1.2.1).
 
-Rebuilt as `deftese-pro/` (v7.0.0) and `deftese-pro-layout/` (v2.0.0).
+Rebuilt as a single plugin, `deftese-pro/` (v7.1.0). The two originals were
+separate plugins; the layout manager is now built in, so one install provides
+the whole feature set. It stands down automatically if an old standalone layout
+plugin is still active, so an upgrade never produces a duplicate menu.
 
 The brief was to rebuild and restyle **without changing what the plugin does**.
 Everything below is either a defect fix that preserves observable behaviour, or a
@@ -206,11 +209,12 @@ SQL, HTML, CSS and JavaScript, with every function wrapped in
 | Login and 2FA flow | `class-auth.php` |
 | CSV coordinates | `class-csv-map.php` |
 | CSV parsing and import | `class-csv-importer.php` |
-| Layout schema and CSS variables | `class-layout.php` |
+| Layout schema, sanitising, CSS variables | `class-layout.php` |
+| Layout settings screen | `class-layout-screen.php` |
 | Asset registration | `class-assets.php` |
 | AJAX endpoints | `class-ajax.php` |
 | Screens | `class-admin.php`, `class-frontend.php`, `class-editor.php`, `class-list-view.php`, `class-overview.php` |
-| Markup | `includes/views/*.php` (11 templates) |
+| Markup | `includes/views/*.php` (12 templates) |
 
 Other structural fixes:
 
@@ -270,17 +274,18 @@ testing against code extracted verbatim from v6.4.9.
 
 | Check | Result |
 | --- | --- |
-| PHP syntax, all 35 files | pass |
+| PHP syntax, all 33 files | pass |
 | JavaScript parse, all 5 files | pass |
 | CSV import: 17 scalar fields, original vs rebuilt | **identical** |
 | CSV import: 31 grade rows, original vs rebuilt | **identical** |
 | CSV import: PHP vs browser implementation | **identical** |
+| Layout save path, original vs rebuilt (32 keys x 3 forms) | **identical** except the colour fix in §1.10 |
 | Default grade sheet, original vs rebuilt | **identical** (31 rows) |
 | Layout CSS variables — defaults | **identical** (31 variables) |
 | Layout CSS variables — legacy aliases | **identical** |
 | Layout CSS variables — custom values | **identical** |
-| Autoloader resolves all 17 classes | pass |
-| All 11 referenced views exist | pass |
+| Autoloader resolves all 18 classes | pass |
+| All 12 referenced views exist | pass |
 
 The CSV fixture deliberately exercises the awkward cases: mangled diacritics
 (`Shk?lqyesh?m` → `Shkëlqyeshëm`), the `Shumë mirë` placeholder round-trip, bare
@@ -304,9 +309,15 @@ every query argument, the `deftese_layout_settings` option and its keys includin
 the three legacy aliases, the three 2FA user-meta keys, and the `--dp-*` CSS
 variables and certificate class names.
 
-Existing data needs no migration. The two plugins remain separate, so activation
-state is preserved; the layout plugin degrades to a local schema copy if the main
-plugin is inactive, rather than fataling.
+Existing data needs no migration.
+
+The one deliberate packaging change is that the layout manager is no longer a
+separate plugin. Its option, nonce action, page slug, capability and every
+setting key are unchanged, so the screen behaves exactly as before and existing
+settings are picked up as they are. `Layout_Screen::is_externally_provided()`
+detects a still-active standalone layout plugin — either the 6.x companion or
+the 2.0 rebuild — and skips registering the built-in screen, so the two can
+coexist during an upgrade without a duplicate submenu.
 
 New extension points: `deftese_capability`, `deftese_gate_frontend`,
 `deftese_2fa_issuer`, `deftese_csv_category_rows`, `deftese_csv_bold_rows`,
@@ -319,11 +330,12 @@ New extension points: `deftese_capability`, `deftese_gate_frontend`,
 Three findings were **not** fixed, because fixing them would change behaviour.
 
 1. **The layout screen is reachable with `edit_posts`.** These are site-wide
-   print settings: anyone who can edit a post can change the margins of every
-   certificate the site produces. `manage_options` would be the right default,
-   but tightening it could lock out staff who use it today. The capability is now
-   filterable — `add_filter( 'deftese_layout_capability', fn() => 'manage_options' );`
-   — and the default is unchanged.
+   print settings: anyone who can edit a certificate can change the margins of
+   every certificate the site produces. `manage_options` would be the right
+   default, but tightening it could lock out staff who use it today. The
+   capability is now filterable —
+   `add_filter( 'deftese_layout_capability', fn() => 'manage_options' );` — and
+   the default is unchanged.
 
 2. **`deftese_format_decimals()` discards a value of `0`.** The guard is
    `if ( empty( $str ) || $str === 'FALSE' )`, and `empty('0')` is `true` in PHP,
