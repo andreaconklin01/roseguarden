@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<title>Kërkesa për pushim - Komuna e Prishtinës</title>
+<style>
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    font-family: "DejaVu Serif", serif;
+  }
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 14mm 16mm 12mm 16mm;
+    box-shadow: none;
+    color: #000;
+    font-size: 10pt;
+    line-height: 1.35;
+  }
+  .header-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2mm;
+  }
+  .header-table td {
+    vertical-align: middle;
+    text-align: center;
+  }
+  .header-table td.logo-cell {
+    width: 20%;
+  }
+  .header-table td.logo-cell img {
+    height: 24mm;
+  }
+  .header-table td.text-cell {
+    width: 60%;
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.3;
+  }
+  .header-table td.text-cell .line1 {
+    font-size: 14pt;
+  }
+  .header-table td.text-cell .line2 {
+    font-size: 13pt;
+    font-weight: bold;
+  }
+  .header-table td.text-cell .line3 {
+    font-size: 12pt;
+    margin-top: 3mm;
+  }
+  .header-table td.text-cell .line4 {
+    font-size: 11pt;
+    font-weight: bold;
+  }
+  .divider {
+    border-bottom: 1px solid #000;
+    margin: 3mm 0 6mm 0;
+  }
+  .below-divider {
+    font-family: "DejaVu Sans", sans-serif;
+  }
+  .report-title-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin: 0;
+  }
+  .report-title-table td {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    vertical-align: top;
+  }
+  .title-underline {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 12pt;
+    margin: 0 auto 2mm auto;
+  }
+  .title-main {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14pt;
+    margin: 0 auto 6mm auto;
+    letter-spacing: 0.5px;
+  }
+  p {
+    margin: 0 0 5mm 0;
+    font-weight: bold;
+  }
+  .field-line {
+    white-space: nowrap;
+  }
+  .blank {
+    display: inline-block;
+    border-bottom: 1px solid #000;
+  }
+  .w-emri { width: 84mm; }
+  .w-pozita { width: 97mm; }
+  .w-sektori { width: 85mm; }
+  .w-datepart { width: 13mm; }
+  .w-sig1 { width: 52mm; }
+  .w-sig2 { width: 27mm; }
+  .w-sig3 { width: 27mm; }
+  .w-sig4 { width: 20mm; }
+  .w-pushim { width: 85mm; }
+
+  .list-row {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    font-weight: bold;
+    margin-bottom: 1.5mm;
+  }
+  .col-num { width: 10mm; display: table-cell; vertical-align: bottom; }
+  .col-label { width: 47mm; display: table-cell; vertical-align: bottom; white-space: nowrap; }
+  .col-blank1 { border-bottom: 1px solid #000; width: 8mm; display: table-cell; vertical-align: bottom; text-align: center; font-weight: bold; }
+  .col-label-wide { width: 111mm; display: table-cell; vertical-align: bottom; white-space: nowrap; }
+  .col-blank2 { border-bottom: 1px solid #000; width: 20mm; display: table-cell; vertical-align: bottom; text-align: center; font-weight: bold; }
+  .list-block { margin: 0 0 5mm 0; }
+
+  .dotted-rule {
+    text-align: center;
+    letter-spacing: 3px;
+    margin: 4mm 0 6mm 0;
+    font-weight: normal;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .section-underline {
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: 5mm;
+    font-size: 11pt;
+  }
+  .signature-line {
+    margin-top: 8mm;
+  }
+  .small-plain {
+    font-size: 10pt;
+    font-weight: normal;
+  }
+  .underline-blank-long {
+    display: block;
+    border-bottom: 1px solid #000;
+    height: 6mm;
+    margin-bottom: 1mm;
+    width: 100%;
+  }
+  .vertejtje {
+    margin-top: 6mm;
+    font-size: 9pt;
+  }
+  .vertejtje b {
+    text-decoration: underline;
+  }
+  .blank, .col-blank1, .col-blank2 {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    line-height: inherit;
+    text-align: center;
+  }
+  .employee-info-value {
+    display: inline-block;
+    width: {{EMPLOYEE_INFO_LINE_WIDTH}}pt;
+    border: 0;
+    border-bottom: 0.4pt solid #000;
+    padding: 0 8pt;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    line-height: inherit;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+  }
+  .underline-blank-long {
+    font-family: "DejaVu Sans", sans-serif;
+    font-size: 8.5pt;
+    font-weight: normal;
+    line-height: 5mm;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <table class="header-table">
+    <tr>
+      <td class="logo-cell"><img src="{{STATE_LOGO_URI}}" alt="Republika e Kosovës"></td>
+      <td class="text-cell">
+        <div class="line1">Republika e Kosovës</div>
+        <div class="line2">Republika Kosova &ndash; Republic of Kosovo</div>
+        <div class="line3">Komuna e Prishtinës</div>
+        <div class="line4">Opština Priština &ndash;Municipality of Prishtina</div>
+      </td>
+      <td class="logo-cell"><img src="{{MUNICIPALITY_LOGO_URI}}" alt="Prishtina"></td>
+    </tr>
+  </table>
+
+  <div class="divider"></div>
+
+  <div class="below-divider">
+  <table class="report-title-table" role="presentation">
+    <tr>
+      <td>
+        <div class="title-underline">Kërkesa për pushim</div>
+        <div class="title-main">KOMUNA E PRISHTINËS</div>
+      </td>
+    </tr>
+  </table>
+
+  <p class="field-line">Emri dhe&nbsp;&nbsp;mbiemri&nbsp;&nbsp;i&nbsp;&nbsp;punonjësit: <span class="employee-info-value">{{EMPLOYEE_NAME}}</span></p>
+
+  <p class="field-line">Pozita: <span class="employee-info-value">{{POSITION}}</span></p>
+
+  <p class="field-line">Sektori/Njësia: <span class="employee-info-value">{{SECTOR}}</span></p>
+
+  <div class="list-block">
+    <div class="list-row" style="font-weight: normal;"><span class="col-num">1.</span><span class="col-label">Pushim vjetor</span><span class="col-blank1">{{ANNUAL_MARK}}</span></div>
+    <div class="list-row" style="font-weight: normal;"><span class="col-num">2.</span><span class="col-label">Pushim mjekësor</span><span class="col-blank1">{{MEDICAL_MARK}}</span></div>
+    <div class="list-row" style="font-weight: normal;"><span class="col-num">3.</span><span class="col-label">Pushim për rast zie</span><span class="col-blank1">{{BEREAVEMENT_MARK}}</span></div>
+    <div class="list-row" style="font-weight: normal;"><span class="col-num">4.</span><span class="col-label">Pushim prindor</span><span class="col-blank1">{{PARENTAL_MARK}}</span></div>
+  </div>
+
+  <p class="field-line">Prej <span class="blank w-datepart">{{START_DAY}}</span> / <span class="blank w-datepart">{{START_MONTH}}</span> / <span class="blank w-datepart">{{START_YEAR}}</span> deri&nbsp;&nbsp;më&nbsp;&nbsp;&nbsp;&nbsp;datën <span class="blank w-datepart">{{END_DAY}}</span> / <span class="blank w-datepart">{{END_MONTH}}</span> / <span class="blank w-datepart">{{END_YEAR}}</span></p>
+
+  <p class="field-line">Të rikthehet në punë më datën: <span class="blank w-datepart">{{RETURN_DAY}}</span> / <span class="blank w-datepart">{{RETURN_MONTH}}</span> / <span class="blank w-datepart">{{RETURN_YEAR}}</span></p>
+
+  <p class="field-line">Nënshkrimi&nbsp;&nbsp;i&nbsp;&nbsp;punonjësit <span class="blank w-sig1">&nbsp;</span>&nbsp;&nbsp;&nbsp; Data e paraqitjes së kërkesës <span class="blank w-sig2">{{SUBMITTED_DATE}}</span></p>
+
+  <div class="dotted-rule">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</div>
+
+  <div class="section-underline">Për udhëheqësin e drejtpërdrejtë</div>
+
+  <p class="field-line" style="margin-bottom: 8mm;">
+    <b>Pushim</b> 
+    <span class="blank w-pushim" style="position: relative;">
+      {{LEAVE_TYPE_LABEL}}
+      <span style="position: absolute; top: 100%; left: 0; right: 0; text-align: center; font-size: 8pt; font-weight: normal; margin-top: 2px;">(lloji i pushimit)</span>
+    </span> 
+    <b>i kërkuar nga punonjësi</b>,
+  </p>
+
+  <div class="list-block">
+    <div class="list-row"><span class="col-num">1.</span><span class="col-label-wide">miratohet sipas kërkesës</span><span class="col-blank2">{{APPROVED_MARK}}</span></div>
+    <div class="list-row"><span class="col-num">2.</span><span class="col-label-wide">miratohet pjesërisht</span><span class="col-blank2">{{PARTIAL_MARK}}</span></div>
+    <div class="list-row"><span class="col-num">3.</span><span class="col-label-wide">refuzohet</span><span class="col-blank2">{{REJECTED_MARK}}</span></div>
+  </div>
+
+  <div class="dotted-rule">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</div>
+
+  <p><b>Arsyetimi i udhëheqësit</b> <span style="font-weight:normal;">për miratimin e pjesshëm ose refuzimin e kërkesës:</span></p>
+
+  <span class="underline-blank-long">{{DECISION_REASON_1}}</span>
+  <span class="underline-blank-long">{{DECISION_REASON_2}}</span>
+  <span class="underline-blank-long">{{DECISION_REASON_3}}</span>
+
+  <p class="field-line signature-line">Nënshkrimi&nbsp;&nbsp;i&nbsp;&nbsp;udhëheqësit <span class="blank w-sig3">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="small-plain">Data <span class="blank w-sig4">{{DECISION_DATE}}</span></span></p>
+
+  <div class="vertejtje"><b>Vërejtje:</b> Pas nënshkrimit nga udhëheqësi, formulari dorëzohet në Sektorin e Burimeve Njerëzore.</div>
+  </div>
+
+</div>
+</body>
+</html>

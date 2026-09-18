@@ -1,0 +1,882 @@
+.elm-portal{
+  --elm-ink:#152238;--elm-muted:#667085;--elm-line:#e4e9f1;--elm-surface:#fff;--elm-soft:#f6f8fc;
+  --elm-brand:#4f46e5;--elm-brand-dark:#3730a3;--elm-green:#15996a;--elm-yellow:#d89400;--elm-red:#d14343;
+  color:var(--elm-ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  max-width:1440px;margin:34px auto;padding:0 18px
+}
+.elm-portal *{box-sizing:border-box}.elm-portal [hidden]{display:none!important}.elm-portal button,.elm-portal input,.elm-portal select,.elm-portal textarea{font-family:inherit}
+.elm-portal__header{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:22px;padding:4px 2px}
+.elm-portal h2,.elm-portal h3,.elm-portal h4{margin:0;color:var(--elm-ink);letter-spacing:-.025em}.elm-portal h2{font-size:clamp(29px,4vw,44px);line-height:1.05}.elm-portal h3{font-size:21px}.elm-portal h4{font-size:16px}
+/* v1.5.78 portable front-end identity/header, adapted from the uploaded reference plugin. */
+.elm-portal .elm-workspace-header{display:block;margin:0 0 20px}
+.elm-portal .elm-brandbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin:0 0 20px;padding:0 2px}
+.elm-portal .elm-brand-link{display:inline-flex;align-items:center;gap:12px;min-width:0;color:inherit;text-decoration:none}
+.elm-portal .elm-brand-link:hover{text-decoration:none}
+.elm-portal .elm-brand-logo{display:block;width:auto;height:60px;max-width:74px;object-fit:contain}
+.elm-portal .elm-brand-name{display:block;padding-left:18px;border-left:2px solid #d9dee8;color:#111827;font-size:clamp(20px,2.3vw,26px);font-weight:800;line-height:1.1;letter-spacing:-.02em}
+.elm-portal .elm-profilebar{display:flex;align-items:center;gap:20px}
+.elm-portal .elm-profile-info{display:flex;align-items:center;gap:12px;min-width:0}
+.elm-portal .elm-profile-avatar{display:grid;place-items:center;flex:0 0 42px;width:42px;height:42px;border-radius:50%;background:#eaf3ff;color:#1185fe}
+.elm-portal .elm-profile-avatar .dashicons{width:22px;height:22px;font-size:22px;line-height:22px}
+.elm-portal .elm-profile-copy{display:flex;min-width:0;flex-direction:column}
+.elm-portal .elm-profile-copy strong{max-width:260px;overflow:hidden;color:#1a1a1a;font-size:15px;font-weight:800;line-height:1.25;text-overflow:ellipsis;white-space:nowrap}
+.elm-portal .elm-profile-copy small{display:flex;align-items:center;gap:3px;margin-top:2px;color:#00a32a;font-size:12.5px;font-weight:700;line-height:1.3}
+.elm-portal .elm-profile-copy small .dashicons{width:14px;height:14px;font-size:14px;line-height:14px}
+.elm-portal .elm-profile-divider{display:block;width:1px;height:30px;background:#d9dbdf}
+.elm-portal .elm-logout-button{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:8px 16px;border:1px solid #d1d5db;border-radius:6px;background:#fff;color:#374151;font-size:13.5px;font-weight:700;line-height:1;text-decoration:none;box-shadow:0 1px 2px rgba(0,0,0,.05);transition:background-color .18s ease,color .18s ease,border-color .18s ease,box-shadow .18s ease,transform .18s ease}
+.elm-portal .elm-logout-button:hover,.elm-portal .elm-logout-button:focus-visible{border-color:#fca5a5;background:#fef2f2;color:#dc2626;text-decoration:none;box-shadow:0 4px 12px rgba(220,38,38,.08);transform:translateY(-1px)}
+.elm-portal .elm-workspace-hero{position:relative;overflow:hidden;align-items:center;margin:0 0 20px;padding:30px 32px;min-height:178px;border:1px solid var(--elm-line);border-radius:16px;background:linear-gradient(90deg,rgba(255,255,255,.98) 0%,rgba(255,255,255,.94) 50%,rgba(255,255,255,.46) 100%),url("../images/portal-header-background.png") center right/cover no-repeat;box-shadow:0 10px 34px rgba(16,24,40,.05)}
+.elm-portal .elm-workspace-hero__copy{position:relative;z-index:1;max-width:760px}
+.elm-portal .elm-workspace-hero .elm-eyebrow{display:inline-flex;align-items:center;gap:8px;margin:0;color:#374151;font-size:11px;font-weight:850;letter-spacing:.12em;text-transform:uppercase}
+.elm-portal .elm-workspace-hero .elm-eyebrow::before{content:"";display:inline-block;width:9px;height:9px;border-radius:2px;background:var(--elm-brand)}
+.elm-portal .elm-workspace-hero h2{margin:10px 0 8px;font-size:clamp(28px,4vw,38px);line-height:1.15}
+.elm-portal .elm-workspace-hero__description{margin:0;max-width:720px;color:var(--elm-muted);font-size:14px;line-height:1.6}
+.elm-portal .elm-workspace-hero .elm-year-chip{position:relative;z-index:1;flex:0 0 auto;background:rgba(255,255,255,.94)}
+@media(max-width:760px){.elm-portal .elm-brandbar{align-items:flex-start}.elm-portal .elm-profilebar{width:100%;justify-content:space-between;padding-top:14px;border-top:1px solid var(--elm-line)}.elm-portal .elm-profile-divider{display:none}.elm-portal .elm-workspace-hero{align-items:flex-start;flex-direction:column;padding:24px;min-height:0}.elm-portal .elm-workspace-hero .elm-year-chip{align-self:flex-start}.elm-portal .elm-brand-logo{height:54px}.elm-portal .elm-brand-name{font-size:20px}.elm-portal .elm-profile-copy strong{max-width:200px}}
+@media(max-width:480px){.elm-portal .elm-brand-link{gap:9px}.elm-portal .elm-brand-logo{height:48px;max-width:60px}.elm-portal .elm-brand-name{padding-left:12px;font-size:18px}.elm-portal .elm-profilebar{gap:10px}.elm-portal .elm-profile-avatar{flex-basis:38px;width:38px;height:38px}.elm-portal .elm-profile-copy strong{max-width:150px;font-size:13px}.elm-portal .elm-profile-copy small{font-size:11px}.elm-portal .elm-logout-button{padding:8px 12px}.elm-portal .elm-workspace-hero{padding:21px}.elm-portal .elm-workspace-hero__description{font-size:13px}}
+@media print{.elm-portal .elm-no-print{display:none!important}.elm-portal .elm-workspace-hero{background:#fff!important;box-shadow:none}.elm-portal .elm-brandbar{margin-bottom:12px}}
+.elm-eyebrow{margin:0 0 7px;text-transform:uppercase;letter-spacing:.14em;font-size:10px;font-weight:850;color:var(--elm-brand)}
+.elm-year-chip{border:1px solid var(--elm-line);background:rgba(255,255,255,.92);border-radius:999px;padding:9px 16px;font-weight:800;box-shadow:0 8px 28px rgba(16,24,40,.08)}
+.elm-notice{border-radius:14px;padding:14px 17px;margin:0 0 18px;font-weight:700;box-shadow:0 7px 24px rgba(16,24,40,.05)}.elm-notice--success{background:#ecfdf3;border:1px solid #abefc6;color:#067647}.elm-notice--error{background:#fff1f0;border:1px solid #fbc8c4;color:#ad251b}
+.elm-balance-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin-bottom:19px}.elm-metric{position:relative;overflow:hidden;background:linear-gradient(180deg,#fff,#fbfcff);border:1px solid var(--elm-line);border-radius:18px;padding:18px 19px;box-shadow:0 10px 34px rgba(16,24,40,.055)}.elm-metric::after{content:"";position:absolute;inset:auto -20px -32px auto;width:82px;height:82px;border-radius:50%;background:rgba(79,70,229,.045)}.elm-metric span{display:block;color:var(--elm-muted);font-size:12px;font-weight:700;margin-bottom:10px}.elm-metric strong{font-size:29px;line-height:1}.elm-metric--primary{display:flex;align-items:center;gap:16px;background:linear-gradient(135deg,#554cf0,#332aaf);border-color:transparent;color:#fff}.elm-metric--primary span{color:#dddafe}.elm-metric--primary::after{background:rgba(255,255,255,.09)}.elm-metric--primary .elm-metric__content{position:relative;z-index:1;flex:1 1 auto;min-width:0}
+/* v1.6.0: signature radial progress ring on the primary "remaining days" metric. */
+.elm-metric__ring{--elm-ring-pct:0;position:relative;z-index:1;flex:0 0 auto;width:58px;height:58px;border-radius:50%;background:conic-gradient(#fff calc(var(--elm-ring-pct) * 1%),rgba(255,255,255,.28) 0);display:grid;place-items:center;transition:background .4s ease}
+.elm-metric__ring::before{content:"";position:absolute;inset:5px;border-radius:50%;background:linear-gradient(135deg,#5b52f3,#332aaf)}
+.elm-metric__ring-value{position:relative;z-index:1;font-size:11px;font-weight:800;letter-spacing:-.02em;color:#fff}
+@media(max-width:600px){.elm-metric__ring{width:46px;height:46px}.elm-metric__ring-value{font-size:10px}}
+.elm-layout{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(320px,.65fr);gap:19px;align-items:start}.elm-card{background:rgba(255,255,255,.97);border:1px solid var(--elm-line);border-radius:22px;padding:23px;box-shadow:0 15px 44px rgba(16,24,40,.065)}.elm-card__head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}.elm-calendar-toolbar{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:-2px 0 20px;padding-bottom:16px;border-bottom:1px solid #f1f5f9}.elm-calendar-toolbar__title{text-align:center}.elm-calendar-toolbar__title .elm-eyebrow{margin-bottom:4px}.elm-icon-button{display:grid;place-items:center;flex:0 0 40px;width:40px;height:40px;border-radius:10px;border:1px solid #e2e8f0;background:#fff;color:#475569;font-size:27px;line-height:1;cursor:pointer;transition:.18s ease;box-shadow:0 1px 2px rgba(0,0,0,.05)}.elm-icon-button:hover{border-color:#cbd5e1;background:#f8fafc;color:#0f172a;transform:translateY(-1px);box-shadow:0 4px 8px rgba(15,23,42,.07)}
+.elm-legend{display:flex;flex-wrap:wrap;gap:14px;color:var(--elm-muted);font-size:12px;margin-bottom:15px;padding:10px 12px;background:var(--elm-soft);border-radius:12px}.elm-legend span{display:inline-flex;align-items:center;gap:7px}.elm-dot{display:inline-block;width:9px;height:9px;border-radius:50%}.elm-dot--green{background:var(--elm-green)}.elm-dot--yellow{background:var(--elm-yellow)}.elm-dot--red{background:var(--elm-red)}
+.elm-calendar{display:flex;gap:40px;flex-wrap:wrap}.elm-calendar-month{flex:1 1 300px;min-width:280px;padding:0;background:#fff}.elm-calendar-month__title{text-align:center;margin:0 0 16px!important;color:#334155;font-size:15px!important;font-weight:700;text-transform:uppercase;letter-spacing:.05em}.elm-calendar-month__grid{display:grid;grid-template-columns:repeat(7,minmax(38px,1fr));gap:4px 2px;justify-items:center;align-items:center}.elm-calendar__weekday{text-align:center;color:#64748b;font-size:11px;font-weight:700;padding:8px 0 10px;text-transform:uppercase;letter-spacing:.05em}.elm-calendar__day{position:relative;display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;min-width:38px;min-height:38px;padding:0;border:0;border-radius:50%;background:transparent;color:#334155;font-size:14px;font-weight:600;line-height:1;cursor:pointer;transition:all .18s ease}.elm-calendar__day:hover:not(:disabled):not(.elm-calendar__day--outside){background:#f1f5f9;color:#0f172a;transform:translateY(-1px)}.elm-calendar__day:focus-visible{outline:3px solid rgba(79,70,229,.22);outline-offset:2px}.elm-calendar__day--outside{color:#cbd5e1;font-weight:400;cursor:default}.elm-calendar__day--green .elm-calendar__status-dot{background:var(--elm-green)}.elm-calendar__day--yellow .elm-calendar__status-dot{background:var(--elm-yellow)}.elm-calendar__day--red .elm-calendar__status-dot{background:var(--elm-red)}.elm-calendar__number{position:relative;z-index:2}.elm-calendar__status-dot{position:absolute;right:3px;bottom:3px;width:5px;height:5px;border-radius:50%;box-shadow:0 0 0 2px #fff}.elm-calendar__pending-dot{position:absolute;right:3px;top:3px;width:5px;height:5px;border-radius:50%;background:#f2b600;box-shadow:0 0 0 2px #fff}.elm-calendar__day.is-disabled{background:#f8fafc;color:#b7c0ce;cursor:not-allowed;text-decoration:line-through;box-shadow:none}.elm-calendar__day.is-disabled .elm-calendar__status-dot{background:#b8c0cc}.elm-calendar__day.is-holiday{background:#f8f3ff}.elm-calendar__day.is-selected{background:#4f46e5;color:#fff;box-shadow:0 4px 10px rgba(79,70,229,.38);font-weight:750;transform:scale(1.08)}.elm-calendar__day.is-selected:hover:not(:disabled){background:#4338ca;color:#fff}.elm-calendar__day.is-selected .elm-calendar__status-dot,.elm-calendar__day.is-selected .elm-calendar__pending-dot{box-shadow:0 0 0 2px #4f46e5}.elm-selected-info{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:22px;padding-top:16px;border-top:1px solid #f1f5f9;color:#475569;font-size:13px}.elm-selected-info strong{color:#0f172a}.elm-clear-dates{border:0;border-radius:7px;background:#64748b;color:#fff;padding:8px 14px;font-size:12px;font-weight:750;cursor:pointer;transition:.18s ease}.elm-clear-dates:hover{background:#475569;transform:translateY(-1px)}.elm-calendar-help{margin:14px 2px 0;color:var(--elm-muted);font-size:12px;line-height:1.55}
+.elm-request-card{position:sticky;top:46px}.elm-request-card form{display:grid;gap:15px}.elm-request-card label{display:grid;gap:7px;color:#344054;font-size:12px;font-weight:750}.elm-request-card input,.elm-request-card select,.elm-request-card textarea{width:100%;border:1px solid #d0d5dd;border-radius:11px;background:#fff;color:var(--elm-ink);font:inherit;padding:11px 12px;box-shadow:0 1px 2px rgba(16,24,40,.04);transition:.16s ease}.elm-request-card input:focus,.elm-request-card select:focus,.elm-request-card textarea:focus{outline:3px solid rgba(79,70,229,.14);border-color:var(--elm-brand)}.elm-form-row{display:grid;grid-template-columns:1fr 1fr;gap:11px}.elm-medical-fields{display:grid;gap:12px;padding:14px;border:1px solid #d9ddec;border-radius:13px;background:#f8f9fd}.elm-check{grid-template-columns:auto 1fr!important;align-items:start}.elm-check input{width:auto;margin-top:2px}.elm-privacy-note{font-size:11px;color:var(--elm-muted);margin:0;line-height:1.45}.elm-waitlist{padding:11px 12px;border-radius:10px;font-size:12px;font-weight:750;line-height:1.45}.elm-waitlist--pending{background:#fff8e7;color:#805400;border:1px solid #efd08b}.elm-waitlist--blocked{background:#fff1f0;color:#ad251b;border:1px solid #fbc8c4}.elm-submit-status{padding:11px 12px;border-radius:10px;font-size:12px;font-weight:750;line-height:1.45}.elm-submit-status--success{background:#ecfdf3;border:1px solid #abefc6;color:#067647}.elm-submit-status--error{background:#fff1f0;border:1px solid #fbc8c4;color:#ad251b}.elm-button{border:0;border-radius:11px;padding:12px 17px;font-weight:850;cursor:pointer;transition:.16s ease}.elm-button:disabled{opacity:.55;cursor:not-allowed}.elm-button--primary{background:linear-gradient(135deg,var(--elm-brand),var(--elm-brand-dark));color:#fff;box-shadow:0 9px 20px rgba(79,70,229,.22)}.elm-button--primary:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 12px 24px rgba(79,70,229,.28)}
+.elm-history-card{margin-top:19px}.elm-table-wrap{overflow-x:auto}.elm-table{width:100%;border-collapse:collapse;font-size:13px}.elm-table th{color:var(--elm-muted);text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:.08em}.elm-table th,.elm-table td{padding:14px 11px;border-bottom:1px solid var(--elm-line);vertical-align:middle}.elm-table tbody tr:hover{background:#fafbfe}.elm-status{display:inline-flex;border-radius:999px;padding:5px 9px;font-size:10px;font-weight:850;text-transform:capitalize}.elm-status--pending{background:#fff3ce;color:#845600}.elm-status--approved{background:#e8fbf2;color:#067647}.elm-status--rejected{background:#fff1f0;color:#ad251b}.elm-status--cancelled{background:#f2f4f7;color:#475467}.elm-table-actions{white-space:nowrap;text-align:right}.elm-table-actions-inner{display:inline-flex;align-items:center;justify-content:flex-end;gap:10px;white-space:nowrap}.elm-link-button{border:0;background:none;color:var(--elm-brand);font-weight:850;cursor:pointer;padding:4px;text-decoration:none}.elm-link-button:hover{text-decoration:underline}.elm-login-required{max-width:760px;margin:30px auto;padding:18px;border:1px solid #e4e7ec;border-radius:14px;background:#fff}
+@media(max-width:1180px){.elm-layout{grid-template-columns:1fr}.elm-request-card{position:static}}
+@media(max-width:820px){.elm-balance-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.elm-calendar{display:grid;grid-template-columns:1fr;gap:28px}.elm-calendar-month:nth-child(2){padding-top:24px;border-top:1px solid #e2e8f0}}
+@media(max-width:600px){.elm-portal{padding:0 10px;margin:18px auto}.elm-card{padding:16px;border-radius:16px}.elm-balance-grid{gap:8px}.elm-metric{padding:14px}.elm-metric strong{font-size:23px}.elm-calendar{gap:24px}.elm-calendar-month{min-width:0}.elm-calendar-month__grid{grid-template-columns:repeat(7,minmax(32px,1fr));gap:4px 0}.elm-calendar__day{width:34px;height:34px;min-width:34px;min-height:34px;font-size:13px}.elm-form-row{grid-template-columns:1fr}.elm-portal__header{align-items:center}.elm-legend{gap:9px}.elm-calendar-toolbar{gap:10px}.elm-calendar-toolbar h3{font-size:16px}}
+
+/* v1.2 calendar: visually matched to the supplied overtime calendar only. */
+.elm-portal .elm-calendar-card.ot-section{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:32px;box-shadow:0 4px 6px -1px rgba(0,0,0,.05),0 2px 4px -2px rgba(0,0,0,.05)}
+.elm-portal .ot-cal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid #f1f5f9}
+.elm-portal .ot-cal-header strong{font-size:1.1rem;color:#0f172a;font-weight:600;text-align:center}
+.elm-portal .ot-cal-nav-btn{cursor:pointer;border:1px solid #e2e8f0;background:#fff;border-radius:10px;width:40px;height:40px;font-size:22px;color:#475569;display:flex;align-items:center;justify-content:center;transition:all .2s ease;box-shadow:0 1px 2px rgba(0,0,0,.05);line-height:0;padding:0 0 4px}
+.elm-portal .ot-cal-nav-btn:hover{background:#f8fafc;color:#0f172a;border-color:#cbd5e1;transform:translateY(-1px);box-shadow:0 4px 6px rgba(0,0,0,.05)}
+.elm-portal .ot-cal-nav-btn:focus-visible,.elm-portal .ot-day:focus-visible{outline:3px solid rgba(79,70,229,.18);outline-offset:2px}
+.elm-portal .ot-cal-grids{display:flex;gap:40px;flex-wrap:wrap}
+.elm-portal .ot-month{flex:1 1 300px;min-width:280px}
+.elm-portal .ot-month-title{font-weight:600;font-size:15px;margin-bottom:16px;color:#334155;text-transform:uppercase;letter-spacing:.05em;text-align:center}
+.elm-portal table.ot-cal-table{width:100%;border-collapse:collapse;border:0;margin:0}
+.elm-portal table.ot-cal-table thead,.elm-portal table.ot-cal-table tbody,.elm-portal table.ot-cal-table tr,.elm-portal table.ot-cal-table th,.elm-portal table.ot-cal-table td{border:0;background:transparent}
+.elm-portal table.ot-cal-table th{font-size:12px;color:#64748b;font-weight:600;padding:8px 0 12px;text-transform:uppercase;letter-spacing:.05em;text-align:center}
+.elm-portal table.ot-cal-table td{text-align:center;padding:2px 0;height:42px}
+.elm-portal .ot-day{position:relative;display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:14px;color:#334155;transition:all .2s ease;font-weight:500;user-select:none}
+.elm-portal .ot-day:hover{background:#f1f5f9;color:#0f172a}
+.elm-portal .ot-day.ot-other-month{color:#cbd5e1;font-weight:400;cursor:default}
+.elm-portal .ot-day.ot-other-month:hover{background:transparent}
+.elm-portal .ot-day.ot-selected{background:#4f46e5;color:#fff;box-shadow:0 4px 10px rgba(79,70,229,.4);font-weight:600;transform:scale(1.08)}
+.elm-portal .ot-day.ot-selected:hover{background:#4338ca;color:#fff}
+.elm-portal .ot-day.ot-pending:not(.ot-selected)::after{content:"";position:absolute;right:3px;top:3px;width:7px;height:7px;border-radius:50%;background:#f59e0b;border:2px solid #fff}
+.elm-portal .ot-day.ot-capacity-full,.elm-portal .ot-day.ot-disabled{background:#f8fafc;color:#b7c0ce;cursor:not-allowed;text-decoration:line-through}
+.elm-portal .ot-day.ot-capacity-full::after{content:"";position:absolute;right:3px;top:3px;width:7px;height:7px;border-radius:50%;background:#ef4444;border:2px solid #fff}
+.elm-portal .ot-day.ot-holiday{background:#f8f3ff}
+.elm-portal .ot-day.ot-disabled:hover{background:#f8fafc;color:#b7c0ce;transform:none}
+.elm-portal .ot-selected-info{margin-top:24px;font-size:14px;color:#475569;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.elm-portal .ot-selected-info span{font-weight:600;color:#0f172a;overflow-wrap:anywhere}
+.elm-portal .ot-btn{cursor:pointer;border:0;background:#0f172a;color:#fff;padding:12px 24px;border-radius:8px;font-size:14px;font-weight:600;font-family:inherit;transition:all .2s ease;box-shadow:0 2px 4px rgba(0,0,0,.1);display:inline-flex;align-items:center;justify-content:center;letter-spacing:.02em}
+.elm-portal .ot-btn:hover{transform:translateY(-2px);box-shadow:0 6px 12px rgba(0,0,0,.15)}
+.elm-portal .ot-btn-small{padding:8px 16px;font-size:13px;border-radius:6px;margin:0;box-shadow:none}
+.elm-portal .ot-btn.ot-secondary{background:#64748b;color:#fff}
+.elm-portal .ot-btn.ot-secondary:hover{background:#475569}
+.elm-portal .elm-calendar-key{display:flex;gap:16px;flex-wrap:wrap;margin-top:20px;padding:14px 16px;border:1px solid #f1f5f9;border-radius:12px;background:#f8fafc;color:#64748b;font-size:12px}
+.elm-portal .elm-calendar-key span{display:inline-flex;align-items:center;gap:7px}
+.elm-portal .elm-key-dot{display:inline-block;width:8px;height:8px;border-radius:50%}
+.elm-portal .elm-key-dot--available{background:#10b981}.elm-portal .elm-key-dot--pending{background:#f59e0b}.elm-portal .elm-key-dot--blocked{background:#ef4444}
+.elm-portal .elm-selected-request-days{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 14px;border:1px solid #e2e8f0;border-radius:11px;background:#f8fafc;color:#475569;font-size:13px;font-weight:700}
+.elm-portal .elm-selected-request-days strong{display:grid;place-items:center;min-width:34px;height:28px;padding:0 9px;border-radius:999px;background:#4f46e5;color:#fff;font-size:13px}
+.elm-portal .elm-refresh-button{border:1px solid #d0d5dd;border-radius:9px;background:#fff;color:#344054;padding:8px 12px;font-weight:750;cursor:pointer}
+.elm-portal .elm-refresh-button:hover{background:#f8fafc;border-color:#98a2b3}
+.elm-portal .elm-refresh-button:disabled{opacity:.55;cursor:not-allowed}
+.elm-portal .elm-request-dates{min-width:230px;max-width:480px;line-height:1.55}
+@media(max-width:820px){.elm-portal .ot-cal-grids{display:grid;grid-template-columns:1fr;gap:28px}.elm-portal .ot-month:nth-child(2){padding-top:24px;border-top:1px solid #e2e8f0}}
+@media(max-width:600px){.elm-portal .elm-calendar-card.ot-section{padding:18px}.elm-portal .ot-cal-header{gap:10px}.elm-portal .ot-cal-header strong{font-size:15px}.elm-portal .ot-month{min-width:0}.elm-portal .ot-day{width:34px;height:34px;font-size:13px}.elm-portal table.ot-cal-table td{height:38px}.elm-portal .ot-cal-grids{gap:24px}.elm-portal .ot-selected-info{align-items:flex-start}.elm-portal .elm-calendar-key{gap:10px}}
+.elm-portal button.ot-day{-webkit-appearance:none;appearance:none;border:0;padding:0;margin:0;background:transparent;font:inherit;line-height:1}
+.elm-portal .elm-inline-action-form{display:inline-flex;margin:0;padding:0}
+
+/* v1.4 range selection and employee request-status colours. */
+.elm-portal .elm-calendar-instruction{margin:12px 0 0;padding:12px 14px;border-left:3px solid #6366f1;border-radius:8px;background:#f8f9ff;color:#475569;font-size:12px;line-height:1.55}
+.elm-portal .elm-calendar-key--statuses{margin-top:9px;background:#fff}
+.elm-portal .elm-key-dot--nonworking{background:repeating-linear-gradient(135deg,#cbd5e1 0 2px,#f8fafc 2px 4px);border:1px solid #94a3b8}
+.elm-portal .elm-key-dot--status-pending{background:#f59e0b}
+.elm-portal .elm-key-dot--status-warning{background:linear-gradient(135deg,#facc15 0 50%,#ef4444 50% 100%);box-shadow:0 0 0 1px #f59e0b}
+.elm-portal .elm-key-dot--status-approved{background:#10b981}
+.elm-portal .elm-key-dot--status-rejected{background:#ef4444}
+.elm-portal .elm-key-dot--status-cancelled{background:#94a3b8}
+.elm-portal .ot-day.ot-nonworking:not(.ot-selected):not(.ot-own-status):not(.ot-capacity-full):not(.ot-disabled){color:#64748b;background-image:repeating-linear-gradient(135deg,rgba(148,163,184,.12) 0 3px,rgba(248,250,252,.25) 3px 6px)}
+.elm-portal .ot-day.ot-holiday:not(.ot-selected):not(.ot-own-status):not(.ot-capacity-full):not(.ot-disabled){box-shadow:inset 0 0 0 1px #ddd6fe}
+.elm-portal .ot-day.ot-own-status:not(.ot-selected){font-weight:500;text-decoration:none;background:transparent;background-image:none;box-shadow:inset 0 0 0 1px currentColor}
+.elm-portal .ot-day.ot-own-status--pending:not(.ot-selected){color:#d97706}
+.elm-portal .ot-day.ot-own-status--approved:not(.ot-selected){color:#059669;font-weight:400}
+.elm-portal .ot-day.ot-own-status--rejected:not(.ot-selected){color:#dc2626}
+.elm-portal .ot-day.ot-own-status--cancelled:not(.ot-selected){color:#64748b}
+.elm-portal .ot-day.ot-own-status.ot-pending:not(.ot-selected)::after{display:none}
+.elm-portal .ot-day.ot-own-status:not(.ot-selected):hover{background:transparent}
+.elm-portal .ot-day.ot-own-status--pending.ot-disabled:not(.ot-selected),.elm-portal .ot-day.ot-own-status--approved.ot-disabled:not(.ot-selected){cursor:not-allowed;opacity:1}
+.elm-portal .ot-day.ot-range-anchor{outline:3px solid rgba(79,70,229,.25);outline-offset:2px}
+.elm-portal .ot-day.ot-selected{background:#4f46e5;color:#fff;background-image:none;box-shadow:0 4px 10px rgba(79,70,229,.4);text-decoration:none}
+.elm-portal .ot-day.ot-selected.ot-nonworking{background:#ede9fe;color:#5b21b6;box-shadow:inset 0 0 0 2px #8b5cf6;background-image:repeating-linear-gradient(135deg,rgba(139,92,246,.08) 0 3px,rgba(255,255,255,.28) 3px 6px)}
+.elm-portal .ot-day.ot-selected.ot-nonworking:hover{background:#ddd6fe;color:#4c1d95}
+.elm-portal .ot-selected-info [data-ot-selected-list]{line-height:1.55}
+@media(max-width:600px){.elm-portal .elm-calendar-instruction{font-size:11px}.elm-portal .elm-calendar-key--statuses{display:grid;grid-template-columns:1fr 1fr}}
+
+/* v1.5 weekend numerals and half-year allowance controls. */
+.elm-portal .elm-half-year-allowance{margin-top:10px;padding:10px 12px;border:1px solid #e2e8f0;border-radius:9px;background:#fff;color:#475569;font-size:12px;font-weight:700}
+.elm-portal .ot-day.ot-nonworking:not(.ot-selected):not(.ot-own-status):not(.ot-capacity-full):not(.ot-disabled){background-image:none}
+.elm-portal .ot-day.ot-weekend:not(.ot-selected):not(.ot-own-status):not(.ot-capacity-full):not(.ot-disabled){color:#dc2626;background-image:none}
+.elm-portal .ot-day.ot-selected.ot-nonworking{background:#4f46e5;color:#fff;box-shadow:0 4px 10px rgba(79,70,229,.4);background-image:none}
+.elm-portal .elm-key-dot--nonworking{background:#fff;border:1px solid #e2e8f0;box-shadow:inset 0 0 0 2px #fff;position:relative}
+.elm-portal .elm-key-dot--nonworking::after{content:"";position:absolute;inset:2px;border-radius:50%;background:#dc2626}
+
+/* v1.5.7 soft policy-warning notices. */
+.elm-portal .elm-policy-warnings{margin-top:10px;padding:12px 14px;border:1px solid #f0c36d;border-left:4px solid #d97706;border-radius:9px;background:#fff8e7;color:#7c4a03;font-size:12px;font-weight:750;line-height:1.55}
+.elm-portal .elm-request-policy-warning{margin-top:6px;color:#845600;font-size:11px;font-weight:750;line-height:1.45}
+.elm-portal .elm-request-policy-warning--pending{color:#845600}
+.elm-portal .elm-request-policy-warning--approved{color:#067647}
+.elm-portal .elm-request-policy-warning--rejected{color:#ad251b}
+.elm-portal .elm-request-policy-warning--cancelled{color:#475467}
+.elm-portal .elm-status--warning{margin-top:5px;background:#fff0d5;color:#9a4f00;white-space:nowrap}
+
+/* Policy-exception dates retain an exclamation badge after submission for every request status. */
+.elm-portal .ot-day.ot-own-status--pending.ot-own-policy-warning:not(.ot-selected){color:#d97706;background:transparent;background-image:none;box-shadow:inset 0 0 0 1px currentColor}
+.elm-portal .ot-day.ot-own-policy-warning::before{content:"!";position:absolute;right:-1px;top:-3px;display:grid;place-items:center;width:13px;height:13px;border-radius:50%;background:#ef4444;color:#fff;font-size:9px;font-weight:800;line-height:1;box-shadow:0 0 0 2px #fff}
+
+/* v1.5.12 thin status-colour circles for every employee-requested date. */
+.elm-portal .ot-day.ot-own-status--pending:not(.ot-selected){color:#d97706;background:transparent;background-image:none;box-shadow:inset 0 0 0 1px currentColor}
+.elm-portal .ot-day.ot-own-status--approved:not(.ot-selected){color:#059669;box-shadow:inset 0 0 0 1px currentColor}
+.elm-portal .ot-day.ot-own-status--rejected:not(.ot-selected){color:#dc2626;box-shadow:inset 0 0 0 1px currentColor}
+.elm-portal .ot-day.ot-own-status--cancelled:not(.ot-selected){color:#64748b;box-shadow:none}
+/* The exclamation badge remains on policy-exception dates for every request status. */
+.elm-portal .ot-day.ot-own-status--pending:not(.ot-selected):hover{color:#d97706;background:transparent}
+
+.elm-portal .elm-request-cancellation-note{margin-top:6px;padding:7px 9px;border-left:3px solid #64748b;border-radius:6px;background:#f8fafc;color:#475467;font-size:11px;font-weight:700;line-height:1.45}
+.elm-portal .elm-cancel-reason-fallback{display:grid;gap:4px;min-width:190px;color:#475467;font-size:11px;font-weight:700}.elm-portal .elm-cancel-reason-fallback input{min-height:34px;border:1px solid #d0d5dd;border-radius:7px;padding:6px 8px}
+
+/* v1.5.19 grouped, numbered Employer and Chief reason history. */
+.elm-portal .elm-request-reasons-notice{display:grid;gap:9px;margin-top:6px;padding:0;border:0;border-radius:0;background:transparent;color:#344054;font-size:11px;font-weight:500;line-height:1.45;white-space:normal;overflow-wrap:anywhere}
+.elm-portal .elm-request-reasons-group{display:grid;gap:5px}
+.elm-portal .elm-request-reasons-group+.elm-request-reasons-group{padding-top:8px;border-top:1px solid #dce3ec}
+.elm-portal .elm-request-reasons-heading{font-weight:850;color:#152238}
+.elm-portal .elm-request-reasons-item{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px;align-items:start;padding:5px 7px;border-left:2px solid #94a3b8;border-radius:5px;background:#f8fafc;color:#344054}
+.elm-portal .elm-request-reasons-number{font-weight:800;color:inherit}
+.elm-portal .elm-request-reasons-content{min-width:0}
+.elm-portal .elm-request-reasons-actor{font-weight:850;color:inherit}
+
+/* v1.5.21 each reason keeps the colour of the event that created it. */
+.elm-portal .elm-request-reasons-item--pending{border-left-color:#d97706;background:#fff8e7;color:#845600}
+.elm-portal .elm-request-reasons-item--approved{border-left-color:#059669;background:#e8fbf2;color:#067647}
+.elm-portal .elm-request-reasons-item--rejected{border-left-color:#dc2626;background:#fff1f0;color:#ad251b}
+.elm-portal .elm-request-reasons-item--cancelled{border-left-color:#64748b;background:#f2f4f7;color:#475467}
+.elm-portal .elm-request-form-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.elm-portal .elm-button--secondary{background:#fff;color:var(--elm-brand-dark);border:1px solid #c7c9f8;box-shadow:none}.elm-portal .elm-button--secondary:hover:not(:disabled){background:#f5f5ff;border-color:var(--elm-brand)}.elm-portal .elm-request-card.is-editing{box-shadow:0 0 0 2px rgba(79,70,229,.16),var(--elm-shadow)}
+
+/* v1.5.29 Chief frontend workspace. */
+.elm-portal .elm-portal-tabs{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 20px;padding:6px;border:1px solid var(--elm-line);border-radius:15px;background:#f8fafc;box-shadow:0 8px 26px rgba(16,24,40,.04)}
+.elm-portal .elm-portal-tab{appearance:none;border:0;border-radius:10px;background:transparent;color:#475467;padding:10px 15px;font-size:12px;font-weight:850;cursor:pointer;transition:.16s ease}
+.elm-portal .elm-portal-tab:hover{background:#fff;color:var(--elm-brand-dark)}
+.elm-portal .elm-portal-tab.is-active{background:#fff;color:var(--elm-brand);box-shadow:0 3px 12px rgba(16,24,40,.09)}
+.elm-portal .elm-portal-tab-panel{display:block}.elm-portal .elm-portal-tab-panel[hidden]{display:none!important}
+.elm-portal .elm-chief-requirements,.elm-portal .elm-chief-settings{min-height:260px}
+.elm-portal .elm-chief-notice{margin:0 0 16px;padding:12px 14px;border-radius:10px;font-size:12px;font-weight:750;line-height:1.5}
+.elm-portal .elm-chief-notice--success{background:#ecfdf3;border:1px solid #abefc6;color:#067647}
+.elm-portal .elm-chief-notice--error{background:#fff1f0;border:1px solid #fbc8c4;color:#ad251b}
+.elm-portal .elm-chief-filters{display:grid;grid-template-columns:minmax(150px,.75fr) minmax(190px,1.2fr) minmax(120px,.55fr) auto;gap:12px;align-items:end;margin-bottom:18px;padding:14px;border:1px solid var(--elm-line);border-radius:14px;background:#f8fafc}
+.elm-portal .elm-chief-filters label,.elm-portal .elm-chief-edit-fields label,.elm-portal .elm-chief-edit-reason,.elm-portal .elm-chief-settings-form>label{display:grid;gap:6px;color:#344054;font-size:11px;font-weight:800}
+.elm-portal .elm-chief-filters input,.elm-portal .elm-chief-filters select,.elm-portal .elm-chief-edit-dialog input,.elm-portal .elm-chief-edit-dialog select,.elm-portal .elm-chief-edit-dialog textarea,.elm-portal .elm-chief-settings-form input,.elm-portal .elm-chief-settings-form textarea{width:100%;min-height:40px;border:1px solid #d0d5dd;border-radius:9px;background:#fff;color:var(--elm-ink);padding:8px 10px;font:inherit}
+.elm-portal .elm-chief-filters input:focus,.elm-portal .elm-chief-filters select:focus,.elm-portal .elm-chief-edit-dialog input:focus,.elm-portal .elm-chief-edit-dialog select:focus,.elm-portal .elm-chief-edit-dialog textarea:focus,.elm-portal .elm-chief-settings-form input:focus,.elm-portal .elm-chief-settings-form textarea:focus{outline:3px solid rgba(79,70,229,.13);border-color:var(--elm-brand)}
+.elm-portal .elm-button--compact{min-height:40px;padding:9px 15px}
+.elm-portal .elm-chief-table{min-width:1100px}.elm-portal .elm-chief-table td{vertical-align:top}
+.elm-portal .elm-chief-actions{flex-wrap:wrap;max-width:260px;white-space:normal}
+.elm-portal .elm-link-button--primary{display:inline-flex;border-radius:8px;background:var(--elm-brand);color:#fff;padding:6px 9px;text-decoration:none}
+.elm-portal .elm-link-button--primary:hover{background:var(--elm-brand-dark);text-decoration:none}
+.elm-portal .elm-link-button:disabled{opacity:.45;cursor:not-allowed;text-decoration:none}
+.elm-portal .elm-chief-edit-overlay{position:fixed;inset:0;z-index:99999;display:grid;place-items:center;padding:24px;background:rgba(15,23,42,.58);backdrop-filter:blur(3px)}
+.elm-portal .elm-chief-edit-overlay[hidden]{display:none!important}
+.elm-portal .elm-chief-edit-dialog{width:min(980px,100%);max-height:calc(100vh - 48px);overflow:auto;border:1px solid #dce3ec;border-radius:20px;background:#fff;box-shadow:0 28px 80px rgba(15,23,42,.3)}
+.elm-portal .elm-chief-edit-dialog form{display:grid;gap:16px;padding:22px}
+.elm-portal .elm-chief-edit-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding-bottom:14px;border-bottom:1px solid var(--elm-line)}
+.elm-portal .elm-chief-edit-close{display:grid;place-items:center;width:36px;height:36px;border:1px solid #d0d5dd;border-radius:9px;background:#fff;color:#475467;font-size:24px;line-height:1;cursor:pointer}
+.elm-portal .elm-chief-edit-close:hover{background:#f8fafc;color:#101828}
+.elm-portal .elm-chief-edit-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.elm-portal .elm-chief-edit-calendar-head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-top:2px}
+.elm-portal .elm-chief-edit-calendars{display:grid;grid-template-columns:1fr 1fr;gap:22px;min-height:260px}
+.elm-portal .elm-chief-edit-month{min-width:0}.elm-portal .elm-chief-edit-month h4{text-align:center;margin:0 0 10px;font-size:14px}
+.elm-portal .elm-chief-edit-calendar{width:100%;border-collapse:separate;border-spacing:3px;font-size:12px}
+.elm-portal .elm-chief-edit-calendar th{padding:5px 2px;color:#667085;font-size:10px;text-align:center;text-transform:uppercase}
+.elm-portal .elm-chief-edit-calendar td{height:38px;padding:0;text-align:center}
+.elm-portal .elm-chief-edit-day{display:inline-grid;place-items:center;width:34px;height:34px;border:1px solid transparent;border-radius:50%;background:#fff;color:#344054;font-weight:700;cursor:pointer;transition:.14s ease}
+.elm-portal .elm-chief-edit-day:hover:not(:disabled){border-color:#a5b4fc;background:#eef2ff;color:#3730a3}
+.elm-portal .elm-chief-edit-day.is-selected{border-color:var(--elm-brand);background:var(--elm-brand);color:#fff;box-shadow:0 4px 10px rgba(79,70,229,.25)}
+.elm-portal .elm-chief-edit-day.is-original{box-shadow:inset 0 0 0 1px #818cf8}.elm-portal .elm-chief-edit-day.is-selected.is-original{box-shadow:inset 0 0 0 1px #fff,0 4px 10px rgba(79,70,229,.25)}
+.elm-portal .elm-chief-edit-day.is-nonworking,.elm-portal .elm-chief-edit-day.is-blocked{color:#98a2b3;background:#f8fafc}
+.elm-portal .elm-chief-edit-day:disabled{cursor:not-allowed;opacity:.55}
+.elm-portal .elm-chief-edit-selected{display:flex;gap:7px;flex-wrap:wrap;min-height:42px;padding:10px;border:1px solid var(--elm-line);border-radius:10px;background:#f8fafc}
+.elm-portal .elm-chief-edit-date-chip{border:1px solid #c7d2fe;border-radius:999px;background:#eef2ff;color:#3730a3;padding:5px 9px;font-size:11px;font-weight:800;cursor:pointer}
+.elm-portal .elm-chief-edit-selected-empty{color:#667085;font-size:12px}
+.elm-portal .elm-chief-edit-feedback{padding:11px 13px;border-radius:9px;font-size:12px;font-weight:750}
+.elm-portal .elm-chief-edit-feedback--error{background:#fff1f0;border:1px solid #fbc8c4;color:#ad251b}.elm-portal .elm-chief-edit-feedback--success{background:#ecfdf3;border:1px solid #abefc6;color:#067647}
+body.elm-chief-edit-open{overflow:hidden}
+.elm-portal .elm-chief-settings-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.elm-portal .elm-chief-settings-form fieldset{grid-column:1/-1;margin:0;padding:14px;border:1px solid var(--elm-line);border-radius:12px}.elm-portal .elm-chief-settings-form legend{padding:0 6px;color:#344054;font-size:11px;font-weight:850}
+.elm-portal .elm-chief-settings-checks{display:flex;gap:12px;flex-wrap:wrap}.elm-portal .elm-chief-settings-checks label{display:inline-flex;align-items:center;gap:6px;color:#475467;font-size:12px;font-weight:700}.elm-portal .elm-chief-settings-checks input{width:auto;min-height:0}
+.elm-portal .elm-chief-settings-wide{grid-column:1/-1}
+@media(max-width:900px){.elm-portal .elm-chief-filters{grid-template-columns:1fr 1fr}.elm-portal .elm-chief-edit-calendars{grid-template-columns:1fr}.elm-portal .elm-chief-settings-form{grid-template-columns:1fr}.elm-portal .elm-chief-settings-wide,.elm-portal .elm-chief-settings-form fieldset{grid-column:auto}}
+@media(max-width:600px){.elm-portal .elm-portal-tabs{display:grid;grid-template-columns:1fr}.elm-portal .elm-portal-tab{text-align:left}.elm-portal .elm-chief-filters,.elm-portal .elm-chief-edit-fields{grid-template-columns:1fr}.elm-portal .elm-chief-edit-overlay{padding:10px}.elm-portal .elm-chief-edit-dialog{max-height:calc(100vh - 20px)}.elm-portal .elm-chief-edit-dialog form{padding:16px}}
+
+/* v1.5.33 unboxed calendar information sections. */
+.elm-portal .elm-calendar-guide{
+  margin-top:18px;border:0;border-radius:0;background:transparent;box-shadow:none
+}
+.elm-portal .elm-calendar-guide__section{
+  padding:14px 0;border-top:1px solid #e2e8f0
+}
+.elm-portal .elm-calendar-guide__title{
+  display:block;margin-bottom:4px;color:#344054;font-size:11px;font-weight:850;letter-spacing:.06em;text-transform:uppercase
+}
+.elm-portal .elm-calendar-guide .elm-half-year-allowance{
+  margin:0;padding:0;border:0;border-radius:0;background:transparent;color:#536079;
+  font-size:12px;font-weight:650;line-height:1.55
+}
+.elm-portal .elm-calendar-guide .elm-policy-warnings{
+  margin:0;padding:11px 0 11px 13px;border:0;border-top:1px solid #e2e8f0;border-left:3px solid #d97706;
+  border-radius:0;background:transparent;color:#9a5b06;font-size:12px;font-weight:750;line-height:1.55;box-shadow:none
+}
+.elm-portal .elm-calendar-guide .elm-calendar-instruction{
+  margin:0;padding:0;border:0;border-radius:0;background:transparent;color:#526078;font-size:12px;line-height:1.55
+}
+.elm-portal .elm-calendar-guide__legend-grid{
+  display:grid;grid-template-columns:minmax(170px,.8fr) minmax(260px,1.7fr);gap:0;
+  padding:14px 0 0;border-top:1px solid #e2e8f0
+}
+.elm-portal .elm-calendar-guide__legend-group{min-width:0;padding-right:20px}
+.elm-portal .elm-calendar-guide__legend-group + .elm-calendar-guide__legend-group{
+  padding-right:0;padding-left:20px;border-left:1px solid #e2e8f0
+}
+.elm-portal .elm-calendar-guide__legend-title{
+  display:block;margin-bottom:8px;color:#344054;font-size:10px;font-weight:850;letter-spacing:.09em;text-transform:uppercase
+}
+.elm-portal .elm-calendar-guide .elm-calendar-key,
+.elm-portal .elm-calendar-guide .elm-calendar-key--statuses{
+  display:flex;gap:9px 15px;flex-wrap:wrap;margin:0;padding:0;border:0;border-radius:0;background:transparent;
+  color:#667085;font-size:11px;line-height:1.35
+}
+.elm-portal .elm-calendar-guide .elm-calendar-key span{gap:6px}
+.elm-portal .elm-calendar-guide .elm-key-dot{flex:0 0 9px;width:9px;height:9px}
+.elm-portal .elm-calendar-guide .elm-key-dot--blocked{
+  position:relative;background:#f1f5f9;border:1px solid #a8b2c1
+}
+.elm-portal .elm-calendar-guide .elm-key-dot--blocked::after{
+  content:"";position:absolute;left:0;right:0;top:3px;height:1px;background:#d14343;transform:rotate(-35deg)
+}
+@media(max-width:760px){
+  .elm-portal .elm-calendar-guide__legend-grid{grid-template-columns:1fr;gap:14px}
+  .elm-portal .elm-calendar-guide__legend-group{padding-right:0}
+  .elm-portal .elm-calendar-guide__legend-group + .elm-calendar-guide__legend-group{
+    padding:14px 0 0;border-left:0;border-top:1px solid #e2e8f0
+  }
+}
+@media(max-width:600px){
+  .elm-portal .elm-calendar-guide .elm-calendar-key--statuses{display:flex;grid-template-columns:none}
+}
+
+/* v1.5.34 permanent employee entitlement workflow. */
+.elm-metric--entitlement{position:relative;padding-bottom:42px}.elm-metric-action{position:absolute;left:16px;bottom:12px;border:0;background:transparent;color:#3157d5;font:inherit;font-size:12px;font-weight:800;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}.elm-metric-action:hover{color:#1f3ea8}.elm-entitlement-panel{margin:18px 0 26px;padding:22px 0;border-top:1px solid #d9dfeb;border-bottom:1px solid #d9dfeb}.elm-entitlement-panel__head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px}.elm-entitlement-close{border:0;background:transparent;color:#667085;font-size:28px;line-height:1;cursor:pointer;padding:0 4px}.elm-entitlement-help{max-width:850px;color:#596579;margin:8px 0 16px;line-height:1.6}.elm-entitlement-form{display:grid;grid-template-columns:repeat(3,minmax(150px,1fr));gap:14px 18px;align-items:end}.elm-entitlement-form label,.elm-chief-entitlement-form label{display:grid;gap:7px;font-size:12px;font-weight:800;color:#344054}.elm-entitlement-form input,.elm-entitlement-form textarea,.elm-chief-entitlement-form input,.elm-chief-entitlement-form select{width:100%;border:1px solid #cfd6e4;border-radius:10px;background:#fff;color:#172033;padding:10px 12px;font:inherit}.elm-entitlement-form__reason{grid-column:1/-1}.elm-entitlement-form__actions{grid-column:1/-1;display:flex;gap:10px;flex-wrap:wrap}.elm-entitlement-history{margin-top:20px;padding-top:17px;border-top:1px solid #e3e7ef}.elm-entitlement-history h4{margin-bottom:10px}.elm-entitlement-history__item{padding:11px 0;border-bottom:1px solid #edf0f5}.elm-entitlement-history__item:last-child{border-bottom:0}.elm-entitlement-history__summary{display:flex;align-items:center;justify-content:space-between;gap:12px}.elm-entitlement-history__item p{margin:5px 0 0;color:#566176}.elm-entitlement-history__decision{font-size:12px}.elm-chief-entitlements{margin:18px 0 28px;padding:18px 0 24px;border-top:1px solid #d9dfeb;border-bottom:1px solid #d9dfeb}.elm-chief-entitlements__head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}.elm-chief-entitlement-form{display:grid;grid-template-columns:minmax(180px,1.2fr) minmax(120px,.7fr) minmax(120px,.7fr) minmax(220px,1.5fr) auto;gap:12px;align-items:end;margin-bottom:18px}.elm-chief-entitlement-form__reason{min-width:0}.elm-chief-entitlement-table td{vertical-align:top}.elm-entitlement-decision{margin-top:6px;font-size:12px;line-height:1.4}.elm-entitlement-decision--approved{color:#16805b}.elm-entitlement-decision--rejected{color:#c43c3c}.elm-entitlement-decision--cancelled{color:#667085}
+@media(max-width:900px){.elm-entitlement-form{grid-template-columns:1fr 1fr}.elm-chief-entitlement-form{grid-template-columns:1fr 1fr}.elm-chief-entitlement-form__reason{grid-column:1/-1}}
+@media(max-width:600px){.elm-entitlement-form,.elm-chief-entitlement-form{grid-template-columns:1fr}.elm-entitlement-form__reason,.elm-entitlement-form__actions,.elm-chief-entitlement-form__reason{grid-column:auto}.elm-entitlement-history__summary{align-items:flex-start;flex-direction:column}.elm-metric--entitlement{padding-bottom:40px}}
+
+/* v1.5.36: entitlement controls inside Chief Settings. */
+.elm-portal .elm-chief-entitlement-access,
+.elm-portal .elm-chief-entitlements{margin-top:18px}
+.elm-portal .elm-entitlement-access-control{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:4px 0}
+.elm-portal .elm-entitlement-access-control strong{display:block;color:#253047;font-size:13px}
+.elm-portal .elm-entitlement-access-control p{margin:4px 0 0;color:#667085;font-size:12px;line-height:1.45}
+.elm-portal .elm-entitlement-access-toggle{display:inline-flex;align-items:center;gap:8px;flex:0 0 auto;color:#344054;font-size:12px;font-weight:800;cursor:pointer}
+.elm-portal .elm-entitlement-access-toggle input{width:17px;height:17px;margin:0;accent-color:var(--elm-brand)}
+.elm-portal .elm-entitlement-access-actions{display:flex;justify-content:flex-end;margin-top:14px}
+.elm-portal .elm-chief-entitlements{padding:22px;border:1px solid var(--elm-line);border-radius:16px;background:#fff}
+.elm-portal .elm-chief-entitlement-access{padding:22px}
+@media(max-width:600px){.elm-portal .elm-entitlement-access-control{align-items:flex-start;flex-direction:column;gap:12px}.elm-portal .elm-entitlement-access-actions{justify-content:stretch}.elm-portal .elm-entitlement-access-actions .elm-button{width:100%}}
+
+/* v1.5.38: function-based Settings layout with compact accessible help tips. */
+.elm-portal .elm-settings-hub{overflow:visible}
+.elm-portal .elm-settings-hub__head{padding-bottom:18px;border-bottom:1px solid var(--elm-line)}
+.elm-portal .elm-settings-hub__head p:last-child{margin:7px 0 0;color:#667085;font-size:13px;font-weight:600}
+.elm-portal .elm-chief-settings-form{display:block}
+.elm-portal .elm-settings-group{margin:0;padding:24px 0;border-top:1px solid var(--elm-line)}
+.elm-portal .elm-chief-settings-form>.elm-settings-group:first-child{border-top:0}
+.elm-portal .elm-settings-group__head{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:0 0 15px}
+.elm-portal .elm-settings-group__head .elm-eyebrow{margin-bottom:4px}
+.elm-portal .elm-settings-group__head h4{margin:0;color:var(--elm-ink);font-size:17px;line-height:1.25;letter-spacing:-.015em}
+.elm-portal .elm-settings-grid{display:grid;grid-template-columns:minmax(180px,360px);gap:15px}
+.elm-portal .elm-settings-grid--three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.elm-portal .elm-settings-grid label,.elm-portal .elm-settings-group>label{display:grid;gap:7px;color:#344054;font-size:11px;font-weight:800}
+.elm-portal .elm-settings-fieldset{margin:0 0 17px;padding:0;border:0}
+.elm-portal .elm-settings-fieldset legend{margin:0 0 10px;padding:0;color:#344054;font-size:11px;font-weight:850}
+.elm-portal .elm-settings-save{display:flex;justify-content:flex-end;padding:20px 0 4px;border-top:1px solid var(--elm-line)}
+.elm-portal .elm-setting-label{display:inline-flex;align-items:center;gap:7px;min-width:0}
+.elm-portal .elm-help-tip{position:relative;display:inline-grid;place-items:center;flex:0 0 17px;width:17px;height:17px;border:1px solid #aeb8c8;border-radius:50%;background:#fff;color:#667085;font-size:11px;font-weight:900;line-height:1;cursor:help;outline:0}
+.elm-portal .elm-help-tip:hover,.elm-portal .elm-help-tip:focus{border-color:var(--elm-brand);color:var(--elm-brand);box-shadow:0 0 0 3px rgba(79,70,229,.12)}
+.elm-portal .elm-help-tip__text{position:absolute;z-index:100;left:50%;bottom:calc(100% + 9px);width:max-content;max-width:min(280px,calc(100vw - 44px));padding:9px 11px;border-radius:8px;background:#172033;color:#fff;font-size:11px;font-weight:650;line-height:1.45;text-align:left;white-space:normal;box-shadow:0 10px 28px rgba(15,23,42,.24);opacity:0;visibility:hidden;pointer-events:none;transform:translate(-50%,5px);transition:opacity .14s ease,transform .14s ease,visibility .14s ease}
+.elm-portal .elm-help-tip__text::after{content:"";position:absolute;left:50%;top:100%;margin-left:-5px;border:5px solid transparent;border-top-color:#172033}
+.elm-portal .elm-help-tip:hover .elm-help-tip__text,.elm-portal .elm-help-tip:focus .elm-help-tip__text{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.elm-portal .elm-settings-hub .elm-chief-entitlement-access,.elm-portal .elm-settings-hub .elm-chief-entitlements{margin:0;padding:24px 0;border:0;border-top:1px solid var(--elm-line);border-radius:0;background:transparent}
+.elm-portal .elm-settings-hub .elm-chief-entitlements__head{margin-bottom:15px}
+.elm-portal .elm-settings-hub .elm-entitlement-access-actions{margin-top:12px}
+.elm-portal .elm-settings-hub .elm-chief-entitlement-form{margin:0 0 18px}
+@media(max-width:900px){.elm-portal .elm-settings-grid--three{grid-template-columns:1fr}.elm-portal .elm-settings-save{justify-content:stretch}.elm-portal .elm-settings-save .elm-button{width:100%}}
+@media(max-width:600px){.elm-portal .elm-settings-group{padding:20px 0}.elm-portal .elm-settings-group__head{align-items:flex-start}.elm-portal .elm-help-tip__text{left:auto;right:-8px;transform:translateY(5px)}.elm-portal .elm-help-tip__text::after{left:auto;right:11px}.elm-portal .elm-help-tip:hover .elm-help-tip__text,.elm-portal .elm-help-tip:focus .elm-help-tip__text{transform:translateY(0)}}
+
+/* v1.5.39: one global entitlement-request access toggle for all employees. */
+
+/* v1.5.40: unified Settings save and accessible global-access switch. */
+.elm-portal .elm-entitlement-access-switch{position:relative;display:inline-flex;align-items:center;gap:10px;flex:0 0 auto;color:#344054;font-size:12px;font-weight:800;cursor:pointer;user-select:none}
+.elm-portal .elm-entitlement-access-switch input{position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.elm-portal .elm-entitlement-access-switch__track{position:relative;display:inline-block;width:46px;height:26px;border:1px solid #c6cfdd;border-radius:999px;background:#d9dee8;box-shadow:inset 0 1px 2px rgba(15,23,42,.08);transition:background-color .18s ease,border-color .18s ease,box-shadow .18s ease}
+.elm-portal .elm-entitlement-access-switch__thumb{position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 1px 4px rgba(15,23,42,.28);transition:transform .18s ease}
+.elm-portal .elm-entitlement-access-switch input:checked + .elm-entitlement-access-switch__track{border-color:var(--elm-brand);background:var(--elm-brand)}
+.elm-portal .elm-entitlement-access-switch input:checked + .elm-entitlement-access-switch__track .elm-entitlement-access-switch__thumb{transform:translateX(20px)}
+.elm-portal .elm-entitlement-access-switch input:focus-visible + .elm-entitlement-access-switch__track{box-shadow:0 0 0 4px rgba(79,70,229,.16)}
+.elm-portal .elm-entitlement-access-switch:hover .elm-entitlement-access-switch__track{border-color:#98a5ba}
+.elm-portal .elm-entitlement-access-switch:hover input:checked + .elm-entitlement-access-switch__track{border-color:var(--elm-brand);filter:brightness(.96)}
+.elm-portal .elm-entitlement-access-switch__state{min-width:52px;color:#475467}
+.elm-portal .elm-entitlement-access-switch input:checked ~ .elm-entitlement-access-switch__state{color:var(--elm-brand)}
+
+
+/* v1.5.42: global Settings notice and guarded permanent request deletion. */
+.elm-portal .elm-chief-notice--global{margin:14px 0 16px;scroll-margin-top:24px}
+.elm-portal .elm-link-button--danger{color:#b42318}
+.elm-portal .elm-link-button--danger:hover{color:#8f1d14}
+.elm-portal .elm-button--danger{border-color:#b42318;background:#b42318;color:#fff}
+.elm-portal .elm-button--danger:hover:not(:disabled){border-color:#8f1d14;background:#8f1d14}
+.elm-portal .elm-button--danger:disabled{opacity:.45;cursor:not-allowed}
+.elm-portal .elm-chief-delete-overlay{position:fixed;inset:0;z-index:100000;display:grid;place-items:center;padding:24px;background:rgba(15,23,42,.62);backdrop-filter:blur(3px)}
+.elm-portal .elm-chief-delete-overlay[hidden]{display:none!important}
+.elm-portal .elm-chief-delete-dialog{width:min(520px,100%);display:grid;gap:16px;padding:22px;border:1px solid #e4e7ec;border-radius:18px;background:#fff;box-shadow:0 28px 80px rgba(15,23,42,.32)}
+.elm-portal .elm-chief-delete-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px}
+.elm-portal .elm-chief-delete-head h3{margin:2px 0 0;color:#1d2939}
+.elm-portal .elm-chief-delete-help{margin:0;color:#667085;font-size:13px;line-height:1.55}
+.elm-portal .elm-chief-delete-summary{padding:10px 0;border-top:1px solid #eaecf0;border-bottom:1px solid #eaecf0;color:#344054;font-size:13px;font-weight:800}
+.elm-portal .elm-chief-delete-confirm-label{display:grid;gap:7px;color:#344054;font-size:12px;font-weight:850}
+.elm-portal .elm-chief-delete-confirm-label input{width:100%;min-height:44px;border:1px solid #d0d5dd;border-radius:9px;background:#fff;color:#101828;padding:9px 11px;font:inherit;font-weight:850;letter-spacing:.08em;text-transform:uppercase}
+.elm-portal .elm-chief-delete-confirm-label input:focus{outline:3px solid rgba(180,35,24,.13);border-color:#b42318}
+body.elm-chief-delete-open{overflow:hidden}
+@media(max-width:600px){.elm-portal .elm-chief-delete-overlay{padding:10px}.elm-portal .elm-chief-delete-dialog{padding:17px;border-radius:14px}}
+
+/* v1.5.43: named holiday import and calendar help marker. */
+.elm-portal .elm-holiday-import{display:grid;grid-template-columns:minmax(0,1fr) minmax(190px,280px);gap:14px;align-items:end}
+.elm-portal .elm-holiday-import>label{display:grid;gap:7px;color:#344054;font-size:11px;font-weight:800}
+.elm-portal .elm-holiday-file input{min-height:44px;padding:7px 9px}
+.elm-portal .ot-day-number{position:relative;z-index:2}
+.elm-portal .ot-holiday-help,.elm-portal .elm-chief-edit-holiday-help{position:absolute;left:-2px;top:-4px;z-index:5;display:grid;place-items:center;width:14px;height:14px;border-radius:50%;background:#7c3aed;color:#fff;font-size:9px;font-weight:900;line-height:1;box-shadow:0 0 0 2px #fff;cursor:help}
+.elm-portal .ot-holiday-help::after,.elm-portal .elm-chief-edit-holiday-help::after{content:attr(data-holiday-name);position:absolute;z-index:100;left:0;bottom:calc(100% + 8px);width:max-content;max-width:min(250px,calc(100vw - 46px));padding:8px 10px;border-radius:8px;background:#172033;color:#fff;font-size:11px;font-weight:700;line-height:1.4;text-align:left;white-space:normal;box-shadow:0 10px 26px rgba(15,23,42,.24);opacity:0;visibility:hidden;pointer-events:none;transform:translateY(4px);transition:opacity .14s ease,transform .14s ease,visibility .14s ease}
+.elm-portal .ot-holiday-help::before,.elm-portal .elm-chief-edit-holiday-help::before{content:"";position:absolute;z-index:101;left:4px;bottom:calc(100% + 3px);border:5px solid transparent;border-top-color:#172033;opacity:0;visibility:hidden;transition:opacity .14s ease,visibility .14s ease}
+.elm-portal .ot-holiday-help:hover::after,.elm-portal .ot-holiday-help:hover::before,.elm-portal .ot-day:focus-visible .ot-holiday-help::after,.elm-portal .ot-day:focus-visible .ot-holiday-help::before,.elm-portal .elm-chief-edit-holiday-help:hover::after,.elm-portal .elm-chief-edit-holiday-help:hover::before,.elm-portal .elm-chief-edit-day:focus-visible .elm-chief-edit-holiday-help::after,.elm-portal .elm-chief-edit-day:focus-visible .elm-chief-edit-holiday-help::before{opacity:1;visibility:visible;transform:translateY(0)}
+.elm-portal .elm-chief-edit-day{position:relative}
+@media(max-width:700px){.elm-portal .elm-holiday-import{grid-template-columns:1fr}.elm-portal .ot-holiday-help::after,.elm-portal .elm-chief-edit-holiday-help::after{left:-4px;max-width:min(210px,calc(100vw - 34px))}}
+.elm-portal .elm-key-holiday{display:inline-grid;place-items:center;width:12px;height:12px;border-radius:50%;background:#7c3aed;color:#fff;font-size:8px;font-style:normal;font-weight:900;line-height:1}
+
+/* v1.5.44: keep holiday-name tooltips above every calendar date. */
+.elm-portal .ot-cal-grids,.elm-portal .ot-month,.elm-portal table.ot-cal-table,.elm-portal table.ot-cal-table tbody,.elm-portal table.ot-cal-table tr,.elm-portal table.ot-cal-table td{overflow:visible}
+.elm-portal table.ot-cal-table td{position:relative}
+.elm-portal table.ot-cal-table td:hover,.elm-portal table.ot-cal-table td:focus-within{z-index:300}
+.elm-portal .ot-day:hover,.elm-portal .ot-day:focus-visible,.elm-portal .elm-chief-edit-day:hover,.elm-portal .elm-chief-edit-day:focus-visible{z-index:310}
+.elm-portal .ot-holiday-help,.elm-portal .elm-chief-edit-holiday-help{z-index:320}
+.elm-portal .ot-holiday-help::after,.elm-portal .elm-chief-edit-holiday-help::after{z-index:330;bottom:calc(100% + 10px)}
+.elm-portal .ot-holiday-help::before,.elm-portal .elm-chief-edit-holiday-help::before{z-index:331;bottom:calc(100% + 5px)}
+
+/* v1.5.60: frontend employee directory, official profile fields, balances, and yearly reports. */
+.elm-portal .elm-chief-directory-controls{display:flex;justify-content:flex-end;gap:12px;margin:0 0 16px;padding:12px 14px;border:1px solid var(--elm-line);border-radius:12px;background:#f8fafc}
+.elm-portal .elm-chief-directory-controls label{display:grid;gap:6px;min-width:190px;color:#344054;font-size:11px;font-weight:800}
+.elm-portal .elm-chief-directory-controls input,.elm-portal .elm-chief-employees-table input{width:100%;min-height:40px;border:1px solid #d0d5dd;border-radius:9px;background:#fff;color:var(--elm-ink);padding:8px 10px;font:inherit}
+.elm-portal .elm-chief-directory-controls input:focus,.elm-portal .elm-chief-employees-table input:focus{outline:3px solid rgba(79,70,229,.13);border-color:var(--elm-brand)}
+.elm-portal .elm-chief-employees-table td{vertical-align:middle}
+.elm-portal .elm-chief-employees-table td:nth-child(2),.elm-portal .elm-chief-employees-table td:nth-child(3){min-width:190px}
+.elm-portal .elm-chief-employees-table small{color:#667085;font-size:11px;line-height:1.45}
+@media(max-width:700px){.elm-portal .elm-chief-directory-controls{justify-content:stretch}.elm-portal .elm-chief-directory-controls label{width:100%}.elm-portal .elm-chief-employees-table td:nth-child(2),.elm-portal .elm-chief-employees-table td:nth-child(3){min-width:160px}}
+
+/* v1.5.61: frontend extensions, entitlement administration, policy settings, and audit verification. */
+.elm-portal .elm-chief-adjustment-form{display:grid;grid-template-columns:minmax(180px,1fr) minmax(110px,.45fr) minmax(110px,.45fr) minmax(240px,1.5fr) auto;gap:12px;align-items:end;margin:0 0 18px}
+.elm-portal .elm-chief-adjustment-form label{display:grid;gap:6px;color:#344054;font-size:11px;font-weight:800}
+.elm-portal .elm-chief-adjustment-form input,.elm-portal .elm-chief-adjustment-form select{width:100%;min-height:40px;border:1px solid #d0d5dd;border-radius:9px;background:#fff;color:var(--elm-ink);padding:8px 10px;font:inherit}
+.elm-portal .elm-chief-adjustment-form input:focus,.elm-portal .elm-chief-adjustment-form select:focus{outline:3px solid rgba(79,70,229,.13);border-color:var(--elm-brand)}
+.elm-portal .elm-chief-adjustments-table small{color:#667085;font-size:11px}
+.elm-portal .elm-chief-audit-status{padding:12px 14px;border:1px solid var(--elm-line);border-radius:10px;background:#f8fafc;color:#475467;font-size:12px;font-weight:750}
+.elm-portal .elm-chief-audit-status--valid{border-color:#86d4a8;background:#ecfdf3;color:#067647}
+.elm-portal .elm-chief-audit-status--invalid{border-color:#fda29b;background:#fef3f2;color:#b42318}
+@media(max-width:1050px){.elm-portal .elm-chief-adjustment-form{grid-template-columns:1fr 1fr}.elm-portal .elm-chief-adjustment-form__note{grid-column:1/-1}.elm-portal .elm-chief-adjustment-form .elm-button{width:100%}}
+@media(max-width:600px){.elm-portal .elm-chief-adjustment-form{grid-template-columns:1fr}.elm-portal .elm-chief-adjustment-form__note{grid-column:auto}}
+
+
+/* v1.5.62: administrator-controlled frontend access mode. */
+.elm-portal .elm-frontend-access-mode{border:1px solid #c7d2fe;border-radius:14px;background:#f8faff;padding:18px}
+.elm-portal .elm-frontend-access-toggle{display:flex!important;align-items:flex-start;gap:10px;padding:12px 14px;border:1px solid #d0d5dd;border-radius:10px;background:#fff;color:#344054;font-weight:750;line-height:1.45}
+.elm-portal .elm-frontend-access-toggle input{flex:0 0 auto;width:18px;height:18px;margin:1px 0 0}
+
+
+/* v1.5.65: backend-equivalent Chief action buttons and employee registry in Settings. */
+.elm-portal .elm-chief-table th:last-child,.elm-portal .elm-chief-table td:last-child{min-width:340px}
+.elm-portal .elm-chief-table .elm-table-actions{text-align:left;white-space:normal}
+.elm-portal .elm-chief-actions{display:flex;align-items:center;justify-content:flex-start;flex-wrap:wrap;gap:6px;max-width:none;white-space:normal}
+.elm-portal .button{display:inline-flex;align-items:center;justify-content:center;min-height:30px;margin:0;padding:4px 10px;border:1px solid #c3c4c7;border-radius:4px;background:#f6f7f7;color:#2271b1;font:600 12px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;text-decoration:none;white-space:nowrap;cursor:pointer;box-shadow:0 1px 0 rgba(0,0,0,.04)}
+.elm-portal .button:hover,.elm-portal .button:focus{border-color:#8c8f94;background:#f0f0f1;color:#135e96;text-decoration:none}
+.elm-portal .button.button-primary{border-color:var(--elm-brand);background:var(--elm-brand);color:#fff}
+.elm-portal .button.button-primary:hover,.elm-portal .button.button-primary:focus{border-color:var(--elm-brand-dark);background:var(--elm-brand-dark);color:#fff}
+.elm-portal .button.button-link-delete{border-color:transparent;background:transparent;color:#b32d2e;box-shadow:none}
+.elm-portal .button.button-link-delete:hover,.elm-portal .button.button-link-delete:focus{border-color:#b32d2e;background:#fff5f5;color:#8a2424}
+.elm-portal .button:disabled{opacity:.5;cursor:not-allowed}
+
+
+/* v1.5.66: reliable Chief action labels, button colours, and click targets. */
+.elm-portal .elm-chief-actions .elm-chief-action{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  min-width:0!important;
+  min-height:32px!important;
+  padding:5px 11px!important;
+  border-width:1px!important;
+  border-style:solid!important;
+  opacity:1;
+  visibility:visible;
+  font-size:12px!important;
+  font-weight:600!important;
+  line-height:1.35!important;
+  text-indent:0!important;
+  letter-spacing:normal!important;
+  -webkit-text-fill-color:currentColor;
+}
+.elm-portal .elm-chief-actions .elm-chief-action--edit{
+  border-color:#2271b1!important;
+  background:#2271b1!important;
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+}
+.elm-portal .elm-chief-actions .elm-chief-action--pdf{
+  border-color:#2271b1!important;
+  background:#eaf4fb!important;
+  color:#135e96!important;
+}
+.elm-portal .elm-chief-actions .elm-chief-action--approve{
+  border-color:#16803c!important;
+  background:#16803c!important;
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+}
+.elm-portal .elm-chief-actions .elm-chief-action--reject{
+  border-color:#d63638!important;
+  background:#d63638!important;
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+}
+.elm-portal .elm-chief-actions .elm-chief-action--cancel{
+  border-color:#646970!important;
+  background:#646970!important;
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+}
+.elm-portal .elm-chief-actions .elm-chief-action--delete{
+  border-color:#a7aaad!important;
+  background:#f0f0f1!important;
+  color:#b32d2e!important;
+  -webkit-text-fill-color:#b32d2e!important;
+  box-shadow:0 1px 0 rgba(0,0,0,.04)!important;
+}
+.elm-portal .elm-chief-actions .elm-chief-action:hover,
+.elm-portal .elm-chief-actions .elm-chief-action:focus{
+  filter:brightness(.96);
+  text-decoration:none!important;
+}
+.elm-portal .elm-chief-actions .elm-chief-action:disabled{
+  opacity:.5!important;
+  cursor:not-allowed!important;
+}
+
+
+/* v1.5.68: complete Chief self-management actions and requested colour system. */
+.elm-portal .elm-my-actions{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:6px;white-space:normal}
+.elm-portal .elm-my-actions .elm-inline-action-form{display:inline-flex;margin:0}
+.elm-portal .elm-my-actions .elm-self-action{min-height:32px;padding:5px 11px;font-size:12px;font-weight:600;line-height:1.35}
+.elm-portal .elm-my-actions .elm-self-action--edit{border-color:#2271b1!important;background:#2271b1!important;color:#fff!important;-webkit-text-fill-color:#fff!important}
+.elm-portal .elm-my-actions .elm-self-action--approve{border-color:#16803c!important;background:#16803c!important;color:#fff!important;-webkit-text-fill-color:#fff!important}
+.elm-portal .elm-my-actions .elm-self-action--reject{border-color:#d63638!important;background:#d63638!important;color:#fff!important;-webkit-text-fill-color:#fff!important}
+.elm-portal .elm-my-actions .elm-self-action--cancel{border-color:#646970!important;background:#646970!important;color:#fff!important;-webkit-text-fill-color:#fff!important}
+.elm-portal .elm-my-actions .elm-self-action--delete{border-color:#a7aaad!important;background:#f0f0f1!important;color:#b32d2e!important;-webkit-text-fill-color:#b32d2e!important;box-shadow:0 1px 0 rgba(0,0,0,.04)!important}
+.elm-portal .elm-my-actions .elm-self-action--pdf{border-color:#2271b1!important;background:#eaf4fb!important;color:#135e96!important}
+.elm-portal .elm-my-actions .elm-self-action:hover,.elm-portal .elm-my-actions .elm-self-action:focus{filter:brightness(.94);text-decoration:none!important}
+.elm-portal .elm-my-actions .elm-self-action:disabled{opacity:.5!important;cursor:not-allowed!important}
+
+
+/* v1.5.70: localized, accessible file controls. */
+.elm-portal .elm-file-field{display:grid;gap:7px}
+.elm-portal .elm-file-picker{position:relative;display:flex;align-items:center;gap:10px;min-height:44px;border:1px solid #cfd6e4;border-radius:10px;background:#fff;padding:6px 10px;overflow:hidden}
+.elm-portal .elm-file-picker input[type="file"]{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.elm-portal .elm-file-button{flex:0 0 auto;border:1px solid #cfd6e4;border-radius:8px;background:#f8fafc;padding:7px 10px;font-size:12px;font-weight:800;color:#344054}
+.elm-portal .elm-file-name{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#667085;font-size:12px;font-weight:600}
+.elm-portal .elm-file-picker:focus-within{border-color:var(--elm-brand);box-shadow:0 0 0 3px rgba(79,70,229,.14)}
+
+
+/* v1.5.71: compact, collapsible calendar guide. */
+.elm-portal details.elm-calendar-guide{
+  margin-top:14px;border:1px solid #dfe5ee;border-radius:13px;background:#fbfcfe;box-shadow:0 1px 2px rgba(16,24,40,.035);overflow:hidden
+}
+.elm-portal details.elm-calendar-guide > summary{
+  list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:54px;padding:10px 13px;
+  cursor:pointer;user-select:none;color:#253047;transition:background .18s ease,border-color .18s ease
+}
+.elm-portal details.elm-calendar-guide > summary::-webkit-details-marker{display:none}
+.elm-portal details.elm-calendar-guide > summary::marker{display:none;content:""}
+.elm-portal details.elm-calendar-guide > summary:hover{background:#f6f8fb}
+.elm-portal details.elm-calendar-guide > summary:focus-visible{outline:3px solid rgba(49,87,213,.18);outline-offset:-3px}
+.elm-portal .elm-calendar-guide__summary-main{display:flex;align-items:center;gap:10px;min-width:0}
+.elm-portal .elm-calendar-guide__summary-icon{
+  display:grid;place-items:center;flex:0 0 28px;width:28px;height:28px;border:1px solid #cfd7e6;border-radius:9px;background:#fff;
+  color:#3157d5;font-size:13px;font-weight:900;line-height:1
+}
+.elm-portal .elm-calendar-guide__summary-copy{display:grid;gap:1px;min-width:0}
+.elm-portal .elm-calendar-guide__summary-copy strong{color:#2d3748;font-size:12px;font-weight:850;line-height:1.35}
+.elm-portal .elm-calendar-guide__summary-copy small{color:#7a8699;font-size:10.5px;font-weight:600;line-height:1.35}
+.elm-portal .elm-calendar-guide__summary-action{display:inline-flex;align-items:center;gap:8px;flex:0 0 auto;color:#526078;font-size:11px;font-weight:800}
+.elm-portal .elm-calendar-guide__hide{display:none}
+.elm-portal .elm-calendar-guide__chevron{
+  width:8px;height:8px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px);
+  transition:transform .18s ease
+}
+.elm-portal details.elm-calendar-guide[open] > summary{background:#f8fafc;border-bottom:1px solid #e3e8f0}
+.elm-portal details.elm-calendar-guide[open] .elm-calendar-guide__show{display:none}
+.elm-portal details.elm-calendar-guide[open] .elm-calendar-guide__hide{display:inline}
+.elm-portal details.elm-calendar-guide[open] .elm-calendar-guide__chevron{transform:rotate(225deg) translate(-1px,-1px)}
+.elm-portal .elm-calendar-guide__content{padding:0 14px 14px;background:#fff}
+.elm-portal .elm-calendar-guide__content .elm-calendar-guide__section{padding:12px 0}
+.elm-portal .elm-calendar-guide__content .elm-calendar-guide__section:first-child{border-top:0}
+.elm-portal .elm-calendar-guide__content .elm-calendar-guide__legend-grid{padding-top:12px}
+.elm-portal .elm-calendar-guide__content .elm-policy-warnings{margin-top:0}
+@media(max-width:600px){
+  .elm-portal details.elm-calendar-guide > summary{min-height:50px;padding:9px 11px;gap:10px}
+  .elm-portal .elm-calendar-guide__summary-copy small{display:none}
+  .elm-portal .elm-calendar-guide__summary-action{font-size:10.5px}
+  .elm-portal .elm-calendar-guide__content{padding:0 11px 12px}
+}
+
+/* v1.5.72: simplified +1-day request and approval workflow. */
+.elm-portal .elm-plus-one-panel{
+  margin:16px 0 24px;padding:18px;border:1px solid #dfe5ee;border-radius:16px;background:#fff;box-shadow:0 6px 20px rgba(15,23,42,.05)
+}
+.elm-portal .elm-plus-one-panel .elm-entitlement-help{margin:6px 0 14px;font-size:13px;line-height:1.5}
+.elm-portal .elm-plus-one-preview{
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:0 0 14px;padding:12px 14px;border:1px solid #e3e8f0;border-radius:12px;background:#f8fafc
+}
+.elm-portal .elm-plus-one-preview>span{color:#475467;font-size:12px;font-weight:800}
+.elm-portal .elm-plus-one-preview strong{display:inline-flex;align-items:center;gap:8px;color:#172033;font-size:20px;line-height:1}
+.elm-portal .elm-plus-one-preview__arrow{color:#98a2b3;font-size:15px}
+.elm-portal .elm-plus-one-preview small{margin-left:auto;color:#667085;font-size:11px;font-weight:650}
+.elm-portal .elm-plus-one-form{display:block;margin:0}
+.elm-portal .elm-plus-one-form .elm-entitlement-form__reason{display:grid;gap:7px}
+.elm-portal .elm-plus-one-form textarea{width:100%;min-height:72px;border:1px solid #cfd6e4;border-radius:10px;background:#fff;color:#172033;padding:10px 12px;font:inherit;resize:vertical}
+.elm-portal .elm-plus-one-form .elm-entitlement-form__actions{margin-top:12px}
+.elm-portal .elm-plus-one-history{margin:14px 0 0;padding:0;border-top:1px solid #e8ecf2}
+.elm-portal .elm-plus-one-history>summary,
+.elm-portal .elm-chief-plus-one__history>summary{
+  list-style:none;display:flex;align-items:center;justify-content:space-between;min-height:42px;padding:10px 2px;color:#475467;font-size:12px;font-weight:800;cursor:pointer
+}
+.elm-portal .elm-plus-one-history>summary::-webkit-details-marker,
+.elm-portal .elm-chief-plus-one__history>summary::-webkit-details-marker{display:none}
+.elm-portal .elm-plus-one-history>summary::after,
+.elm-portal .elm-chief-plus-one__history>summary::after{content:"⌄";color:#98a2b3;font-size:15px;transition:transform .16s ease}
+.elm-portal .elm-plus-one-history[open]>summary::after,
+.elm-portal .elm-chief-plus-one__history[open]>summary::after{transform:rotate(180deg)}
+.elm-portal .elm-plus-one-history [data-entitlement-history]{padding:2px 0 4px}
+
+.elm-portal .elm-chief-plus-one{margin-top:16px}
+.elm-portal .elm-chief-plus-one .elm-chief-entitlements__head{align-items:flex-start;margin-bottom:12px}
+.elm-portal .elm-chief-plus-one__help{max-width:760px;margin:5px 0 0;color:#667085;font-size:12.5px;font-weight:600;line-height:1.5}
+.elm-portal .elm-chief-plus-one__pending>h4{margin:0 0 9px;color:#344054;font-size:12px;font-weight:850}
+.elm-portal .elm-plus-one-list{display:grid;gap:9px}
+.elm-portal .elm-plus-one-request{padding:12px 14px;border:1px solid #e3e8ef;border-radius:12px;background:#fff}
+.elm-portal .elm-plus-one-request--pending{border-color:#d8e1f0;background:#fbfcff}
+.elm-portal .elm-plus-one-request__head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.elm-portal .elm-plus-one-request__head>div{display:grid;gap:3px;min-width:0}
+.elm-portal .elm-plus-one-request__head strong{color:#1d2939;font-size:13px}
+.elm-portal .elm-plus-one-request__head small{color:#667085;font-size:11px;font-weight:650}
+.elm-portal .elm-plus-one-request__reason{margin:8px 0 0;color:#344054;font-size:12.5px;line-height:1.5;white-space:pre-line}
+.elm-portal .elm-plus-one-request__decision{margin:7px 0 0;font-size:11.5px;line-height:1.45}
+.elm-portal .elm-plus-one-request__actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
+.elm-portal .elm-chief-plus-one__history{margin-top:12px;border-top:1px solid #e8ecf2}
+.elm-portal .elm-chief-plus-one__history .elm-plus-one-list{padding-top:2px}
+.elm-portal .elm-empty-state{margin:0;padding:10px 0;color:#667085;font-size:12px;font-weight:650}
+
+@media(max-width:600px){
+  .elm-portal .elm-plus-one-preview{align-items:flex-start;gap:8px 12px}
+  .elm-portal .elm-plus-one-preview small{width:100%;margin-left:0}
+  .elm-portal .elm-plus-one-request__head{flex-direction:column}
+  .elm-portal .elm-plus-one-request__actions .elm-chief-action{flex:1 1 120px}
+}
+
+
+/* v1.5.73: regulation-aligned rules tab and legal-deadline guidance. */
+.elm-portal .elm-legal-deadline{color:#475467;font-size:12px;line-height:1.55}
+.elm-portal .elm-rules-panel{padding-top:2px}
+.elm-portal .elm-rules-card{padding:0;overflow:hidden}
+.elm-portal .elm-rules-hero{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;padding:24px 26px;border-bottom:1px solid #e5eaf1;background:linear-gradient(135deg,#f8fafc 0%,#fff 72%)}
+.elm-portal .elm-rules-hero h3{margin:2px 0 7px;font-size:24px;letter-spacing:-.025em}
+.elm-portal .elm-rules-hero p:not(.elm-eyebrow){max-width:760px;margin:0;color:#596579;line-height:1.55}
+.elm-portal .elm-rules-badge{flex:0 0 auto;padding:7px 10px;border:1px solid #d5ddeb;border-radius:999px;background:#fff;color:#475467;font-size:11px;font-weight:800;white-space:nowrap}
+.elm-portal .elm-rules-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:#e5eaf1;border-bottom:1px solid #e5eaf1}
+.elm-portal .elm-rules-stats>div{display:grid;gap:3px;padding:16px 18px;background:#fff}
+.elm-portal .elm-rules-stats strong{font-size:25px;line-height:1;color:#1d3fa3}
+.elm-portal .elm-rules-stats span{color:#667085;font-size:11.5px;line-height:1.4}
+.elm-portal .elm-rules-list{padding:18px 26px 8px}
+.elm-portal .elm-rules-list details{border-bottom:1px solid #e8ecf2}
+.elm-portal .elm-rules-list details:last-child{border-bottom:0}
+.elm-portal .elm-rules-list summary{position:relative;cursor:pointer;list-style:none;padding:15px 32px 15px 0;color:#172033;font-size:14px;font-weight:850}
+.elm-portal .elm-rules-list summary::-webkit-details-marker{display:none}
+.elm-portal .elm-rules-list summary::after{content:'+';position:absolute;right:4px;top:12px;color:#667085;font-size:20px;font-weight:500}
+.elm-portal .elm-rules-list details[open] summary::after{content:'–'}
+.elm-portal .elm-rules-list details>div{padding:0 8px 15px 0;color:#4b5565;font-size:13px;line-height:1.58}
+.elm-portal .elm-rules-list ul{margin:0;padding-left:20px}
+.elm-portal .elm-rules-list li+li{margin-top:7px}
+.elm-portal .elm-rules-disclaimer{margin:10px 26px 24px;padding:12px 14px;border:1px solid #dce4ef;border-radius:10px;background:#f8fafc;color:#596579;font-size:11.5px;line-height:1.5}
+@media(max-width:760px){.elm-portal .elm-rules-hero{display:grid;padding:20px}.elm-portal .elm-rules-badge{justify-self:start}.elm-portal .elm-rules-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.elm-portal .elm-rules-list{padding:14px 20px 6px}.elm-portal .elm-rules-disclaimer{margin:8px 20px 20px}}
+
+.elm-portal .elm-rules-source-actions{display:flex;align-items:flex-end;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.elm-portal .elm-rules-source-link{display:inline-flex;align-items:center;min-height:32px;padding:6px 10px;border:1px solid #d0d8e5;border-radius:999px;background:#fff;color:#344054;font-size:12px;font-weight:700;text-decoration:none;white-space:nowrap}
+.elm-portal .elm-rules-source-link:hover,.elm-portal .elm-rules-source-link:focus{border-color:#98a2b3;color:#101828;text-decoration:none}
+@media (max-width:700px){.elm-portal .elm-rules-source-actions{justify-content:flex-start;align-items:flex-start}}
+
+.elm-portal .elm-rules-sources a{color:#1d4ed8;font-weight:750;text-underline-offset:2px}
+.elm-portal .elm-rules-sources span{color:#667085;font-size:12px}
+.elm-portal .elm-chief-requirements__legal-note{margin:-2px 0 16px;padding:10px 12px;border:1px solid #e1e7ef;border-radius:9px;background:#f8fafc;color:#596579;font-size:12px;line-height:1.5}
+
+
+/* v1.5.76: reliable +1-day visibility and compact supervisor toggle. */
+.elm-portal .elm-chief-plus-one--hidden{display:none!important}
+.elm-portal .elm-plus-one-display-settings{padding:16px 0!important}
+.elm-portal .elm-plus-one-display-settings__head{align-items:center!important;margin:0!important}
+.elm-portal .elm-plus-one-display-settings__head>div{min-width:0}
+.elm-portal .elm-plus-one-display-settings__head p{margin:4px 0 0;color:#667085;font-size:12px;line-height:1.45}
+.elm-portal .elm-switch{position:relative;display:inline-flex;align-items:center;flex:0 0 auto;width:44px;height:24px;cursor:pointer;user-select:none}
+.elm-portal .elm-switch__input{position:absolute;width:1px!important;height:1px!important;margin:0!important;padding:0!important;opacity:0;pointer-events:none}
+.elm-portal .elm-switch__track{position:relative;display:block;width:44px;height:24px;border:1px solid #cfd6e4;border-radius:999px;background:#e9edf3;transition:background .18s ease,border-color .18s ease,box-shadow .18s ease}
+.elm-portal .elm-switch__thumb{position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(16,24,40,.24);transition:transform .18s ease}
+.elm-portal .elm-switch__input:checked+.elm-switch__track{border-color:var(--elm-brand);background:var(--elm-brand)}
+.elm-portal .elm-switch__input:checked+.elm-switch__track .elm-switch__thumb{transform:translateX(20px)}
+.elm-portal .elm-switch__input:focus-visible+.elm-switch__track{box-shadow:0 0 0 4px rgba(79,70,229,.16)}
+.elm-portal .elm-switch__input:disabled+.elm-switch__track{opacity:.55;cursor:wait}
+.elm-portal .elm-plus-one-display-settings__meta{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:8px;color:#667085;font-size:11.5px;line-height:1.45}
+.elm-portal .elm-plus-one-display-settings__status{flex:0 0 auto;font-size:11px;font-weight:800}
+.elm-portal .elm-plus-one-display-settings__status--saving{color:#667085}
+.elm-portal .elm-plus-one-display-settings__status--success{color:#067647}
+.elm-portal .elm-plus-one-display-settings__status--error{color:#b42318}
+@media(max-width:600px){.elm-portal .elm-plus-one-display-settings__head{flex-direction:row!important;align-items:center!important}.elm-portal .elm-plus-one-display-settings__meta{align-items:flex-start;flex-direction:column}}
+
+/* v1.5.77: unified loading/empty/info/error states for dynamic cards and tables. */
+.elm-portal .elm-table-state:hover{background:transparent!important}
+.elm-portal .elm-table-state__cell{padding:18px 14px!important;text-align:center!important;color:#667085!important;font-size:12px!important;font-weight:650!important;line-height:1.5!important;white-space:normal!important}
+.elm-portal .elm-table-state--loading .elm-table-state__cell{color:#7a8495!important;font-weight:600!important}
+.elm-portal .elm-table-state--info .elm-table-state__cell{color:#475467!important}
+.elm-portal .elm-table-state--error .elm-table-state__cell{color:#b42318!important;background:#fff7f6!important}
+.elm-portal .elm-empty-state{margin:0;padding:12px 14px;border:1px dashed #d8dee8;border-radius:9px;background:#fafbfc;color:#667085;font-size:12px;font-weight:650;line-height:1.5;text-align:center}
+.elm-portal .elm-empty-state--loading{border-color:#e4e7ec;background:#fcfcfd;color:#7a8495;font-weight:600}
+.elm-portal .elm-empty-state--info{border-style:solid;color:#475467}
+.elm-portal .elm-empty-state--error{border-style:solid;border-color:#f3c7c2;background:#fff7f6;color:#b42318}
+
+/* v1.5.79 front-end login state: keep the portal usable after logout. */
+.elm-portal.elm-login-portal{max-width:960px;min-height:55vh;display:flex;flex-direction:column;justify-content:center;gap:24px}
+.elm-portal .elm-login-brand{display:flex;justify-content:center;padding:0 2px}
+.elm-portal .elm-login-brand .elm-brand-link{justify-content:center}
+.elm-portal .elm-login-card{width:min(100%,520px);margin:0 auto;padding:30px;border:1px solid var(--elm-line);border-radius:20px;background:rgba(255,255,255,.98);box-shadow:0 18px 52px rgba(16,24,40,.09)}
+.elm-portal .elm-login-card__intro{display:flex;align-items:flex-start;gap:14px;margin-bottom:24px}
+.elm-portal .elm-login-card__intro h2{margin:4px 0 7px;font-size:28px;line-height:1.15}
+.elm-portal .elm-login-card__intro p:last-child{margin:0;color:var(--elm-muted);font-size:14px;line-height:1.55}
+.elm-portal .elm-login-icon{display:grid;place-items:center;flex:0 0 44px;width:44px;height:44px;border-radius:12px;background:#eef2ff;color:var(--elm-brand)}
+.elm-portal .elm-login-icon .dashicons{width:22px;height:22px;font-size:22px;line-height:22px}
+.elm-portal .elm-login-form form{display:grid;gap:16px;margin:0}
+.elm-portal .elm-login-form p{margin:0}
+.elm-portal .elm-login-form label{display:grid;gap:7px;color:#344054;font-size:13px;font-weight:750}
+.elm-portal .elm-login-form input[type="text"],.elm-portal .elm-login-form input[type="password"]{width:100%;min-height:44px;padding:10px 12px;border:1px solid #d0d5dd;border-radius:10px;background:#fff;color:var(--elm-ink);font-size:15px;outline:none;box-shadow:0 1px 2px rgba(16,24,40,.03)}
+.elm-portal .elm-login-form input[type="text"]:focus,.elm-portal .elm-login-form input[type="password"]:focus{border-color:#818cf8;box-shadow:0 0 0 3px rgba(99,102,241,.12)}
+.elm-portal .elm-login-form .login-remember label{display:flex;align-items:center;gap:8px;font-weight:650}
+.elm-portal .elm-login-form .login-remember input{margin:0}
+.elm-portal .elm-login-form .login-submit{margin-top:2px}
+.elm-portal .elm-login-form .button-primary{width:100%;min-height:44px;border:0;border-radius:10px;background:linear-gradient(135deg,var(--elm-brand),var(--elm-brand-dark));color:#fff;font-size:14px;font-weight:850;cursor:pointer;box-shadow:0 9px 20px rgba(79,70,229,.2);transition:transform .16s ease,box-shadow .16s ease}
+.elm-portal .elm-login-form .button-primary:hover,.elm-portal .elm-login-form .button-primary:focus-visible{transform:translateY(-1px);box-shadow:0 12px 24px rgba(79,70,229,.27)}
+.elm-portal .elm-login-help{margin-top:18px;padding-top:17px;border-top:1px solid var(--elm-line);text-align:center}
+.elm-portal .elm-login-help a{color:var(--elm-brand);font-size:13px;font-weight:750;text-decoration:none}
+.elm-portal .elm-login-help a:hover{text-decoration:underline}
+@media(max-width:600px){.elm-portal.elm-login-portal{min-height:0}.elm-portal .elm-login-brand{justify-content:flex-start}.elm-portal .elm-login-brand .elm-brand-link{justify-content:flex-start}.elm-portal .elm-login-card{padding:22px 18px;border-radius:16px}.elm-portal .elm-login-card__intro h2{font-size:24px}}
+
+/* v1.5.80: selectable non-working dates and non-blocking first-period warning. */
+.elm-portal .elm-calendar-policy-notice{margin:12px 0 0}
+.elm-portal .elm-request-policy-warning{white-space:normal;padding:7px 9px;border:1px solid #f0c36d;border-radius:8px;background:#fff8e7;color:#7c4a03}
+.elm-portal .elm-request-policy-warning--approved{border-color:#b7e4c7;background:#f0fdf4;color:#067647}
+.elm-portal .elm-request-policy-warning--rejected{border-color:#fecaca;background:#fff7f7;color:#ad251b}
+
+
+/* v1.5.81: keep supervisor management actions visible in employee and own-request tables. */
+.elm-portal .elm-my-actions .elm-self-action{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  visibility:visible!important;
+  opacity:1;
+  min-width:0!important;
+  white-space:nowrap!important;
+}
+.elm-portal .elm-chief-table .elm-table-actions,
+.elm-portal[data-elm-chief="1"] .elm-history-card .elm-table-actions{
+  min-width:340px;
+}
+@media(min-width:901px){
+  .elm-portal .elm-chief-table th:last-child,
+  .elm-portal .elm-chief-table td:last-child,
+  .elm-portal[data-elm-chief="1"] .elm-history-card .elm-table th:last-child,
+  .elm-portal[data-elm-chief="1"] .elm-history-card .elm-table td:last-child{
+    position:sticky;
+    right:0;
+    z-index:2;
+    background:#fff;
+    box-shadow:-10px 0 18px -18px rgba(15,23,42,.55);
+  }
+  .elm-portal .elm-chief-table thead th:last-child,
+  .elm-portal[data-elm-chief="1"] .elm-history-card .elm-table thead th:last-child{
+    z-index:3;
+    background:#fff;
+  }
+  .elm-portal .elm-chief-table tbody tr:hover td:last-child,
+  .elm-portal[data-elm-chief="1"] .elm-history-card .elm-table tbody tr:hover td:last-child{
+    background:#fafbfe;
+  }
+}
+@media(max-width:900px){
+  .elm-portal .elm-chief-table .elm-table-actions,
+  .elm-portal[data-elm-chief="1"] .elm-history-card .elm-table-actions{min-width:300px}
+  .elm-portal .elm-chief-actions,
+  .elm-portal .elm-my-actions{justify-content:flex-start}
+}
+
+/* v1.5.82: recurring fixed holidays and compact calendar pickers for the two movable Bajram dates. */
+.elm-portal .elm-holiday-policy{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:16px;align-items:start}
+.elm-portal .elm-holiday-policy__fixed,.elm-portal .elm-holiday-policy__movable{padding:16px;border:1px solid var(--elm-line);border-radius:14px;background:#fbfcfe}
+.elm-portal .elm-holiday-policy__movable{background:#fff}
+.elm-portal .elm-holiday-policy__head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:13px}
+.elm-portal .elm-holiday-policy__head strong{display:block;color:#1d2939;font-size:13px;line-height:1.35}
+.elm-portal .elm-holiday-policy__head p{margin:4px 0 0;color:#667085;font-size:11.5px;font-weight:600;line-height:1.5}
+.elm-portal .elm-holiday-policy__badge{flex:0 0 auto;padding:5px 8px;border-radius:999px;background:#ecfdf3;color:#027a48;font-size:10px;font-weight:850;letter-spacing:.02em}
+.elm-portal .elm-fixed-holiday-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.elm-portal .elm-fixed-holiday{display:flex;align-items:center;gap:9px;min-width:0;padding:8px 9px;border:1px solid #eaecf0;border-radius:9px;background:#fff}
+.elm-portal .elm-fixed-holiday time{flex:0 0 auto;min-width:43px;color:#475467;font-size:10.5px;font-weight:850;font-variant-numeric:tabular-nums}
+.elm-portal .elm-fixed-holiday span{min-width:0;color:#344054;font-size:11px;font-weight:700;line-height:1.35}
+.elm-portal .elm-movable-holiday-grid{display:grid;gap:10px}
+.elm-portal .elm-movable-holiday-grid label{display:grid;gap:6px;color:#344054;font-size:11px;font-weight:800}
+.elm-portal .elm-movable-holiday-grid input[type="date"]{width:100%;min-height:43px;padding:8px 10px;border:1px solid #d0d5dd;border-radius:9px;background:#fff;color:#101828;font:inherit;font-size:13px;font-weight:700;box-shadow:0 1px 2px rgba(16,24,40,.03)}
+.elm-portal .elm-movable-holiday-grid input[type="date"]:focus{outline:3px solid rgba(79,70,229,.12);border-color:var(--elm-brand)}
+.elm-portal .elm-holiday-policy__note{margin:11px 0 0;padding-top:10px;border-top:1px solid #eaecf0;color:#667085;font-size:10.5px;font-weight:600;line-height:1.5}
+@media(max-width:900px){.elm-portal .elm-holiday-policy{grid-template-columns:1fr}}
+@media(max-width:560px){.elm-portal .elm-fixed-holiday-grid{grid-template-columns:1fr}.elm-portal .elm-holiday-policy__fixed,.elm-portal .elm-holiday-policy__movable{padding:13px}}
+
+/* v1.5.87: review-table actions mirror Pushimi im and always keep the request PDF visible. */
+.elm-portal .elm-chief-table .elm-review-actions{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  flex-wrap:wrap!important;
+  gap:6px!important;
+  overflow:visible!important;
+  white-space:normal!important;
+}
+.elm-portal .elm-chief-table .elm-review-actions .elm-self-action{
+  display:inline-flex!important;
+  flex:0 0 auto!important;
+  visibility:visible!important;
+  opacity:1!important;
+}
+.elm-portal .elm-chief-table .elm-review-actions .elm-review-action--pdf{
+  display:inline-flex!important;
+  visibility:visible!important;
+  opacity:1!important;
+}
+.elm-portal .elm-chief-table th:last-child,
+.elm-portal .elm-chief-table td:last-child{
+  min-width:430px!important;
+  overflow:visible!important;
+}
+@media(max-width:1100px){
+  .elm-portal .elm-chief-table th:last-child,
+  .elm-portal .elm-chief-table td:last-child{min-width:360px!important}
+}
+
+
+/* v1.5.94 calendar policy markers. Short-notice dates stay selectable; selected days above the 10-day first-half threshold are marked individually. */
+.elm-portal .ot-day.ot-short-notice-warning::before,.elm-portal .ot-day.ot-period-one-excess-warning::before{content:"!";position:absolute;right:-2px;top:-4px;z-index:4;display:grid;place-items:center;width:14px;height:14px;border-radius:50%;background:#ef4444;color:#fff;font-size:9px;font-weight:800;line-height:1;box-shadow:0 0 0 2px #fff}
+.elm-portal .ot-day.ot-period-one-excess-warning.ot-selected{box-shadow:0 4px 10px rgba(79,70,229,.4),inset 0 0 0 2px #f59e0b}
+.elm-portal .elm-key-warning{display:inline-grid;place-items:center;flex:0 0 15px;width:15px;height:15px;border-radius:50%;background:#ef4444;color:#fff;font-style:normal;font-size:9px;font-weight:800;line-height:1;box-shadow:0 0 0 1px #fff}
+
+.elm-portal .elm-chief-edit-day.is-short-notice-warning::before,.elm-portal .elm-chief-edit-day.is-period-one-excess-warning::before{content:"!";position:absolute;right:-2px;top:-4px;z-index:4;display:grid;place-items:center;width:14px;height:14px;border-radius:50%;background:#ef4444;color:#fff;font-size:9px;font-weight:800;line-height:1;box-shadow:0 0 0 2px #fff}
+.elm-portal .elm-chief-edit-day.is-period-one-excess-warning.is-selected{box-shadow:0 4px 10px rgba(79,70,229,.25),inset 0 0 0 2px #f59e0b}
+
+/* v1.5.96: preserve the year chip appearance and use the browser's compact number steppers (2024–2060). */
+.elm-portal .elm-year-chip--input{position:relative;display:inline-flex;align-items:center;padding:0;overflow:hidden}
+.elm-portal .elm-year-input{box-sizing:border-box;border:0;outline:0;background:transparent;color:#1d2939;width:86px;min-width:86px;padding:9px 7px 9px 16px;font:inherit;font-weight:800;line-height:1.2;cursor:default}
+.elm-portal .elm-year-chip--input:focus-within{border-color:var(--elm-brand);box-shadow:0 0 0 3px rgba(79,70,229,.12),0 8px 28px rgba(16,24,40,.08)}
+.elm-portal .elm-year-input:focus{outline:0}
+.elm-portal .elm-year-input::-webkit-inner-spin-button,.elm-portal .elm-year-input::-webkit-outer-spin-button{-webkit-appearance:auto;appearance:auto;opacity:1;margin:0}
+
+/* v1.5.97: supervisor leave history tab and per-employee history report dialog. */
+.elm-portal .elm-chief-history .elm-card__head{align-items:flex-start}
+.elm-portal .elm-chief-history .elm-card__head p{margin:6px 0 0;color:var(--elm-muted);line-height:1.55}
+.elm-portal .elm-history-filters{grid-template-columns:minmax(210px,1.25fr) minmax(150px,.8fr) minmax(120px,.55fr) auto}
+.elm-portal .elm-history-report{display:grid;gap:20px}
+.elm-portal .elm-history-overview,.elm-portal .elm-history-details{display:grid;gap:14px}
+.elm-portal .elm-history-section-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
+.elm-portal .elm-history-section-head h4{margin:0;color:#1d2939;font-size:17px;line-height:1.3}
+.elm-portal .elm-history-section-head p{margin:4px 0 0;color:var(--elm-muted);font-size:12px;font-weight:650}
+.elm-portal .elm-history-summary-grid{margin-bottom:0}
+.elm-portal .elm-history-metric{min-height:112px}
+.elm-portal .elm-history-employee-table-wrap{border:1px solid var(--elm-line);border-radius:14px;background:#fff}
+.elm-portal .elm-history-employee-table{min-width:720px}
+.elm-portal .elm-history-employee-table td:not(:first-child),.elm-portal .elm-history-employee-table th:not(:first-child){text-align:center}
+.elm-portal .elm-history-employee-table small{color:var(--elm-muted);font-size:11px}
+.elm-portal .elm-history-employee-meta{margin:-3px 0 0;padding:10px 12px;border:1px solid var(--elm-line);border-radius:10px;background:#f8fafc;color:#667085;font-size:12px;font-weight:650}
+.elm-portal .elm-history-request-list{display:grid;gap:12px}
+.elm-portal .elm-history-request{position:relative;overflow:hidden;border:1px solid var(--elm-line);border-radius:15px;background:#fff;box-shadow:0 8px 24px rgba(16,24,40,.045)}
+.elm-portal .elm-history-request::before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:#d0d5dd}
+.elm-portal .elm-history-request--pending::before{background:#e7a800}
+.elm-portal .elm-history-request--approved::before{background:#12a06a}
+.elm-portal .elm-history-request--rejected::before{background:#d92d20}
+.elm-portal .elm-history-request--cancelled::before{background:#667085}
+.elm-portal .elm-history-request__head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;padding:15px 16px 12px 19px;border-bottom:1px solid #eef1f5;background:#fbfcfe}
+.elm-portal .elm-history-request__head>div{display:grid;gap:4px}
+.elm-portal .elm-history-request__head strong{color:#1d2939;font-size:14px}
+.elm-portal .elm-history-request__head>div>span{color:#667085;font-size:11.5px;font-weight:700}
+.elm-portal .elm-history-request__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;padding:0 4px 0 8px}
+.elm-portal .elm-history-request__grid>div{min-width:0;padding:13px 12px;border-right:1px solid #eef1f5}
+.elm-portal .elm-history-request__grid>div:last-child{border-right:0}
+.elm-portal .elm-history-request__grid span{display:block;margin-bottom:5px;color:#98a2b3;font-size:9.5px;font-weight:850;text-transform:uppercase;letter-spacing:.06em}
+.elm-portal .elm-history-request__grid strong{display:block;color:#344054;font-size:11.5px;line-height:1.5;word-break:break-word}
+.elm-portal .elm-history-request__reasons{padding:0 18px 14px}
+.elm-portal .elm-history-request__reasons-title{display:block;margin:0 0 7px;color:#667085;font-size:10px;font-weight:850;text-transform:uppercase;letter-spacing:.06em}
+.elm-portal .elm-history-request__reasons .elm-request-reasons-notice{margin:0}
+.elm-portal .elm-chief-history-overlay{position:fixed;inset:0;z-index:100001;display:grid;place-items:center;padding:22px;background:rgba(15,23,42,.65);backdrop-filter:blur(4px)}
+.elm-portal .elm-chief-history-overlay[hidden]{display:none!important}
+.elm-portal .elm-chief-history-dialog{width:min(1180px,96vw);max-height:calc(100vh - 44px);overflow:auto;padding:20px;border:1px solid rgba(255,255,255,.45);border-radius:20px;background:#fff;box-shadow:0 28px 80px rgba(15,23,42,.3)}
+.elm-portal .elm-chief-history-dialog__head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:15px;padding-bottom:13px;border-bottom:1px solid var(--elm-line)}
+.elm-portal .elm-chief-history-dialog__head h3{margin:3px 0 0;color:#1d2939;font-size:22px}
+.elm-portal .elm-history-dialog__filters{grid-template-columns:minmax(180px,.9fr) minmax(120px,.55fr) auto;margin-bottom:12px}
+.elm-portal .elm-history-report--dialog{padding:2px}
+body.elm-chief-history-open{overflow:hidden}
+.elm-portal .elm-my-actions .elm-self-action--history{border-color:#6d5ce7!important;background:#f1efff!important;color:#4d3ec7!important;-webkit-text-fill-color:#4d3ec7!important}
+.elm-portal .elm-my-actions .elm-self-action--history:hover,.elm-portal .elm-my-actions .elm-self-action--history:focus{background:#e8e4ff!important}
+@media(max-width:900px){.elm-portal .elm-history-filters,.elm-portal .elm-history-dialog__filters{grid-template-columns:1fr 1fr}.elm-portal .elm-history-request__grid{grid-template-columns:1fr 1fr}.elm-portal .elm-history-request__grid>div:nth-child(2){border-right:0}.elm-portal .elm-history-request__grid>div:nth-child(-n+2){border-bottom:1px solid #eef1f5}}
+@media(max-width:600px){.elm-portal .elm-history-filters,.elm-portal .elm-history-dialog__filters{grid-template-columns:1fr}.elm-portal .elm-chief-history-overlay{padding:8px}.elm-portal .elm-chief-history-dialog{width:100%;max-height:calc(100vh - 16px);padding:14px;border-radius:15px}.elm-portal .elm-history-request__head{flex-direction:column}.elm-portal .elm-history-request__grid{grid-template-columns:1fr}.elm-portal .elm-history-request__grid>div{border-right:0;border-bottom:1px solid #eef1f5}.elm-portal .elm-history-request__grid>div:last-child{border-bottom:0}}
+
+/* v1.6.0: Pro edition polish - hero badge and animated loading state. */
+.elm-portal .elm-pro-badge{display:inline-flex;align-items:center;gap:5px;margin-left:10px;padding:4px 10px 4px 8px;border-radius:999px;background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#4a2c00;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;vertical-align:middle;box-shadow:0 4px 10px rgba(245,158,11,.35)}
+.elm-portal .elm-pro-badge::before{content:"\2726";font-size:10px}
+.elm-portal .elm-table-state--loading .elm-table-state__cell{position:relative;padding-left:36px!important}
+.elm-portal .elm-table-state--loading .elm-table-state__cell::before{content:"";position:absolute;left:16px;top:50%;width:14px;height:14px;margin-top:-7px;border-radius:50%;border:2px solid currentColor;border-top-color:transparent;opacity:.5;animation:elm-spin .7s linear infinite}
+@keyframes elm-spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.elm-portal .elm-table-state--loading .elm-table-state__cell::before{animation:none}.elm-metric__ring{transition:none}}
