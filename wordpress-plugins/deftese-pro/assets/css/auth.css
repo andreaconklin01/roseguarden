@@ -1,0 +1,59 @@
+/*
+ * Dëftesë PRO — sign-in and two-factor challenge.
+ */
+
+.dp-auth {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 60vh;
+	padding: var(--dp-sp-5) var(--dp-sp-4);
+	font-family: var(--dp-font);
+	color: var(--dp-text);
+	box-sizing: border-box;
+}
+
+.dp-auth *,
+.dp-auth *::before,
+.dp-auth *::after { box-sizing: inherit; }
+
+.dp-auth__card {
+	width: 100%;
+	max-width: 24rem;
+	padding: clamp(24px, 5vw, 36px);
+	background: var(--dp-surface);
+	border: 1px solid var(--dp-border);
+	border-radius: var(--dp-r-lg);
+	box-shadow: var(--dp-shadow-md);
+}
+
+.dp-auth__card > * + * { margin-top: var(--dp-sp-4); }
+
+.dp-auth__brand { text-align: center; }
+
+.dp-auth__mark {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 3rem;
+	height: 3rem;
+	margin-bottom: var(--dp-sp-3);
+	border-radius: var(--dp-r-md);
+	background: var(--dpx-brand-soft);
+	color: var(--dpx-brand);
+}
+
+.dp-auth__title {
+	margin: 0;
+	font-size: var(--dp-fs-lg);
+	font-weight: 700;
+	color: var(--dp-text);
+}
+
+.dp-auth__subtitle {
+	margin: var(--dp-sp-1) 0 0;
+	font-size: var(--dp-fs-sm);
+	color: var(--dp-text-muted);
+}
+
+.dp-auth .dp-input--code { max-width: none; margin-inline: auto; }

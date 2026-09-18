@@ -1,0 +1,106 @@
+/*
+ * Dëftesë PRO — layout manager screen.
+ *
+ * Sits inside wp-admin, so it borrows the admin palette rather than importing
+ * the front-end token set, and only styles what the core admin CSS does not.
+ */
+
+.dpl-wrap {
+	--dpl-accent: #2f5fd4;
+	--dpl-accent-alt: #1f7a4d;
+	--dpl-line: #dbe1ea;
+	--dpl-sunken: #f6f8fb;
+}
+
+.dpl-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+	gap: 20px;
+	align-items: start;
+	margin-top: 16px;
+}
+
+.dpl-box { margin: 0; }
+.dpl-box--wide { grid-column: 1 / -1; }
+
+.dpl-split {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	gap: 20px;
+	padding: 16px;
+	background: var(--dpl-sunken);
+	border: 1px solid var(--dpl-line);
+	border-radius: 8px;
+}
+
+.dpl-split .form-table { margin-top: 0; }
+
+.dpl-subhead {
+	margin: 0 0 4px;
+	padding-bottom: 6px;
+	font-size: 14px;
+	border-bottom: 2px solid var(--dpl-line);
+}
+
+.dpl-subhead--top { color: var(--dpl-accent); }
+.dpl-subhead--bottom { color: var(--dpl-accent-alt); }
+
+.dpl-subhead::before { content: "▲ "; font-size: 11px; }
+.dpl-subhead--bottom::before { content: "▼ "; }
+
+.dpl-unit {
+	margin-left: 4px;
+	color: #6b7889;
+	font-size: 12px;
+}
+
+.dpl-columns {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 14px;
+	padding: 14px;
+	background: var(--dpl-sunken);
+	border: 1px solid var(--dpl-line);
+	border-radius: 6px;
+}
+
+.dpl-col label {
+	display: block;
+	margin-bottom: 4px;
+	font-size: 12px;
+	font-weight: 600;
+	color: #3a4553;
+}
+
+.dpl-col--derived label { font-weight: 400; color: #6b7889; }
+.dpl-col--derived input { background: #eceff3; }
+
+.dpl-warning {
+	margin-top: 10px;
+	color: #b3261e;
+	font-weight: 700;
+}
+
+.dpl-warning[hidden] { display: none; }
+
+.dpl-remove { color: #b3261e !important; }
+
+.dpl-preview {
+	display: block;
+	max-width: 110px;
+	max-height: 110px;
+	margin-top: 10px;
+	padding: 3px;
+	border: 1px solid var(--dpl-line);
+	border-radius: 4px;
+	background: #fff;
+}
+
+.dpl-preview[hidden] { display: none; }
+
+@media (prefers-color-scheme: dark) {
+	.dpl-wrap {
+		--dpl-line: #3a4553;
+		--dpl-sunken: #23293233;
+	}
+}

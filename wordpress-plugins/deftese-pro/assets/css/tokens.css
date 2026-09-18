@@ -1,0 +1,133 @@
+/*
+ * Dëftesë PRO — design tokens
+ *
+ * One palette, one type scale, one set of radii and shadows. Everything the
+ * manager chrome draws resolves back to a token here, so the whole interface
+ * can be re-themed by editing this file alone.
+ *
+ * The A4 certificate sheet deliberately does NOT use these tokens: it is a
+ * printed legal document and keeps its own fixed millimetre geometry, driven by
+ * the --dp-* variables the layout plugin writes.
+ */
+
+:root {
+	/* Neutrals: a cool slate ramp. */
+	--dpx-n-0: #ffffff;
+	--dpx-n-25: #fbfcfd;
+	--dpx-n-50: #f4f6f9;
+	--dpx-n-100: #eaeef3;
+	--dpx-n-200: #dbe1ea;
+	--dpx-n-300: #c2cbd8;
+	--dpx-n-400: #94a1b4;
+	--dpx-n-500: #6b7889;
+	--dpx-n-600: #505c6d;
+	--dpx-n-700: #3a4553;
+	--dpx-n-800: #27303c;
+	--dpx-n-900: #171d26;
+
+	/* Accents. */
+	--dpx-brand: #2f5fd4;
+	--dpx-brand-strong: #244cae;
+	--dpx-brand-soft: #e8efff;
+	--dpx-success: #1f7a4d;
+	--dpx-success-soft: #e4f4ec;
+	--dpx-warning: #a15c00;
+	--dpx-warning-soft: #fdf1df;
+	--dpx-danger: #b3261e;
+	--dpx-danger-soft: #fceceb;
+	--dpx-violet: #6035b0;
+	--dpx-teal: #0f6f7a;
+
+	/* Semantic surfaces. */
+	--dp-bg: var(--dpx-n-50);
+	--dp-surface: var(--dpx-n-0);
+	--dp-surface-sunken: var(--dpx-n-25);
+	--dp-surface-alt: var(--dpx-n-100);
+	--dp-border: var(--dpx-n-200);
+	--dp-border-strong: var(--dpx-n-300);
+
+	--dp-text: var(--dpx-n-800);
+	--dp-text-soft: var(--dpx-n-600);
+	--dp-text-muted: var(--dpx-n-500);
+	--dp-text-invert: var(--dpx-n-0);
+
+	/* Type. */
+	--dp-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	--dp-font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+	--dp-fs-xs: 0.75rem;
+	--dp-fs-sm: 0.8125rem;
+	--dp-fs-base: 0.875rem;
+	--dp-fs-md: 1rem;
+	--dp-fs-lg: 1.125rem;
+	--dp-fs-xl: 1.375rem;
+	--dp-fs-2xl: 1.75rem;
+
+	/* Spacing. */
+	--dp-sp-1: 0.25rem;
+	--dp-sp-2: 0.5rem;
+	--dp-sp-3: 0.75rem;
+	--dp-sp-4: 1rem;
+	--dp-sp-5: 1.5rem;
+	--dp-sp-6: 2rem;
+
+	/* Radii. */
+	--dp-r-sm: 6px;
+	--dp-r-md: 10px;
+	--dp-r-lg: 14px;
+	--dp-r-pill: 999px;
+
+	/* Elevation. */
+	--dp-shadow-sm: 0 1px 2px rgba(23, 29, 38, 0.06), 0 1px 3px rgba(23, 29, 38, 0.04);
+	--dp-shadow-md: 0 2px 6px rgba(23, 29, 38, 0.07), 0 8px 24px rgba(23, 29, 38, 0.06);
+	--dp-shadow-lg: 0 12px 40px rgba(23, 29, 38, 0.16);
+
+	--dp-ring: 0 0 0 3px rgba(47, 95, 212, 0.28);
+	--dp-ease: 160ms cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+/*
+ * Dark mode follows the reader's system setting. The certificate sheet stays
+ * on paper white in both themes, because that is what comes out of a printer.
+ */
+@media (prefers-color-scheme: dark) {
+	:root:not([data-dp-theme="light"]) {
+		--dp-bg: #11161d;
+		--dp-surface: #1a212b;
+		--dp-surface-sunken: #151b23;
+		--dp-surface-alt: #222b37;
+		--dp-border: #2d3846;
+		--dp-border-strong: #3c4a5c;
+
+		--dp-text: #e7ecf3;
+		--dp-text-soft: #b3bdcc;
+		--dp-text-muted: #8b97a8;
+
+		--dpx-brand-soft: #1d2a45;
+		--dpx-success-soft: #142b21;
+		--dpx-warning-soft: #322311;
+		--dpx-danger-soft: #351a18;
+
+		--dp-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.45);
+		--dp-shadow-md: 0 2px 6px rgba(0, 0, 0, 0.45), 0 8px 24px rgba(0, 0, 0, 0.35);
+		--dp-shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.55);
+	}
+}
+
+:root[data-dp-theme="dark"] {
+	--dp-bg: #11161d;
+	--dp-surface: #1a212b;
+	--dp-surface-sunken: #151b23;
+	--dp-surface-alt: #222b37;
+	--dp-border: #2d3846;
+	--dp-border-strong: #3c4a5c;
+
+	--dp-text: #e7ecf3;
+	--dp-text-soft: #b3bdcc;
+	--dp-text-muted: #8b97a8;
+
+	--dpx-brand-soft: #1d2a45;
+	--dpx-success-soft: #142b21;
+	--dpx-warning-soft: #322311;
+	--dpx-danger-soft: #351a18;
+}

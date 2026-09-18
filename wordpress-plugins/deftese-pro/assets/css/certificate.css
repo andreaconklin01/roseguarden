@@ -1,0 +1,622 @@
+/*
+ * Dëftesë PRO — the printed A4 sheet.
+ *
+ * Geometry here is deliberately absolute. The certificate is a legal document
+ * that has to come out of the printer at a fixed size, so this file works in
+ * millimetres and pixels rather than the token scale used by the rest of the
+ * interface. Every value is driven by a --dp-* custom property written by the
+ * layout plugin, and the defaults match the 6.x output exactly.
+ */
+
+/* ---------------------------------------------------------------- shell -- */
+
+.deftese-app-container {
+	width: 100% !important;
+	max-width: 100% !important;
+	display: flex !important;
+	flex-direction: column !important;
+	align-items: center !important;
+	justify-content: flex-start !important;
+	margin: 20px auto !important;
+	padding: 0 !important;
+	box-sizing: border-box !important;
+	font-family: Arial, sans-serif !important;
+	background: transparent !important;
+	float: none !important;
+	text-align: left !important;
+}
+
+.deftese-app-container .a4-page,
+.deftese-app-container .a4-page * {
+	font-family: Arial, sans-serif !important;
+}
+
+#deftese-main-editor-wrap {
+	position: relative !important;
+	width: 100% !important;
+	max-width: 210mm !important;
+	margin: 0 auto !important;
+	float: none !important;
+	display: block !important;
+}
+
+#deftese-scale-wrapper {
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+	transition: height 0.1s ease;
+}
+
+.deftese-app-container .a4-page {
+	position: absolute !important;
+	inset: 0 0 auto 0 !important;
+	transform-origin: top center !important;
+	width: 210mm !important;
+	height: 297mm !important;
+	background-color: var(--dp-bg-color, #fff) !important;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
+	padding: var(--dp-pad-top, 5mm) var(--dp-pad-right, 17mm) var(--dp-pad-bottom, 5mm) var(--dp-pad-left, 5mm) !important;
+	box-sizing: border-box !important;
+	color: #000 !important;
+	line-height: normal !important;
+}
+
+.deftese-watermark {
+	position: absolute;
+	inset: 0;
+	background-image: var(--dp-logo-url, none);
+	background-repeat: no-repeat;
+	background-position: var(--dp-logo-x, 50%) var(--dp-logo-y, 50%);
+	background-size: var(--dp-logo-size, 50%);
+	opacity: var(--dp-logo-opacity, 0.1);
+	pointer-events: none;
+	z-index: 0;
+}
+
+.deftese-app-container .a4-page > div:not(.deftese-watermark) {
+	position: relative;
+	z-index: 1;
+}
+
+/*
+ * The sheet is printed with asymmetric side margins so the vertical "Vërejtje"
+ * rules have room on the right. This nudges the body copy back to the optical
+ * centre of the page without moving the table.
+ */
+.page-centered-content {
+	margin-left: calc((var(--dp-pad-right, 17mm) - var(--dp-pad-left, 5mm)) / 2) !important;
+	margin-right: calc((var(--dp-pad-left, 5mm) - var(--dp-pad-right, 17mm)) / 2) !important;
+}
+
+/* --------------------------------------------------------------- header -- */
+
+.deftese-app-container .header-top {
+	display: flex;
+	justify-content: space-between;
+	font-size: 11.5px;
+	line-height: 1.3;
+	margin-bottom: 0;
+}
+
+.deftese-app-container .header-left u {
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+.deftese-app-container .name-slot {
+	position: relative;
+	display: inline-block;
+	text-align: center;
+}
+
+.deftese-app-container .name-slot > .bold {
+	font-size: 13px;
+	display: inline-block;
+	min-width: 140px;
+}
+
+.deftese-app-container .name-slot > .sub-text {
+	width: 100%;
+	left: 0;
+	text-align: center;
+}
+
+.deftese-app-container .school-city {
+	font-size: 13px;
+}
+
+.deftese-app-container .header-right {
+	text-align: center;
+	font-size: 10px;
+	line-height: 1.2;
+	padding-top: 5px;
+}
+
+.deftese-app-container .header-left-bottom {
+	margin-top: var(--dp-gap-hf, 15px);
+	display: flex;
+	gap: 40px;
+}
+
+.deftese-app-container .header-right-bottom {
+	display: inline-block;
+	margin-top: var(--dp-gap-hf, 15px);
+	font-size: 12px;
+}
+
+/* ---------------------------------------------------------------- title -- */
+
+.deftese-app-container .title-section {
+	text-align: center;
+	margin-top: var(--dp-gap-top-1, 15px);
+	margin-bottom: 0;
+}
+
+.deftese-app-container .title-section h1 {
+	color: var(--dp-color-main, #c00);
+	font-size: var(--dp-fs-title, 34px);
+	margin: 0;
+	letter-spacing: 2px;
+	line-height: 1.2;
+	font-weight: 700;
+}
+
+.deftese-app-container .title-section h3 {
+	font-size: 13.5px;
+	margin: var(--dp-gap-top-2, 5px) 0 0;
+	font-weight: 700;
+}
+
+/* -------------------------------------------------------------- student -- */
+
+.deftese-app-container .student-info {
+	text-align: center;
+	font-size: 12px;
+	margin-top: var(--dp-gap-top-3, 15px);
+	margin-bottom: 0;
+}
+
+.deftese-app-container .student-names {
+	display: flex;
+	justify-content: center;
+	align-items: baseline;
+	gap: 15px;
+	margin-bottom: var(--dp-gap-hf, 15px);
+}
+
+.deftese-app-container .name-block {
+	position: relative;
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.deftese-app-container .name-text {
+	font-size: 16px;
+	font-weight: 700;
+	border-bottom: 1px solid #000;
+	padding: 0 15px;
+	text-align: center;
+	display: inline-block;
+	min-width: 160px;
+	line-height: 1.2;
+}
+
+.deftese-app-container .sub-text {
+	position: absolute;
+	top: 100%;
+	font-size: 9px;
+	margin-top: 2px;
+}
+
+.deftese-app-container .middle-text {
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.deftese-app-container .details-text {
+	text-align: left;
+	margin-left: 20px;
+	line-height: 1.6;
+}
+
+.deftese-app-container .details-text u {
+	font-weight: 700;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 2px;
+}
+
+/* ---------------------------------------------------------- grade table -- */
+
+.deftese-app-container .table-wrapper {
+	position: relative;
+	width: 100%;
+	margin-top: var(--dp-gap-top-4, 15px);
+	margin-bottom: 0;
+}
+
+.deftese-app-container table {
+	width: 100%;
+	table-layout: fixed;
+	border-collapse: collapse;
+	font-size: var(--dp-fs-table, 10px);
+	border: var(--dp-border-out, 2px) solid #000;
+	margin: 0;
+}
+
+.deftese-app-container th,
+.deftese-app-container td {
+	border: var(--dp-border-in, 1px) solid #000;
+	padding: var(--dp-cell-pad-y, 2px) 3px;
+	vertical-align: middle;
+	height: var(--dp-row-height, 14px) !important;
+	word-wrap: break-word;
+	position: relative;
+}
+
+.deftese-app-container th {
+	font-weight: 700;
+	text-align: center;
+}
+
+.deftese-app-container .dp-c1 { width: var(--dp-col1, 32%); }
+.deftese-app-container .dp-c2 { width: var(--dp-col2, 15%); }
+.deftese-app-container .dp-c3 { width: var(--dp-col3, 15%); }
+.deftese-app-container .dp-c4 { width: var(--dp-col4, 15%); }
+.deftese-app-container .dp-c5 { width: var(--dp-col5, 15%); }
+.deftese-app-container .dp-c6 { width: var(--dp-col6, 8%); }
+
+.deftese-app-container .grades-caption {
+	color: var(--dp-color-main, #c00);
+	font-size: 1.2em;
+	padding: 4px 0;
+}
+
+.deftese-app-container .grades-test-head {
+	font-size: 0.9em;
+	line-height: 1.2;
+	white-space: nowrap;
+}
+
+.deftese-app-container .grades-classes-head {
+	text-align: left;
+}
+
+.deftese-app-container .grades-points-head {
+	font-size: 0.9em;
+	line-height: 1.2;
+}
+
+.deftese-app-container .cat-row {
+	color: var(--dp-color-main, #c00) !important;
+	font-weight: 700;
+}
+
+.deftese-app-container .subject-cell {
+	display: inline-block;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.deftese-app-container .mark-cell {
+	color: #333;
+	display: block;
+	text-align: center;
+}
+
+.deftese-app-container .flex-cell {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.deftese-app-container .center { text-align: center; }
+.deftese-app-container .bold { font-weight: 700; }
+
+/* ------------------------------------------------- vertical remark rules -- */
+
+.deftese-app-container .right-decor-wrapper {
+	position: absolute;
+	left: 100%;
+	top: 0;
+	bottom: 0;
+	padding-left: 20px;
+	display: flex;
+	gap: var(--dp-decor-gap, 20px);
+	box-sizing: border-box;
+}
+
+.deftese-app-container .right-decor-line {
+	border-left: 1px solid #000;
+	height: 100%;
+	position: relative;
+}
+
+.deftese-app-container .vertical-note {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	transform: rotate(-90deg);
+	transform-origin: bottom left;
+	font-weight: 700;
+	font-size: 11px;
+	color: #000;
+	white-space: nowrap;
+	margin: 0;
+	padding-bottom: 5px;
+	display: flex;
+	align-items: center;
+	gap: 4px;
+}
+
+.deftese-app-container .vertical-text {
+	font-weight: normal;
+	display: inline-block;
+	min-width: 150px;
+	outline: none;
+	cursor: text;
+}
+
+/* ------------------------------------------------------------ footer -- */
+
+.deftese-app-container .footer-signatures {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	margin-top: var(--dp-gap-bottom-1, 15px);
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+.deftese-app-container .sig-block--teacher { width: 250px; text-align: left; }
+.deftese-app-container .sig-block--director { width: 160px; text-align: left; }
+
+.deftese-app-container .sig-place {
+	white-space: nowrap;
+	margin-bottom: 25px;
+	font-size: 12px;
+}
+
+.deftese-app-container .sig-city { min-width: 60px; display: inline-block; text-align: center; }
+.deftese-app-container .sig-date { min-width: 80px; display: inline-block; text-align: center; }
+
+.deftese-app-container .sig-role {
+	font-size: 12px;
+	margin-bottom: 2px;
+}
+
+.deftese-app-container .sig-name {
+	min-height: 14px;
+	text-align: center;
+	font-weight: 700;
+	display: inline-block;
+	font-size: 12px;
+}
+
+.deftese-app-container .sig-block--teacher .sig-name { width: 160px; }
+.deftese-app-container .sig-block--director .sig-name { width: 100%; }
+
+.deftese-app-container .sig-line {
+	border-bottom: 1px dashed #000;
+	margin-top: 2px;
+}
+
+.deftese-app-container .sig-block--teacher .sig-line { width: 160px; }
+.deftese-app-container .sig-block--director .sig-line { width: 100%; }
+
+.deftese-app-container .stamp-mark {
+	position: absolute;
+	right: 270px;
+	bottom: 20px;
+	font-size: 15px;
+	font-weight: 700;
+}
+
+.deftese-app-container .footer-note {
+	margin-top: var(--dp-gap-bottom-2, 15px);
+	margin-bottom: var(--dp-gap-bottom-3, 0);
+	font-size: 8.5px;
+	font-weight: 700;
+	text-align: left;
+	line-height: 1.2;
+}
+
+/* ------------------------------------------------------- editing state -- */
+
+#deftese-status-msg {
+	width: 100%;
+	text-align: center;
+	font-weight: 700;
+	font-size: 13px;
+	margin: 0 0 12px;
+	min-height: 20px;
+}
+
+#deftese-status-msg[data-tone="ok"] { color: #1f7a4d; }
+#deftese-status-msg[data-tone="busy"] { color: #a15c00; }
+#deftese-status-msg[data-tone="error"] { color: #b3261e; }
+#deftese-status-msg[data-tone="info"] { color: #244cae; }
+
+.deftese-app-container.is-editing .editable-field {
+	outline: 1px dashed rgba(0, 0, 0, 0.2) !important;
+	background-color: rgba(255, 235, 59, 0.15) !important;
+	transition: background-color 0.2s !important;
+	cursor: text !important;
+	border-radius: 2px !important;
+	min-width: 15px !important;
+	display: inline-block !important;
+}
+
+.deftese-app-container.is-editing .subject-cell,
+.deftese-app-container.is-editing .mark-cell {
+	display: block;
+}
+
+.deftese-app-container.is-editing .editable-field:hover,
+.deftese-app-container.is-editing .editable-field:focus,
+.deftese-app-container.is-editing .vertical-text:hover,
+.deftese-app-container.is-editing .vertical-text:focus {
+	background-color: rgba(255, 235, 59, 0.5) !important;
+	outline: 1px dashed #2f5fd4 !important;
+}
+
+.deftese-app-container .test-cell-mismatch {
+	color: #c00;
+}
+
+.row-controls {
+	position: absolute;
+	left: -65px;
+	top: 50%;
+	transform: translateY(-50%);
+	display: none;
+	gap: 3px;
+	z-index: 10;
+}
+
+.deftese-app-container.is-editing .row-controls { display: flex; }
+
+.row-controls button {
+	background: #5a6b7d;
+	color: #fff;
+	border: none;
+	border-radius: 3px;
+	width: 18px;
+	height: 18px;
+	font-size: 9px;
+	line-height: 1;
+	cursor: pointer;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.row-controls button:hover { background: #3a4553; }
+.row-controls .btn-remove-row { background: #b3261e; }
+.row-controls .btn-remove-row:hover { background: #8d1c16; }
+
+#edit-table-actions {
+	display: none;
+	text-align: left;
+	margin-top: 8px;
+	gap: 6px;
+}
+
+.deftese-app-container.is-editing #edit-table-actions { display: flex; }
+
+/* ------------------------------------------------------------ nav arrows -- */
+
+.nav-arrow {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 60px;
+	color: #76ccac;
+	text-decoration: none;
+	z-index: 30;
+	line-height: 1;
+	transition: color var(--dp-ease, 160ms), transform var(--dp-ease, 160ms);
+	font-family: monospace;
+}
+
+.nav-arrow:hover { color: #5ba88a; transform: translateY(-50%) scale(1.1); }
+.nav-arrow:focus-visible { outline: 2px solid #2f5fd4; outline-offset: 4px; border-radius: 4px; }
+.nav-arrow-left { left: -60px; }
+.nav-arrow-right { right: -60px; }
+.nav-arrow.disabled { color: #c2cbd8; pointer-events: none; }
+
+@media screen and (max-width: 950px) {
+	.nav-arrow {
+		font-size: 40px;
+		width: 40px;
+		height: 40px;
+		text-align: center;
+		line-height: 35px;
+		background: rgba(255, 255, 255, 0.85);
+		border-radius: 50%;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	}
+
+	.nav-arrow-left { left: 0; }
+	.nav-arrow-right { right: 0; }
+}
+
+/* ------------------------------------------------------------ fullscreen -- */
+
+.deftese-app-container:fullscreen {
+	background-color: #2b333d !important;
+	overflow-y: auto !important;
+	padding: 30px 0 !important;
+	width: 100vw !important;
+	height: 100vh !important;
+	display: block !important;
+}
+
+.deftese-app-container:fullscreen .deftese-toolbar {
+	position: sticky !important;
+	top: 0 !important;
+	z-index: 40 !important;
+	margin: 0 auto 30px !important;
+}
+
+/* -------------------------------------------------------------- printing -- */
+
+@media print {
+	@page { size: A4; margin: 0; }
+
+	body * { visibility: hidden !important; }
+
+	.deftese-toolbar,
+	#deftese-status-msg,
+	.deftese-modal-overlay,
+	.row-controls,
+	#edit-table-actions,
+	.nav-arrow {
+		display: none !important;
+		visibility: hidden !important;
+	}
+
+	#deftese-main-editor-wrap,
+	#deftese-scale-wrapper,
+	#deftese-scale-wrapper * {
+		visibility: visible !important;
+	}
+
+	#deftese-scale-wrapper {
+		position: fixed !important;
+		left: 0 !important;
+		top: 0 !important;
+		width: 210mm !important;
+		height: 297mm !important;
+		display: block !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		transform: none !important;
+		overflow: hidden !important;
+	}
+
+	.deftese-app-container .a4-page {
+		position: absolute !important;
+		left: 0 !important;
+		top: 0 !important;
+		box-shadow: none !important;
+		margin: 0 !important;
+		transform: none !important;
+		page-break-after: always;
+	}
+
+	.deftese-app-container .editable-field {
+		outline: none !important;
+		background: transparent !important;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	#deftese-scale-wrapper,
+	.nav-arrow,
+	.deftese-app-container.is-editing .editable-field {
+		transition: none;
+	}
+}

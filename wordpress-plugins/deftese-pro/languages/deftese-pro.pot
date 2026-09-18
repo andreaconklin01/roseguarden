@@ -1,0 +1,838 @@
+# Copyright (C) 2026 Professional Studio
+# This file is distributed under the GPL-2.0-or-later license.
+msgid ""
+msgstr ""
+"Project-Id-Version: Deftese PRO 7.0.0\n"
+"Report-Msgid-Bugs-To: https://example.org/deftese-pro\n"
+"POT-Creation-Date: 2026-09-18T00:00:00+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: deftese-pro\n"
+
+
+#: includes/class-admin.php:38 includes/class-admin.php:39
+msgid "Dëftesë PRO"
+msgstr ""
+
+#: includes/class-admin.php:49 includes/views/manager.php:21
+msgid "Të Gjitha Dëftesat"
+msgstr ""
+
+#: includes/class-admin.php:50
+msgid "Të Gjitha"
+msgstr ""
+
+#: includes/class-admin.php:58
+msgid "Shto Dëftesë të Re"
+msgstr ""
+
+#: includes/class-admin.php:59 includes/views/admin-list.php:16
+msgid "+ Dëftesë e Re"
+msgstr ""
+
+#: includes/class-admin.php:67 includes/views/admin-list.php:18
+msgid "Pasqyra Sipas Kategorive"
+msgstr ""
+
+#: includes/class-admin.php:68
+msgid "Sipas Kategorive"
+msgstr ""
+
+#: includes/class-ajax.php:60
+msgid "Nuk keni leje."
+msgstr ""
+
+#: includes/class-ajax.php:85
+msgid "Gabim: Numri i librit amë nuk mund të jetë bosh."
+msgstr ""
+
+#: includes/class-ajax.php:102
+msgid "Ky numër i librit amë ekziston dhe i përket një përdoruesi tjetër."
+msgstr ""
+
+#: includes/class-ajax.php:109
+msgid "Nuk keni leje për të ndryshuar këtë dëftesë."
+msgstr ""
+
+#: includes/class-ajax.php:115
+msgid "Dëftesa u përditësua! (Libri Amë: %s)"
+msgstr ""
+
+#: includes/class-ajax.php:120
+msgid "Dëftesa ekzistuese u mbishkrua! (Libri Amë: %s)"
+msgstr ""
+
+#: includes/class-ajax.php:129
+msgid "Dëftesa u ruajt si e re! (Libri Amë: %s)"
+msgstr ""
+
+#: includes/class-ajax.php:133
+msgid "Ruajtja dështoi. Provoni sërish."
+msgstr ""
+
+#: includes/class-ajax.php:155
+msgid "Dëftesa nuk u gjet."
+msgstr ""
+
+#: includes/class-ajax.php:159
+msgid "Nuk keni akses në këtë dëftesë."
+msgstr ""
+
+#: includes/class-ajax.php:223
+msgid "Fillo procesin e aktivizimit sërish."
+msgstr ""
+
+#: includes/class-ajax.php:227 includes/class-ajax.php:249 includes/class-frontend.php:102
+msgid "Kodi është i pasaktë."
+msgstr ""
+
+#: includes/class-ajax.php:234
+msgid "U aktivizua."
+msgstr ""
+
+#: includes/class-ajax.php:256
+msgid "U çaktivizua."
+msgstr ""
+
+#: includes/class-editor.php:46
+msgid "Ndalohet aksesi. Kjo dëftesë është regjistruar nga një përdorues tjetër."
+msgstr ""
+
+#: includes/class-editor.php:130
+msgid "Mbyll Redaktimin"
+msgstr ""
+
+#: includes/class-editor.php:131 includes/views/editor.php:25 includes/views/list.php:298
+msgid "Ndrysho"
+msgstr ""
+
+#: includes/class-editor.php:132
+msgid "Modaliteti i redaktimit është aktiv."
+msgstr ""
+
+#: includes/class-editor.php:133
+msgid "Redaktimi u mbyll."
+msgstr ""
+
+#: includes/class-editor.php:134
+msgid "Duke ruajtur…"
+msgstr ""
+
+#: includes/class-editor.php:135
+msgid "Duke ngarkuar…"
+msgstr ""
+
+#: includes/class-editor.php:136
+msgid "U ngarkua."
+msgstr ""
+
+#: includes/class-editor.php:137 includes/class-frontend.php:101
+msgid "Gabim."
+msgstr ""
+
+#: includes/class-editor.php:138
+msgid "Gabim lidhjeje."
+msgstr ""
+
+#: includes/class-editor.php:139
+msgid "Gabim gjatë ngarkimit."
+msgstr ""
+
+#: includes/class-editor.php:140
+msgid "Gabim gjatë importimit."
+msgstr ""
+
+#: includes/class-editor.php:141
+msgid "CSV u importua me sukses."
+msgstr ""
+
+#: includes/class-editor.php:142
+msgid "Ruaj Ndryshimet"
+msgstr ""
+
+#: includes/class-editor.php:144
+msgid "Do të përditësohet dëftesa: %s. Vazhdo?"
+msgstr ""
+
+#: includes/class-editor.php:145
+msgid "Ruaj si Dëftesë e Re"
+msgstr ""
+
+#: includes/class-editor.php:146
+msgid "Do të krijohet një rekord i ri. Vazhdo?"
+msgstr ""
+
+#: includes/class-editor.php:147
+msgid "Importo Dëftesën"
+msgstr ""
+
+#: includes/class-editor.php:149
+msgid "Dëftesa aktuale do të zëvendësohet me të dhënat e skedarit \"%s\". Vazhdo?"
+msgstr ""
+
+#: includes/class-editor.php:150 includes/views/editor.php:66
+msgid "E Paredaktuar"
+msgstr ""
+
+#: includes/class-editor.php:152 includes/views/editor.php:62
+msgid "Libri Amë: %s"
+msgstr ""
+
+#: includes/class-editor.php:153
+msgid "Dil nga Fullscreen"
+msgstr ""
+
+#: includes/class-editor.php:154 includes/views/editor.php:74
+msgid "Fullscreen"
+msgstr ""
+
+#: includes/class-editor.php:155
+msgid "Lëndë e re"
+msgstr ""
+
+#: includes/class-editor.php:156
+msgid "KATEGORI E RE"
+msgstr ""
+
+#: includes/class-editor.php:158
+msgid "Shuma e saktë është: %d"
+msgstr ""
+
+#: includes/class-editor.php:159 includes/views/certificate.php:127
+msgid "Lart"
+msgstr ""
+
+#: includes/class-editor.php:160 includes/views/certificate.php:128
+msgid "Poshtë"
+msgstr ""
+
+#: includes/class-editor.php:161 includes/views/certificate.php:129 includes/views/list.php:182 includes/views/list.php:299
+msgid "Fshi"
+msgstr ""
+
+#: includes/class-frontend.php:97
+msgid "Duke përgatitur…"
+msgstr ""
+
+#: includes/class-frontend.php:98
+msgid "Duke verifikuar…"
+msgstr ""
+
+#: includes/class-frontend.php:99
+msgid "2FA u aktivizua me sukses!"
+msgstr ""
+
+#: includes/class-frontend.php:100
+msgid "2FA u çaktivizua."
+msgstr ""
+
+#: includes/class-frontend.php:136
+msgid "Ju nuk keni akses."
+msgstr ""
+
+#: includes/class-list-view.php:85
+msgid "Fshi rekordet e zgjedhura?"
+msgstr ""
+
+#: includes/class-list-view.php:86
+msgid "Lëviz rekordet e zgjedhura tek ky përdorues?"
+msgstr ""
+
+#: includes/class-list-view.php:87
+msgid "Ju lutem zgjidhni një përdorues!"
+msgstr ""
+
+#: includes/class-list-view.php:88
+msgid "Fshi këtë dëftesë?"
+msgstr ""
+
+#: includes/class-list-view.php:90
+msgid "Duke importuar… (%1$d / %2$d)"
+msgstr ""
+
+#: includes/class-list-view.php:91 includes/views/list.php:89
+msgid "Importo Skedarët"
+msgstr ""
+
+#: includes/class-list-view.php:174
+msgid "%d rekord u fshi."
+msgid_plural "%d rekorde u fshinë."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-list-view.php:186
+msgid "Përdoruesi i zgjedhur nuk ekziston."
+msgstr ""
+
+#: includes/class-list-view.php:197
+msgid "%d rekord u transferua."
+msgid_plural "%d rekorde u transferuan."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-list-view.php:228
+msgid "Fshirja dështoi ose dëftesa nuk ju përket juve."
+msgstr ""
+
+#: includes/class-list-view.php:236
+msgid "U fshi me sukses."
+msgstr ""
+
+#: includes/class-list-view.php:273
+msgid "%d skedar CSV u importua me sukses."
+msgid_plural "%d skedarë CSV u importuan me sukses."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-list-view.php:281
+msgid "%d skedar pati probleme (ose nuk ju përket juve)."
+msgid_plural "%d skedarë patën probleme (ose nuk ju përkasin juve)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-overview.php:26
+msgid "Sipas Përdoruesit"
+msgstr ""
+
+#: includes/class-overview.php:27
+msgid "Sipas Shkollës"
+msgstr ""
+
+#: includes/class-overview.php:28
+msgid "Sipas Vitit Shkollor"
+msgstr ""
+
+#: includes/class-overview.php:29
+msgid "Sipas Kujdestarit"
+msgstr ""
+
+#: includes/class-overview.php:38
+msgid "Ju nuk keni akses për të parë këtë faqe."
+msgstr ""
+
+#: includes/class-overview.php:152
+msgid "— Pa shkollë të specifikuar —"
+msgstr ""
+
+#: includes/class-overview.php:157
+msgid "— Pa vit shkollor —"
+msgstr ""
+
+#: includes/class-overview.php:162
+msgid "— Pa kujdestar të specifikuar —"
+msgstr ""
+
+#: includes/class-overview.php:175
+msgid "Përdorues i panjohur (ID: %d)"
+msgstr ""
+
+#: includes/views/admin-editor.php:19
+msgid "Ndrysho Dëftesën: %s"
+msgstr ""
+
+#: includes/views/admin-editor.php:23
+msgid "Dëftesë e Re"
+msgstr ""
+
+#: includes/views/admin-editor.php:27 includes/views/overview.php:27
+msgid "Kthehu te Lista"
+msgstr ""
+
+#: includes/views/admin-list.php:15
+msgid "Dëftesë PRO — Të Gjitha Dëftesat"
+msgstr ""
+
+#: includes/views/certificate.php:31
+msgid "(emri i shkollës)"
+msgstr ""
+
+#: includes/views/certificate.php:33 includes/views/certificate.php:69
+msgid "në"
+msgstr ""
+
+#: includes/views/certificate.php:37
+msgid "Nr. i librit amë:"
+msgstr ""
+
+#: includes/views/certificate.php:38
+msgid "Nr. i protokollit:"
+msgstr ""
+
+#: includes/views/certificate.php:43
+msgid "Këndi i shkollës në bazë të Vendimit"
+msgstr ""
+
+#: includes/views/certificate.php:44
+msgid "të Ministrisë së Arsimit, Shkencës,"
+msgstr ""
+
+#: includes/views/certificate.php:45
+msgid "Teknologjisë dhe Inovacionit"
+msgstr ""
+
+#: includes/views/certificate.php:51
+msgid "DËFTESË"
+msgstr ""
+
+#: includes/views/certificate.php:52
+msgid "PËR KRYERJEN E SHKOLLËS SË MESME TË ULËT"
+msgstr ""
+
+#: includes/views/certificate.php:59
+msgid "(emri dhe mbiemri)"
+msgstr ""
+
+#: includes/views/certificate.php:61
+msgid "i biri, e bija"
+msgstr ""
+
+#: includes/views/certificate.php:68
+msgid "lindur më"
+msgstr ""
+
+#: includes/views/certificate.php:70
+msgid "komuna"
+msgstr ""
+
+#: includes/views/certificate.php:71
+msgid "shteti"
+msgstr ""
+
+#: includes/views/certificate.php:72
+msgid "në vitin shkollor"
+msgstr ""
+
+#: includes/views/certificate.php:73
+msgid "e kreu shkollën e mesme të ulët dhe tregoi këtë sukses:"
+msgstr ""
+
+#: includes/views/certificate.php:82
+msgid "Vërejtje:"
+msgstr ""
+
+#: includes/views/certificate.php:105
+msgid "Suksesi sipas fushave dhe klasave"
+msgstr ""
+
+#: includes/views/certificate.php:106
+msgid "Testi i"
+msgstr ""
+
+#: includes/views/certificate.php:106
+msgid "arritshmërisë"
+msgstr ""
+
+#: includes/views/certificate.php:109
+msgid "Klasat"
+msgstr ""
+
+#: includes/views/certificate.php:114
+msgid "Numri"
+msgstr ""
+
+#: includes/views/certificate.php:114
+msgid "i pikave"
+msgstr ""
+
+#: includes/views/certificate.php:126
+msgid "Rreshti"
+msgstr ""
+
+#: includes/views/certificate.php:127
+msgid "Zhvendos lart"
+msgstr ""
+
+#: includes/views/certificate.php:128
+msgid "Zhvendos poshtë"
+msgstr ""
+
+#: includes/views/certificate.php:129
+msgid "Fshi rreshtin"
+msgstr ""
+
+#: includes/views/certificate.php:159
+msgid "+ Shto Lëndë"
+msgstr ""
+
+#: includes/views/certificate.php:160
+msgid "+ Shto Kategori"
+msgstr ""
+
+#: includes/views/certificate.php:168
+msgid "Në"
+msgstr ""
+
+#: includes/views/certificate.php:169
+msgid "më"
+msgstr ""
+
+#: includes/views/certificate.php:171
+msgid "Kujdestari i klasës:"
+msgstr ""
+
+#: includes/views/certificate.php:179
+msgid "Drejtori:"
+msgstr ""
+
+#: includes/views/editor.php:21
+msgid "Mjetet e dëftesës"
+msgstr ""
+
+#: includes/views/editor.php:23
+msgid "Aktivizo/çaktivizo redaktimin"
+msgstr ""
+
+#: includes/views/editor.php:32
+msgid "Ruaj ndryshimet aktuale"
+msgstr ""
+
+#: includes/views/editor.php:34
+msgid "Ruaj"
+msgstr ""
+
+#: includes/views/editor.php:36
+msgid "Ruaj si dëftesë e re"
+msgstr ""
+
+#: includes/views/editor.php:38
+msgid "E Re"
+msgstr ""
+
+#: includes/views/editor.php:45
+msgid "Importo nga CSV"
+msgstr ""
+
+#: includes/views/editor.php:47
+msgid "Importo CSV"
+msgstr ""
+
+#: includes/views/editor.php:49
+msgid "Printo dëftesën"
+msgstr ""
+
+#: includes/views/editor.php:51
+msgid "Printo"
+msgstr ""
+
+#: includes/views/editor.php:72
+msgid "Hap në Ekran të Plotë"
+msgstr ""
+
+#: includes/views/editor.php:79
+msgid "Skedar CSV"
+msgstr ""
+
+#: includes/views/editor.php:89 includes/views/editor.php:90
+msgid "Dëftesa e Mëparshme"
+msgstr ""
+
+#: includes/views/editor.php:94 includes/views/editor.php:95
+msgid "Dëftesa e Radhës"
+msgstr ""
+
+#: includes/views/editor.php:113 includes/views/editor.php:117
+msgid "Konfirmo"
+msgstr ""
+
+#: includes/views/editor.php:116
+msgid "Anulo"
+msgstr ""
+
+#: includes/views/list.php:71
+msgid "Importo Skedarët (CSV Bulk)"
+msgstr ""
+
+#: includes/views/list.php:72
+msgid "Mund të zgjidhni 100+ skedarë njëherësh. Sistemi do t\\'i ngarkojë të sigurt në prapavijë."
+msgstr ""
+
+#: includes/views/list.php:80
+msgid "Skedarët CSV"
+msgstr ""
+
+#: includes/views/list.php:86
+msgid "Zëvendëso rekordet ekzistuese (nëse Libri amë përputhet)"
+msgstr ""
+
+#: includes/views/list.php:116
+msgid "Kërko dëftesa"
+msgstr ""
+
+#: includes/views/list.php:119
+msgid "Kërko me emër, shkollë ose libër amë…"
+msgstr ""
+
+#: includes/views/list.php:121
+msgid "Kërko"
+msgstr ""
+
+#: includes/views/list.php:124
+msgid "Fshij filtrin"
+msgstr ""
+
+#: includes/views/list.php:130
+msgid "Dëftesat sipas Përdoruesve"
+msgstr ""
+
+#: includes/views/list.php:136 includes/views/overview.php:77
+msgid "Përdoruesi"
+msgstr ""
+
+#: includes/views/list.php:137
+msgid "Username"
+msgstr ""
+
+#: includes/views/list.php:138
+msgid "Dëftesa të Regjistruara"
+msgstr ""
+
+#: includes/views/list.php:139 includes/views/list.php:226 includes/views/overview.php:79
+msgid "Veprime"
+msgstr ""
+
+#: includes/views/list.php:150 includes/views/overview.php:101
+msgid "ID %d"
+msgstr ""
+
+#: includes/views/list.php:159
+msgid "Shiko dhe Menaxho"
+msgstr ""
+
+#: includes/views/list.php:163
+msgid "Nuk ka dëftesa të regjistruara."
+msgstr ""
+
+#: includes/views/list.php:172
+msgid "← Kthehu te Lista e Përdoruesve"
+msgstr ""
+
+#: includes/views/list.php:179 includes/views/list.php:181
+msgid "Veprimet masive"
+msgstr ""
+
+#: includes/views/list.php:184
+msgid "Lëviz tek Përdoruesi"
+msgstr ""
+
+#: includes/views/list.php:189
+msgid "Përdoruesi i destinacionit"
+msgstr ""
+
+#: includes/views/list.php:191
+msgid "Zgjidh Përdoruesin"
+msgstr ""
+
+#: includes/views/list.php:200
+msgid "Apliko"
+msgstr ""
+
+#: includes/views/list.php:206
+msgid "%s dëftesë gjithsej"
+msgid_plural "%s dëftesa gjithsej"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/views/list.php:218
+msgid "Zgjidh të gjitha"
+msgstr ""
+
+#: includes/views/list.php:221 includes/views/overview.php:72
+msgid "Nr. Librit Amë"
+msgstr ""
+
+#: includes/views/list.php:222 includes/views/overview.php:73
+msgid "Nxënësi"
+msgstr ""
+
+#: includes/views/list.php:223 includes/views/overview.php:20 includes/views/overview.php:74
+msgid "Shkolla"
+msgstr ""
+
+#: includes/views/list.php:224
+msgid "Viti shkollor"
+msgstr ""
+
+#: includes/views/list.php:225 includes/views/overview.php:78
+msgid "Ruajtur më"
+msgstr ""
+
+#: includes/views/list.php:283
+msgid "Zgjidh dëftesën e %s"
+msgstr ""
+
+#: includes/views/list.php:304
+msgid "Nuk u gjet asnjë dëftesë."
+msgstr ""
+
+#: includes/views/list.php:312
+msgid "Faqet e listës"
+msgstr ""
+
+#: includes/views/login-form.php:22 includes/views/manager.php:39
+msgid "Menaxheri i Dëftesave"
+msgstr ""
+
+#: includes/views/login-form.php:23 includes/views/manager.php:41
+msgid "Komuna e Prishtinës"
+msgstr ""
+
+#: includes/views/login-form.php:29
+msgid "Emri i përdoruesit ose fjalëkalimi është i pasaktë."
+msgstr ""
+
+#: includes/views/login-form.php:34
+msgid "Shumë përpjekje të dështuara. Provoni sërish pas 15 minutash."
+msgstr ""
+
+#: includes/views/login-form.php:42
+msgid "Emri i përdoruesit ose Email"
+msgstr ""
+
+#: includes/views/login-form.php:47
+msgid "Fjalëkalimi"
+msgstr ""
+
+#: includes/views/login-form.php:53
+msgid "Më mbaj mend"
+msgstr ""
+
+#: includes/views/login-form.php:56
+msgid "Kyçu"
+msgstr ""
+
+#: includes/views/manager.php:26
+msgid "Shto/Ndrysho Dëftesë"
+msgstr ""
+
+#: includes/views/manager.php:31
+msgid "Siguria"
+msgstr ""
+
+#: includes/views/manager.php:46
+msgid "Mirësevini, %s"
+msgstr ""
+
+#: includes/views/manager.php:52
+msgid "Dil"
+msgstr ""
+
+#: includes/views/manager.php:55
+msgid "Seksionet e menaxherit"
+msgstr ""
+
+#: includes/views/overview.php:18
+msgid "Dëftesa gjithsej"
+msgstr ""
+
+#: includes/views/overview.php:19
+msgid "Përdorues aktivë"
+msgstr ""
+
+#: includes/views/overview.php:21
+msgid "Vite shkollore"
+msgstr ""
+
+#: includes/views/overview.php:22
+msgid "Kujdestarë"
+msgstr ""
+
+#: includes/views/overview.php:26
+msgid "Pasqyra e Dëftesave — Sipas Kategorive"
+msgstr ""
+
+#: includes/views/overview.php:40
+msgid "Grupimi"
+msgstr ""
+
+#: includes/views/overview.php:51
+msgid "Nuk ka ende dëftesa të regjistruara."
+msgstr ""
+
+#: includes/views/overview.php:61
+msgid "%s dëftesë"
+msgid_plural "%s dëftesa"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/views/overview.php:75
+msgid "Viti Shkollor"
+msgstr ""
+
+#: includes/views/overview.php:76
+msgid "Kujdestari"
+msgstr ""
+
+#: includes/views/overview.php:114
+msgid "Hap"
+msgstr ""
+
+#: includes/views/security.php:14
+msgid "Autentikimi Dyfaktorësh (2FA)"
+msgstr ""
+
+#: includes/views/security.php:15
+msgid "Shton një shtresë shtesë sigurie: përveç fjalëkalimit, do të kërkohet edhe një kod 6-shifror nga një aplikacion si Google Authenticator ose Authy."
+msgstr ""
+
+#: includes/views/security.php:22
+msgid "Aktiv — llogaria jote është e mbrojtur me 2FA."
+msgstr ""
+
+#: includes/views/security.php:23
+msgid "Joaktiv — llogaria jote nuk përdor ende 2FA."
+msgstr ""
+
+#: includes/views/security.php:31
+msgid "Aktivizo 2FA"
+msgstr ""
+
+#: includes/views/security.php:35
+msgid "Në aplikacionin tënd të autentikimit zgjidh \"Fut çelësin manualisht\" dhe ngjit këtë çelës:"
+msgstr ""
+
+#: includes/views/security.php:38
+msgid "Në telefon mund të prekësh edhe këtë link që hap direkt aplikacionin:"
+msgstr ""
+
+#: includes/views/security.php:39
+msgid "hap në aplikacion"
+msgstr ""
+
+#: includes/views/security.php:43
+msgid "Fut kodin 6-shifror për të konfirmuar"
+msgstr ""
+
+#: includes/views/security.php:47
+msgid "Konfirmo dhe Aktivizo"
+msgstr ""
+
+#: includes/views/security.php:52
+msgid "Për ta çaktivizuar, fut kodin aktual 6-shifror"
+msgstr ""
+
+#: includes/views/security.php:56
+msgid "Çaktivizo 2FA"
+msgstr ""
+
+#: includes/views/twofactor-form.php:22
+msgid "Verifikimi Dyfaktorësh"
+msgstr ""
+
+#: includes/views/twofactor-form.php:23
+msgid "Fut kodin 6-shifror nga aplikacioni yt i autentikimit"
+msgstr ""
+
+#: includes/views/twofactor-form.php:29
+msgid "Kodi është i pasaktë ose ka skaduar. Provo sërish."
+msgstr ""
+
+#: includes/views/twofactor-form.php:37
+msgid "Kodi 6-shifror"
+msgstr ""
+
+#: includes/views/twofactor-form.php:42
+msgid "Verifiko"
+msgstr ""
