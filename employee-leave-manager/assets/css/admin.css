@@ -1,143 +1,1416 @@
-.elm-admin{--e-ink:#152238;--e-muted:#667085;--e-line:#e0e6ef;--e-brand:#4f46e5;--e-brand-dark:#3730a3;max-width:1440px;color:var(--e-ink)}
-.elm-admin *{box-sizing:border-box}.elm-admin__hero{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:24px;margin:22px 0;padding:29px 31px;border-radius:21px;background:linear-gradient(135deg,#152238,#263b68 68%,#3f3aa8);color:#fff;box-shadow:0 18px 48px rgba(16,24,40,.2)}.elm-admin__hero::after{content:"";position:absolute;width:260px;height:260px;right:-90px;top:-135px;border-radius:50%;background:rgba(255,255,255,.08)}.elm-admin__hero>div{position:relative;z-index:1}.elm-admin__hero h1{color:#fff;font-size:32px;line-height:1.08;margin:0 0 9px;letter-spacing:-.03em}.elm-admin__hero p{margin:0;color:#dce4f4;max-width:760px;font-size:14px;line-height:1.6}.elm-admin__hero-icon{display:grid;place-items:center;width:66px;height:66px;border:1px solid rgba(255,255,255,.22);border-radius:18px;background:rgba(255,255,255,.09)}.elm-admin__hero-icon .dashicons{font-size:34px;width:34px;height:34px}.elm-admin__eyebrow{text-transform:uppercase;letter-spacing:.14em!important;color:#b7c5ff!important;font-weight:850;font-size:10px;margin-bottom:8px!important}.elm-admin__audit{position:relative;z-index:1;flex:0 0 auto;padding:10px 14px;border:1px solid rgba(255,255,255,.2);border-radius:999px;font-weight:750;color:#d5dced}.elm-admin__audit.is-valid{background:rgba(23,166,115,.17);color:#baf5df;border-color:rgba(186,245,223,.35)}.elm-admin__audit.is-invalid{background:rgba(214,69,69,.2);color:#ffd3d3;border-color:rgba(255,211,211,.4)}
-.elm-admin__notice{margin:0 0 16px;padding:13px 15px;border-radius:11px;font-weight:750}.elm-admin__notice--success{background:#ecfdf3;border:1px solid #abefc6;color:#067647}.elm-admin__notice--error{background:#fff1f0;border:1px solid #fbc8c4;color:#ad251b}.elm-admin__card{background:linear-gradient(180deg,#fff,#fcfdff);border:1px solid var(--e-line);border-radius:18px;padding:22px;box-shadow:0 10px 34px rgba(16,24,40,.06)}.elm-admin__filters{display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px;margin-bottom:16px;padding:17px;background:#fff;border:1px solid var(--e-line);border-radius:16px;box-shadow:0 7px 24px rgba(16,24,40,.04)}.elm-admin__filters label,.elm-admin__form label,.elm-admin__report-card label{display:grid;gap:7px;font-weight:750;color:#344054}.elm-admin__filters select,.elm-admin__filters input,.elm-admin__form select,.elm-admin__form input,.elm-admin__form textarea,.elm-admin__report-card select,.elm-admin__report-card input{min-width:190px;border-color:#cfd5df;border-radius:9px;min-height:39px}.elm-admin__form textarea{width:100%}.elm-admin__table-wrap{overflow:auto;border-radius:11px}.elm-admin__table td{vertical-align:top}.elm-admin__table th:nth-child(1){width:58px}.elm-admin__table th:nth-child(5){width:90px}.elm-admin__table th:nth-child(6){width:130px}.elm-admin__table th:nth-child(7){width:230px}.elm-admin__actions{display:flex;gap:6px;flex-wrap:wrap}.elm-admin__status{display:inline-flex;padding:5px 9px;border-radius:999px;text-transform:capitalize;font-weight:850;font-size:10px}.elm-admin__status--pending{background:#fff3ce;color:#845600}.elm-admin__status--approved{background:#e8fbf2;color:#067647}.elm-admin__status--rejected{background:#fff1f0;color:#ad251b}.elm-admin__status--cancelled{background:#f2f4f7;color:#475467}.elm-admin__grid{display:grid;grid-template-columns:minmax(320px,.72fr) minmax(0,1.28fr);gap:18px}.elm-admin__grid--reports{grid-template-columns:minmax(0,1.25fr) minmax(300px,.75fr)}.elm-admin__card h2{margin-top:0;color:var(--e-ink);letter-spacing:-.02em}.elm-admin__form{display:grid;gap:15px;max-width:700px}.elm-admin__report-card{display:block}.elm-admin__report-form{grid-template-columns:minmax(220px,1.3fr) minmax(130px,.5fr);align-items:end;max-width:none;margin-top:22px}.elm-admin__report-form .button{grid-column:1/-1;justify-self:start}.elm-admin__dependency{margin-top:0}.elm-admin__section-heading{display:flex;align-items:flex-start;gap:13px}.elm-admin__section-heading>.dashicons{display:grid;place-items:center;flex:0 0 42px;width:42px;height:42px;border-radius:12px;background:#efefff;color:var(--e-brand);font-size:23px}.elm-admin__section-heading h2{margin:0 0 6px}.elm-admin__section-heading p{margin:0;color:var(--e-muted);line-height:1.55}.elm-admin__feature-list{display:grid;gap:10px;margin:22px 0 0;padding:0;list-style:none}.elm-admin__feature-list li{position:relative;padding-left:25px;color:#344054;font-weight:650}.elm-admin__feature-list li::before{content:"✓";position:absolute;left:0;top:-1px;color:#15996a;font-weight:900}.elm-admin__settings{max-width:820px}.elm-admin__settings fieldset{border:1px solid var(--e-line);border-radius:11px;padding:14px}.elm-admin__settings legend{font-weight:850;padding:0 5px}.elm-admin__checks{display:flex;flex-wrap:wrap;gap:12px}.elm-admin__checks label{display:flex;align-items:center;gap:5px;font-weight:650}.elm-admin__checks input{min-width:0}.elm-admin .button-primary{background:var(--e-brand);border-color:var(--e-brand);box-shadow:none}.elm-admin .button-primary:hover,.elm-admin .button-primary:focus{background:var(--e-brand-dark);border-color:var(--e-brand-dark)}
-@media(max-width:960px){.elm-admin__grid,.elm-admin__grid--reports{grid-template-columns:1fr}.elm-admin__hero{align-items:flex-start;flex-direction:column}.elm-admin__report-form{grid-template-columns:1fr}.elm-admin__report-form .button{grid-column:auto}.elm-admin__hero-icon{display:none}}
+/*!
+ * Employee Leave Manager (Pro) - WordPress admin stylesheet
+ * ---------------------------------------------------------------------------
+ * Rewritten from scratch on the same token system as the front-end portal.
+ *
+ * Architecture
+ *   01 Design tokens          05 Data tables & records
+ *   02 Page furniture         06 Request editor & dialogs
+ *   03 Cards & sections       07 Settings & holiday policy
+ *   04 Forms & controls       08 Responsive / motion
+ *
+ * Principles
+ *   - Stay native. WordPress supplies `.wrap`, `.widefat`, `.button` and the
+ *     form-table primitives; this sheet layers structure and rhythm on top
+ *     instead of re-skinning core admin chrome.
+ *   - Everything is scoped under `.elm-admin` so no other admin screen is
+ *     affected.
+ *   - Tokens in section 01 are the single place to re-theme the plugin.
+ */
 
-/* v1.5.7 policy exception indicators. */
-.elm-admin__policy-warning{margin-top:7px;padding:7px 9px;border-left:3px solid #d97706;border-radius:6px;background:#fff3ce;color:#845600;font-size:11px;font-weight:700;line-height:1.45;white-space:normal}
-.elm-admin__policy-warning--pending{border-left-color:#d97706;background:#fff3ce;color:#845600}
-.elm-admin__policy-warning--approved{border-left-color:#059669;background:#e8fbf2;color:#067647}
-.elm-admin__policy-warning--rejected{border-left-color:#dc2626;background:#fff1f0;color:#ad251b}
-.elm-admin__policy-warning--cancelled{border-left-color:#64748b;background:#f2f4f7;color:#475467}
+/* ===========================================================================
+   01. DESIGN TOKENS
+   =========================================================================== */
 
-.elm-admin__cancellation-note{margin-top:7px;padding:8px 10px;border-left:3px solid #64748b;border-radius:6px;background:#f8fafc;color:#475467;font-size:12px;font-weight:700;line-height:1.45}
+.elm-admin {
+	/* Neutrals ------------------------------------------------------------ */
+	--elm-n-0: #ffffff;
+	--elm-n-25: #fcfdff;
+	--elm-n-50: #f7f9fc;
+	--elm-n-100: #eff3f8;
+	--elm-n-200: #e3e9f1;
+	--elm-n-300: #cdd6e3;
+	--elm-n-400: #9daaba;
+	--elm-n-500: #6d7a8c;
+	--elm-n-600: #505b6b;
+	--elm-n-700: #3a4453;
+	--elm-n-900: #151d29;
 
-/* v1.5.19 grouped, numbered Employer and Chief reason history. */
-.elm-admin__reasons-notice{display:grid;gap:10px;margin-top:0;padding:0;border:0;border-radius:0;background:transparent;color:#344054;font-size:12px;font-weight:500;line-height:1.45;white-space:normal;overflow-wrap:anywhere}
-.elm-admin__reasons-group{display:grid;gap:5px}
-.elm-admin__reasons-group+.elm-admin__reasons-group{padding-top:9px;border-top:1px solid #dce3ec}
-.elm-admin__reasons-heading{font-weight:850;color:#152238}
-.elm-admin__reasons-item{display:grid;grid-template-columns:auto minmax(0,1fr);gap:7px;align-items:start;padding:6px 8px;border-left:2px solid #94a3b8;border-radius:5px;background:#f8fafc;color:#344054}
-.elm-admin__reasons-number{font-weight:800;color:inherit}
-.elm-admin__reasons-content{min-width:0}
-.elm-admin__reasons-actor{font-weight:850;color:inherit}
+	/* Brand --------------------------------------------------------------- */
+	--elm-brand-50: #eef2ff;
+	--elm-brand-200: #c7d2fe;
+	--elm-brand-300: #a5b4fc;
+	--elm-brand-400: #818cf8;
+	--elm-brand-500: #4f46e5;
+	--elm-brand-600: #4338ca;
+	--elm-brand-700: #3730a3;
 
-/* v1.5.21 each reason keeps the colour of the event that created it. */
-.elm-admin__reasons-item--pending{border-left-color:#d97706;background:#fff8e7;color:#845600}
-.elm-admin__reasons-item--approved{border-left-color:#059669;background:#e8fbf2;color:#067647}
-.elm-admin__reasons-item--rejected{border-left-color:#dc2626;background:#fff1f0;color:#ad251b}
-.elm-admin__reasons-item--cancelled{border-left-color:#64748b;background:#f2f4f7;color:#475467}
+	/* Semantic ------------------------------------------------------------ */
+	--elm-success-50: #ecfdf3;
+	--elm-success-200: #a7e8c4;
+	--elm-success-500: #12a06a;
+	--elm-success-700: #067647;
+	--elm-warning-50: #fff8e8;
+	--elm-warning-200: #f3d089;
+	--elm-warning-500: #d98c00;
+	--elm-warning-700: #8a5300;
+	--elm-danger-50: #fff2f1;
+	--elm-danger-200: #fbc9c4;
+	--elm-danger-500: #d92d20;
+	--elm-danger-700: #a8231a;
+	--elm-accent-500: #7c3aed;
 
-/* v1.5.27 interactive pending-request editor. */
-body.elm-admin-edit-open{overflow:hidden}
-.elm-admin__edit-overlay[hidden]{display:none!important}.elm-admin__edit-overlay{position:fixed;z-index:100100;inset:0;display:grid;place-items:center;padding:24px;background:rgba(15,23,42,.58);backdrop-filter:blur(2px)}
-.elm-admin__edit-dialog{width:min(1040px,calc(100vw - 32px));max-height:calc(100vh - 40px);overflow:auto;border:1px solid #d8deea;border-radius:18px;background:#fff;box-shadow:0 28px 80px rgba(15,23,42,.3)}
-.elm-admin__edit-form{display:grid;gap:17px;max-width:none;padding:22px}.elm-admin__edit-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding-bottom:14px;border-bottom:1px solid var(--e-line)}.elm-admin__edit-head h2{margin:0;font-size:23px}.elm-admin__edit-head .elm-admin__eyebrow{color:var(--e-brand)!important}.elm-admin__edit-close{display:grid;place-items:center;width:36px;height:36px;padding:0;border:1px solid #d0d5dd;border-radius:50%;background:#fff;color:#475467;font-size:25px;line-height:1;cursor:pointer}.elm-admin__edit-close:hover{border-color:#98a2b3;background:#f8fafc}
-.elm-admin__edit-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.elm-admin__edit-grid label,.elm-admin__edit-reason{display:grid;gap:7px;color:#344054;font-weight:750}.elm-admin__edit-grid input,.elm-admin__edit-grid select,.elm-admin__edit-reason textarea{width:100%;min-height:40px;border:1px solid #cfd5df;border-radius:9px}.elm-admin__edit-grid input[readonly]{background:#f8fafc;color:#475467}
-.elm-admin__edit-calendar-section{display:grid;gap:10px;padding:15px;border:1px solid var(--e-line);border-radius:14px;background:#fbfcff}.elm-admin__edit-calendar-head{display:flex;align-items:center;justify-content:space-between;gap:12px}.elm-admin__edit-calendar-head>div{display:flex;gap:6px}.elm-admin__edit-calendars{display:grid;grid-template-columns:1fr 1fr;gap:18px;min-height:280px}.elm-admin__edit-month h3{margin:0 0 8px;text-align:center;font-size:14px}.elm-admin__edit-calendar{width:100%;border-collapse:separate;border-spacing:3px;table-layout:fixed}.elm-admin__edit-calendar th{padding:3px;color:#667085;font-size:10px;text-align:center}.elm-admin__edit-calendar td{height:36px;padding:0;text-align:center}.elm-admin__edit-day{width:34px;height:34px;padding:0;border:1px solid transparent;border-radius:50%;background:#fff;color:#344054;font-weight:700;cursor:pointer}.elm-admin__edit-day:hover:not(:disabled){border-color:#818cf8;background:#eef2ff}.elm-admin__edit-day.is-selected{border-color:#4f46e5;background:#4f46e5;color:#fff;box-shadow:0 3px 8px rgba(79,70,229,.25)}.elm-admin__edit-day.is-original:not(.is-selected){border-color:#f59e0b}.elm-admin__edit-day.is-nonworking:not(.is-selected){color:#b42318;background:#f8fafc}.elm-admin__edit-day.is-capacity-full:not(.is-selected){color:#98a2b3;text-decoration:line-through}.elm-admin__edit-day:disabled{opacity:.55;cursor:not-allowed}
-.elm-admin__edit-selected{display:flex;flex-wrap:wrap;gap:7px;min-height:34px}.elm-admin__edit-date-chip{padding:5px 9px;border:1px solid #c7d2fe;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:11px;font-weight:750;cursor:pointer}.elm-admin__edit-date-chip:hover{border-color:#ef4444;background:#fff1f0;color:#b42318}.elm-admin__edit-selected-empty{color:#667085;font-size:12px}
-.elm-admin__edit-medical{display:flex;align-items:center;gap:8px;color:#344054;font-weight:700}.elm-admin__edit-medical input{margin:0}.elm-admin__edit-feedback{padding:10px 12px;border-radius:9px;font-weight:700}.elm-admin__edit-feedback--error{border:1px solid #fbc8c4;background:#fff1f0;color:#ad251b}.elm-admin__edit-feedback--success{border:1px solid #abefc6;background:#ecfdf3;color:#067647}.elm-admin__edit-actions{display:flex;justify-content:flex-end;gap:9px;padding-top:3px}
-@media(max-width:760px){.elm-admin__edit-overlay{padding:10px}.elm-admin__edit-dialog{width:100%;max-height:calc(100vh - 20px)}.elm-admin__edit-form{padding:16px}.elm-admin__edit-grid,.elm-admin__edit-calendars{grid-template-columns:1fr}.elm-admin__edit-calendar-section{padding:11px}}
-.elm-admin__edit-medical[hidden]{display:none!important}
+	/* Aliases ------------------------------------------------------------- */
+	--elm-ink: var(--elm-n-900);
+	--elm-ink-soft: var(--elm-n-700);
+	--elm-muted: var(--elm-n-500);
+	--elm-faint: var(--elm-n-400);
+	--elm-line: var(--elm-n-200);
+	--elm-line-strong: var(--elm-n-300);
+	--elm-surface: var(--elm-n-0);
+	--elm-surface-sunken: var(--elm-n-50);
+	--elm-surface-raised: var(--elm-n-25);
 
-/* v1.5.34 permanent employee entitlement workflow. */
-.elm-admin__entitlements{margin:18px 0}.elm-admin__entitlement-form{display:grid;grid-template-columns:minmax(180px,1fr) minmax(150px,.7fr) minmax(150px,.7fr) minmax(260px,1.5fr) auto;gap:14px;align-items:end;margin:18px 0 24px}.elm-admin__entitlement-form label{margin:0}.elm-admin__entitlement-status{font-weight:800;text-transform:capitalize}.elm-admin__entitlement-status--pending{color:#b76b00}.elm-admin__entitlement-status--approved{color:#13805a}.elm-admin__entitlement-status--rejected{color:#c03939}.elm-admin__entitlement-status--cancelled{color:#667085}.elm-admin__entitlement-status div{font-weight:500;text-transform:none;margin-top:6px;line-height:1.4}.elm-admin__entitlements td{vertical-align:top}@media(max-width:1100px){.elm-admin__entitlement-form{grid-template-columns:1fr 1fr}.elm-admin__entitlement-form label:nth-child(4){grid-column:1/-1}}
+	/* Scale --------------------------------------------------------------- */
+	--elm-space-1: 4px;
+	--elm-space-2: 8px;
+	--elm-space-3: 12px;
+	--elm-space-4: 16px;
+	--elm-space-5: 20px;
+	--elm-space-6: 24px;
+	--elm-space-8: 32px;
 
-/* v1.5.38: grouped Settings and compact accessible help tips. */
-.elm-admin__settings-hub{overflow:visible}
-.elm-admin__settings{display:block;max-width:1100px}
-.elm-admin__settings-group{padding:23px 0;border-top:1px solid var(--e-line)}
-.elm-admin__settings-group:first-child{padding-top:0;border-top:0}
-.elm-admin__settings-head{margin-bottom:15px}
-.elm-admin__settings-head .elm-admin__eyebrow{margin:0 0 4px!important;color:var(--e-brand)!important}
-.elm-admin__settings-head h2{margin:0;font-size:18px}
-.elm-admin__settings-grid{display:grid;grid-template-columns:minmax(190px,360px);gap:15px}
-.elm-admin__settings-grid--three{grid-template-columns:repeat(3,minmax(0,1fr))}
-.elm-admin__settings-group>label{display:grid;gap:7px}
-.elm-admin__settings-group fieldset{margin:0 0 17px;padding:0;border:0;border-radius:0}
-.elm-admin__settings-group legend{margin:0 0 10px;padding:0}
-.elm-admin__settings-save{display:flex;justify-content:flex-end;padding-top:20px;border-top:1px solid var(--e-line)}
-.elm-admin .elm-setting-label{display:inline-flex;align-items:center;gap:7px;min-width:0}
-.elm-admin .elm-help-tip{position:relative;display:inline-grid;place-items:center;flex:0 0 17px;width:17px;height:17px;border:1px solid #aeb8c8;border-radius:50%;background:#fff;color:#667085;font-size:11px;font-weight:900;line-height:1;cursor:help;outline:0}
-.elm-admin .elm-help-tip:hover,.elm-admin .elm-help-tip:focus{border-color:var(--e-brand);color:var(--e-brand);box-shadow:0 0 0 3px rgba(79,70,229,.12)}
-.elm-admin .elm-help-tip__text{position:absolute;z-index:100;left:50%;bottom:calc(100% + 9px);width:max-content;max-width:min(280px,calc(100vw - 60px));padding:9px 11px;border-radius:8px;background:#172033;color:#fff;font-size:11px;font-weight:650;line-height:1.45;text-align:left;white-space:normal;box-shadow:0 10px 28px rgba(15,23,42,.24);opacity:0;visibility:hidden;pointer-events:none;transform:translate(-50%,5px);transition:opacity .14s ease,transform .14s ease,visibility .14s ease}
-.elm-admin .elm-help-tip__text::after{content:"";position:absolute;left:50%;top:100%;margin-left:-5px;border:5px solid transparent;border-top-color:#172033}
-.elm-admin .elm-help-tip:hover .elm-help-tip__text,.elm-admin .elm-help-tip:focus .elm-help-tip__text{opacity:1;visibility:visible;transform:translate(-50%,0)}
-@media(max-width:900px){.elm-admin__settings-grid--three{grid-template-columns:1fr}.elm-admin__settings-save{justify-content:flex-start}}
+	--elm-radius-xs: 6px;
+	--elm-radius-sm: 8px;
+	--elm-radius-md: 10px;
+	--elm-radius-lg: 14px;
+	--elm-radius-xl: 18px;
+	--elm-radius-pill: 999px;
 
-/* v1.5.43: holiday CSV/text import and named holiday marker. */
-.elm-admin__holiday-import{display:grid;grid-template-columns:minmax(0,1fr) minmax(200px,300px);gap:16px;align-items:end}
-.elm-admin__holiday-import>label{display:grid;gap:7px}
-.elm-admin__holiday-import input[type="file"]{min-height:42px;padding:7px 9px;border:1px solid var(--e-line);border-radius:9px;background:#fff}
-.elm-admin__edit-day{position:relative}
-.elm-admin__holiday-help{position:absolute;left:-2px;top:-4px;z-index:5;display:grid;place-items:center;width:14px;height:14px;border-radius:50%;background:#7c3aed;color:#fff;font-size:9px;font-weight:900;line-height:1;box-shadow:0 0 0 2px #fff;cursor:help}
-.elm-admin__holiday-help::after{content:attr(data-holiday-name);position:absolute;z-index:100;left:0;bottom:calc(100% + 8px);width:max-content;max-width:min(250px,calc(100vw - 46px));padding:8px 10px;border-radius:8px;background:#172033;color:#fff;font-size:11px;font-weight:700;line-height:1.4;text-align:left;white-space:normal;box-shadow:0 10px 26px rgba(15,23,42,.24);opacity:0;visibility:hidden;pointer-events:none;transform:translateY(4px);transition:opacity .14s ease,transform .14s ease,visibility .14s ease}
-.elm-admin__holiday-help:hover::after,.elm-admin__edit-day:focus-visible .elm-admin__holiday-help::after{opacity:1;visibility:visible;transform:translateY(0)}
-@media(max-width:760px){.elm-admin__holiday-import{grid-template-columns:1fr}}
+	--elm-shadow-xs: 0 1px 2px rgba(17, 24, 39, 0.05);
+	--elm-shadow-sm: 0 1px 3px rgba(17, 24, 39, 0.06), 0 1px 2px rgba(17, 24, 39, 0.04);
+	--elm-shadow-md: 0 6px 18px rgba(17, 24, 39, 0.06), 0 2px 5px rgba(17, 24, 39, 0.04);
+	--elm-shadow-overlay: 0 32px 80px rgba(10, 16, 28, 0.32);
 
-/* v1.5.44: keep holiday-name tooltips above backend calendar dates. */
-.elm-admin__edit-day:hover,.elm-admin__edit-day:focus-visible{z-index:310}
-.elm-admin__holiday-help{z-index:320}
-.elm-admin__holiday-help::after{z-index:330;bottom:calc(100% + 10px)}
+	--elm-text-2xs: 11px;
+	--elm-text-xs: 12px;
+	--elm-text-sm: 13px;
+	--elm-text-base: 14px;
+	--elm-leading-snug: 1.4;
+	--elm-leading-normal: 1.55;
 
-.elm-admin__delete-dialog{width:min(560px,calc(100vw - 32px))}.elm-admin__delete-summary{margin:0;padding:10px 12px;border-left:3px solid #dc2626;background:#fef2f2;font-weight:700}.elm-admin__delete-dialog input[data-admin-delete-confirm]{max-width:260px;text-transform:uppercase;letter-spacing:.12em;font-weight:700}
+	--elm-ease: cubic-bezier(0.2, 0, 0.1, 1);
+	--elm-duration: 160ms;
+	--elm-focus-ring: 0 0 0 3px rgba(79, 70, 229, 0.28);
 
+	--elm-control-height: 40px;
 
-/* v1.5.62: administrator-controlled frontend access mode. */
-.elm-admin__inline-check{display:flex;align-items:flex-start;gap:9px;min-height:42px;padding:10px 12px;border:1px solid var(--e-line);border-radius:9px;background:#f8fafc;color:#344054;font-weight:700;line-height:1.45}
-.elm-admin__inline-check input{flex:0 0 auto;margin:2px 0 0}
+	/* Page ---------------------------------------------------------------- */
+	max-width: 1440px;
+	color: var(--elm-ink);
+}
 
+.elm-admin *,
+.elm-admin *::before,
+.elm-admin *::after {
+	box-sizing: border-box;
+}
 
-/* v1.5.65: employee registry and reports on the PDF Reports page. */
-.elm-admin__employees-reports{margin-top:18px}
-.elm-admin__employees-controls{display:flex;align-items:flex-end;justify-content:flex-end;gap:10px;margin:18px 0 14px;padding:14px;border:1px solid var(--e-line);border-radius:12px;background:#f8fafc}
-.elm-admin__employees-controls label{display:grid;gap:6px;min-width:210px;color:#344054;font-weight:750}
-.elm-admin__employees-controls input{min-height:39px;border-color:#cfd5df;border-radius:9px}
-.elm-admin__employees-table td{vertical-align:middle}
-.elm-admin__employees-table td:nth-child(2),.elm-admin__employees-table td:nth-child(3){min-width:210px}
-.elm-admin__employees-table input.regular-text{width:100%;max-width:none}
-.elm-admin__employees-table small{color:#667085;line-height:1.45}
-.elm-admin__employees-table .elm-admin__actions{min-width:190px}
-@media(max-width:782px){.elm-admin__employees-controls{align-items:stretch;flex-direction:column}.elm-admin__employees-controls label{min-width:0}.elm-admin__employees-table td:nth-child(2),.elm-admin__employees-table td:nth-child(3){min-width:170px}}
+.elm-admin [hidden] {
+	display: none !important;
+}
 
+/* ===========================================================================
+   02. PAGE FURNITURE
+   =========================================================================== */
 
-/* v1.5.70: localized, accessible file controls. */
-.elm-admin .elm-file-field{display:grid;gap:7px}
-.elm-admin .elm-file-picker{position:relative;display:flex;align-items:center;gap:10px;min-height:42px;border:1px solid var(--e-line);border-radius:9px;background:#fff;padding:6px 9px;overflow:hidden}
-.elm-admin .elm-file-picker input[type="file"]{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
-.elm-admin .elm-file-button{flex:0 0 auto;border:1px solid var(--e-line);border-radius:7px;background:#f6f7f7;padding:6px 9px;font-size:12px;font-weight:700;color:#1d2327}
-.elm-admin .elm-file-name{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#646970;font-size:12px}
-.elm-admin .elm-file-picker:focus-within{border-color:#2271b1;box-shadow:0 0 0 1px #2271b1}
+/* 2.1 Hero ----------------------------------------------------------------- */
 
-/* v1.5.77: unified loading/empty/info/error states for admin data tables. */
-.elm-admin .elm-table-state:hover{background:transparent!important}
-.elm-admin .elm-table-state__cell{padding:18px 14px!important;text-align:center!important;color:#646970!important;font-size:12px!important;font-weight:600!important;line-height:1.5!important;white-space:normal!important}
-.elm-admin .elm-table-state--loading .elm-table-state__cell{color:#7a7f87!important;font-weight:500!important}
-.elm-admin .elm-table-state--info .elm-table-state__cell{color:#50575e!important}
-.elm-admin .elm-table-state--error .elm-table-state__cell{color:#b32d2e!important;background:#fff8f8!important}
+.elm-admin__hero {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--elm-space-6);
+	margin: var(--elm-space-5) 0;
+	padding: 26px 30px;
+	border: 1px solid var(--elm-line);
+	border-radius: var(--elm-radius-xl);
+	background: linear-gradient(120deg, var(--elm-brand-50), var(--elm-surface) 62%);
+	box-shadow: var(--elm-shadow-sm);
+}
 
-/* v1.5.82: recurring holidays and date pickers for the two movable Bajram dates. */
-.elm-admin__holiday-policy{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:16px;align-items:start}
-.elm-admin__holiday-fixed,.elm-admin__holiday-movable{padding:16px;border:1px solid var(--e-line);border-radius:14px;background:#fbfcfe}
-.elm-admin__holiday-movable{background:#fff}
-.elm-admin__holiday-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:13px}
-.elm-admin__holiday-head h3{margin:0;font-size:14px;color:#1d2939}
-.elm-admin__holiday-head p{margin:4px 0 0;color:#667085;font-size:12px;line-height:1.5}
-.elm-admin__holiday-badge{flex:0 0 auto;padding:5px 8px;border-radius:999px;background:#ecfdf3;color:#027a48;font-size:10px;font-weight:800}
-.elm-admin__fixed-holiday-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
-.elm-admin__fixed-holiday{display:flex;align-items:center;gap:9px;min-width:0;padding:8px 9px;border:1px solid #eaecf0;border-radius:9px;background:#fff}
-.elm-admin__fixed-holiday time{flex:0 0 auto;min-width:43px;color:#475467;font-size:11px;font-weight:800;font-variant-numeric:tabular-nums}
-.elm-admin__fixed-holiday span{min-width:0;color:#344054;font-size:12px;font-weight:650;line-height:1.35}
-.elm-admin__movable-holiday-grid{display:grid;gap:10px}
-.elm-admin__movable-holiday-grid label{display:grid;gap:6px;color:#344054;font-size:12px;font-weight:700}
-.elm-admin__movable-holiday-grid input[type="date"]{width:100%;min-height:42px;padding:7px 9px;border:1px solid var(--e-line);border-radius:9px;background:#fff;color:#101828;font-weight:700}
-@media(max-width:900px){.elm-admin__holiday-policy{grid-template-columns:1fr}}
-@media(max-width:560px){.elm-admin__fixed-holiday-grid{grid-template-columns:1fr}}
+.elm-admin__hero h1 {
+	margin: 0;
+	padding: 0;
+	color: var(--elm-ink);
+	font-size: 26px;
+	font-weight: 700;
+	letter-spacing: -0.02em;
+	line-height: 1.2;
+}
 
-/* v1.6.0: Pro edition polish - hero badge and animated loading state. */
-.elm-admin .elm-pro-badge{display:inline-flex;align-items:center;gap:5px;margin-left:10px;padding:4px 10px 4px 8px;border-radius:999px;background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#4a2c00;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;vertical-align:middle;box-shadow:0 4px 10px rgba(245,158,11,.35)}
-.elm-admin .elm-pro-badge::before{content:"\2726";font-size:10px}
-.elm-admin .elm-table-state--loading .elm-table-state__cell{position:relative;padding-left:36px!important}
-.elm-admin .elm-table-state--loading .elm-table-state__cell::before{content:"";position:absolute;left:16px;top:50%;width:14px;height:14px;margin-top:-7px;border-radius:50%;border:2px solid currentColor;border-top-color:transparent;opacity:.5;animation:elm-spin .7s linear infinite}
-@keyframes elm-spin{to{transform:rotate(360deg)}}
-@media(prefers-reduced-motion:reduce){.elm-admin .elm-table-state--loading .elm-table-state__cell::before{animation:none}}
+.elm-admin__hero p:not(.elm-admin__eyebrow) {
+	max-width: 760px;
+	margin: var(--elm-space-2) 0 0;
+	color: var(--elm-muted);
+	font-size: var(--elm-text-base);
+	line-height: var(--elm-leading-normal);
+}
+
+.elm-admin__eyebrow {
+	margin: 0 0 var(--elm-space-1);
+	color: var(--elm-brand-600);
+	font-size: var(--elm-text-2xs);
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	line-height: 1.3;
+	text-transform: uppercase;
+}
+
+.elm-admin__hero-icon {
+	display: grid;
+	flex: 0 0 auto;
+	place-items: center;
+	width: 58px;
+	height: 58px;
+	border-radius: var(--elm-radius-lg);
+	background: var(--elm-surface);
+	color: var(--elm-brand-600);
+	box-shadow: var(--elm-shadow-sm);
+}
+
+.elm-admin__hero-icon .dashicons {
+	width: 28px;
+	height: 28px;
+	font-size: 28px;
+	line-height: 28px;
+}
+
+.elm-admin .elm-pro-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--elm-space-1);
+	margin-left: var(--elm-space-2);
+	padding: 3px 10px;
+	border-radius: var(--elm-radius-pill);
+	background: linear-gradient(135deg, #fcc949, #eb9b06);
+	color: #4a2c00;
+	font-size: var(--elm-text-2xs);
+	font-weight: 800;
+	letter-spacing: 0.04em;
+	line-height: 1.5;
+	text-transform: uppercase;
+	vertical-align: middle;
+}
+
+.elm-admin .elm-pro-badge::before {
+	content: "\2726";
+	font-size: 9px;
+}
+
+/* 2.2 Audit chip ----------------------------------------------------------- */
+
+.elm-admin__audit {
+	flex: 0 0 auto;
+	padding: 10px 14px;
+	border: 1px solid var(--elm-line-strong);
+	border-radius: var(--elm-radius-pill);
+	background: var(--elm-surface);
+	color: var(--elm-ink-soft);
+	font-size: var(--elm-text-xs);
+	font-weight: 600;
+}
+
+.elm-admin__audit.is-valid {
+	border-color: var(--elm-success-200);
+	background: var(--elm-success-50);
+	color: var(--elm-success-700);
+}
+
+.elm-admin__audit.is-invalid {
+	border-color: var(--elm-danger-200);
+	background: var(--elm-danger-50);
+	color: var(--elm-danger-700);
+}
+
+/* 2.3 Plugin notices ------------------------------------------------------- */
+
+.elm-admin__notice {
+	margin: 0 0 var(--elm-space-4);
+	padding: 12px 15px;
+	border: 1px solid var(--elm-line);
+	border-radius: var(--elm-radius-md);
+	background: var(--elm-surface-sunken);
+	color: var(--elm-ink-soft);
+	font-size: var(--elm-text-sm);
+	font-weight: 600;
+	line-height: var(--elm-leading-snug);
+}
+
+.elm-admin__notice--success {
+	border-color: var(--elm-success-200);
+	background: var(--elm-success-50);
+	color: var(--elm-success-700);
+}
+
+.elm-admin__notice--error {
+	border-color: var(--elm-danger-200);
+	background: var(--elm-danger-50);
+	color: var(--elm-danger-700);
+}
+
+/* ===========================================================================
+   03. CARDS & SECTIONS
+   =========================================================================== */
+
+.elm-admin__card {
+	margin: 0 0 var(--elm-space-5);
+	padding: var(--elm-space-6);
+	border: 1px solid var(--elm-line);
+	border-radius: var(--elm-radius-lg);
+	background: var(--elm-surface);
+	box-shadow: var(--elm-shadow-sm);
+}
+
+.elm-admin__card > h2:first-child {
+	margin-top: 0;
+}
+
+.elm-admin__grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: var(--elm-space-5);
+	align-items: start;
+}
+
+.elm-admin__grid--reports {
+	grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.6fr);
+}
+
+.elm-admin__grid > .elm-admin__card {
+	margin: 0;
+}
+
+.elm-admin__section-heading {
+	display: flex;
+	align-items: flex-start;
+	gap: var(--elm-space-3);
+	margin: 0 0 var(--elm-space-4);
+	padding-bottom: var(--elm-space-4);
+	border-bottom: 1px solid var(--elm-line);
+}
+
+.elm-admin__section-heading > .dashicons {
+	flex: 0 0 auto;
+	width: 22px;
+	height: 22px;
+	color: var(--elm-brand-500);
+	font-size: 22px;
+	line-height: 22px;
+}
+
+.elm-admin__section-heading h2 {
+	margin: 0;
+	padding: 0;
+	color: var(--elm-ink);
+	font-size: 17px;
+	font-weight: 700;
+	line-height: 1.3;
+}
+
+.elm-admin__section-heading p {
+	margin: var(--elm-space-1) 0 0;
+	color: var(--elm-muted);
+	font-size: var(--elm-text-sm);
+	line-height: var(--elm-leading-snug);
+}
+
+.elm-admin__feature-list {
+	margin: 0;
+	padding-left: var(--elm-space-5);
+	color: var(--elm-ink-soft);
+	font-size: var(--elm-text-sm);
+	line-height: var(--elm-leading-normal);
+}
+
+.elm-admin__feature-list li + li {
+	margin-top: var(--elm-space-1);
+}
+
+.elm-admin__dependency p {
+	margin: 0;
+	color: var(--elm-ink-soft);
+	font-size: var(--elm-text-sm);
+	line-height: var(--elm-leading-normal);
+}
+
+/* ===========================================================================
+   04. FORMS & CONTROLS
+   =========================================================================== */
+
+.elm-admin__form {
+	display: grid;
+	gap: var(--elm-space-4);
+	max-width: 720px;
+}
+
+/*
+ * Filter and report bars mix flexible fields with content-width submit
+ * controls, so they wrap as a flex row rather than stretching buttons across
+ * a grid track.
+ */
+.elm-admin__filters,
+.elm-admin__report-form {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	gap: var(--elm-space-4);
+	max-width: none;
+}
+
+.elm-admin__filters > label,
+.elm-admin__report-form > label {
+	flex: 1 1 190px;
+	min-width: 0;
+}
+
+.elm-admin__filters > :where(.button, button, a),
+.elm-admin__report-form > :where(.button, button, a) {
+	flex: 0 0 auto;
+}
+
+.elm-admin__filters {
+	margin: 0 0 var(--elm-space-5);
+	padding: var(--elm-space-4);
+	border: 1px solid var(--elm-line);
+	border-radius: var(--elm-radius-md);
+	background: var(--elm-surface-sunken);
+}
+
+.elm-admin__filters .button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--elm-space-1);
+	min-height: var(--elm-control-height);
+}
+
+.elm-admin__filters .button .dashicons {
+	width: 17px;
+	height: 17px;
+	margin: 0;
+	font-size: 17px;
+	line-height: 17px;
+}
+
+.elm-admin__entitlement-form {
+	display: grid;
+	grid-template-columns:
+		minmax(180px, 1fr) minmax(150px, 0.7fr) minmax(150px, 0.7fr)
+		minmax(260px, 1.5fr) auto;
+	gap: var(--elm-space-4);
+	align-items: end;
+	max-width: none;
+}
+
+.elm-admin :where(.elm-admin__form, .elm-admin__filters, .elm-admin__settings-grid) label {
+	display: grid;
+	gap: var(--elm-space-2);
+	color: var(--elm-ink-soft);
+	font-size: var(--elm-text-xs);
+	font-weight: 600;
+}
+
+.elm-admin :where(.elm-admin__form, .elm-admin__filters) :where(input, select) {
+	width: 100%;
+	max-width: none;
+}
+
+/* 4.1 Inline checkbox row -------------------------------------------------- */
+
+.elm-admin .elm-admin__inline-check {
+	display: flex;
+	align-items: flex-start;
+	gap: var(--elm-space-2);
+	min-height: 42px;
+	padding: 10px 12px;
+	border: 1px solid var(--elm-line);
+	border-radius: var(--elm-radius-sm);
+	background: var(--elm-surface-sunken);
+	color: var(--elm-ink-soft);
+	font-size: var(--elm-text-sm);
+	font-weight: 600;
+	line-height: var(--elm-leading-snug);
+}
+
+.elm-admin .elm-admin__inline-check input {
+	flex: 0 0 auto;
+	margin: 2px 0 0;
+}
+
+/* 4.2 Supervisor assignment picker ----------------------------------------- */
+
+.elm-admin__checks {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: var(--elm-space-2);
+	max-height: 520px;
+	margin: var(--elm-space-5) 0;
+	padding: var(--elm-space-3);
+	border: 1px solid var(--elm-line);
+	border-radius: var(--elm-radius-sm);
+	overflow: auto;
+	overscroll-behavior: contain;
+	background: var(--elm-surface-sunken);
+}
+
+.elm-admin__checks label {
+	display: flex;
+	align-items: flex-start;
+	gap: var(--elm-space-2);
+	padding: var(--elm-space-2) 10px;
+	border: 1px solid var(--elm-line);
+	border-radius: var(--elm-radius-xs);
+	background: var(--elm-surface);
+	line-height: var(--elm-leading-snug);
+	transition: border-color var(--elm-duration) var(--elm-ease),
+		background-color var(--elm-duration) var(--elm-ease);
+}
+
+.elm-admin__checks label:hover {
+	border-color: var(--elm-brand-300);
+	background: var(--elm-brand-50);
+}
+
+.elm-admin__checks label small {
+	color: var(--elm-muted);
+}
+
+.elm-admin__checks p {
+	margin: 0;
+	color: var(--elm-muted);
+}
+
+/* 4.3 Help tips ------------------------------------------------------------ */
+
+.elm-admin .elm-setting-label {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--elm-space-2);
+	min-width: 0;
+}
+
+.elm-admin .elm-help-tip {
+	position: relative;
+	display: inline-grid;
+	flex: 0 0 17px;
+	place-items: center;
+	width: 17px;
+	height: 17px;
+	border: 1px solid var(--elm-faint);
+	border-radius: 50%;
+	background: var(--elm-surface);
+	color: var(--elm-muted);
+	font-size: 10px;
+	font-weight: 700;
+	line-height: 1;
+	cursor: help;
+	transition: border-color var(--elm-duration) var(--elm-ease),
+		color var(--elm-duration) var(--elm-ease),
+		box-shadow var(--elm-duration) var(--elm-ease);
+}
+
+.elm-admin .elm-help-tip:hover,
+.elm-admin .elm-help-tip:focus,
+.elm-admin .elm-help-tip:focus-visible {
+	border-color: var(--elm-brand-500);
+	color: var(--elm-brand-600);
+	box-shadow: var(--elm-focus-ring);
+}
+
+.elm-admin .elm-help-tip__text {
+	position: absolute;
+	z-index: 100;
+	bottom: calc(100% + 9px);
+	left: 50%;
+	width: max-content;
+	max-width: min(280px, calc(100vw - 60px));
+	padding: 9px 11px;
+	border-radius: var(--elm-radius-sm);
+	background: var(--elm-n-900);
+	color: var(--elm-n-0);
+	font-size: var(--elm-text-2xs);
+	font-weight: 400;
+	line-height: var(--elm-leading-snug);
+	text-align: left;
+	white-space: normal;
+	opacity: 0;
+	visibility: hidden;
+	transform: translate(-50%, 4px);
+	transition: opacity var(--elm-duration) var(--elm-ease),
+		transform var(--elm-duration) var(--elm-ease),
+		visibility var(--elm-duration) var(--elm-ease);
+	box-shadow: var(--elm-shadow-md);
+	pointer-events: none;
+}
+
+.elm-admin .elm-help-tip__text::after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border: 5px solid transparent;
+	border-top-color: var(--elm-n-900);
+}
+
+.elm-admin .elm-help-tip:hover .elm-help-tip__text,
+.elm-admin .elm-help-tip:focus .elm-help-tip__text,
+.elm-admin .elm-help-tip:focus-visible .elm-help-tip__text {
+	opacity: 1;
+	visibility: visible;
+	transform: translate(-50%, 0);
+}
+
+/* ===========================================================================
+   05. DATA TABLES & RECORDS
+   =========================================================================== */
+
+.elm-admin__table-wrap {
+	overflow-x: auto;
+	overscroll-behavior-x: contain;
+	border-radius: var(--elm-radius-sm);
+}
+
+.elm-admin__table {
+	min-width: 980px;
+}
+
+.elm-admin :where(.widefat) :where(th, td) {
+	vertical-align: middle;
+}
+
+.elm-admin__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--elm-space-1);
+	min-width: 190px;
+}
+
+/* 5.1 Status chips --------------------------------------------------------- */
+
+.elm-admin__status,
+.elm-admin__entitlement-status {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--elm-space-1);
+	padding: 3px 10px;
+	border: 1px solid transparent;
+	border-radius: var(--elm-radius-pill);
+	font-size: var(--elm-text-2xs);
+	font-weight: 700;
+	line-height: 1.5;
+	white-space: nowrap;
+}
+
+.elm-admin__status::before,
+.elm-admin__entitlement-status::before {
+	content: "";
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: currentColor;
+}
+
+.elm-admin__status--pending,
+.elm-admin__entitlement-status--pending {
+	border-color: var(--elm-warning-200);
+	background: var(--elm-warning-50);
+	color: var(--elm-warning-700);
+}
+
+.elm-admin__status--approved,
+.elm-admin__entitlement-status--approved {
+	border-color: var(--elm-success-200);
+	background: var(--elm-success-50);
+	color: var(--elm-success-700);
+}
+
+.elm-admin__status--rejected,
+.elm-admin__entitlement-status--rejected {
+	border-color: var(--elm-danger-200);
+	background: var(--elm-danger-50);
+	color: var(--elm-danger-700);
+}
+
+.elm-admin__status--cancelled,
+.elm-admin__entitlement-status--cancelled {
+	border-color: var(--elm-line-strong);
+	background: var(--elm-n-100);
+	color: var(--elm-n-600);
+}
+
+/* 5.2 Numbered reason history ---------------------------------------------- */
+
+.elm-admin__reasons-notice {
+	display: grid;
+	gap: var(--elm-space-2);
+	color: var(--elm-ink-soft);
+	font-size: var(--elm-text-xs);
+	font-weight: 400;
+	line-height: var(--elm-leading-snug);
+	overflow-wrap: anywhere;
+	white-space: normal;
+}
+
+.elm-admin__reasons-item {
+	display: grid;
+	grid-template-columns: auto minmax(0, 1fr);
+	gap: var(--elm-space-2);
+	align-items: start;
+	padding: 6px 9px;
+	border-left: 2px solid var(--elm-faint);
+	border-radius: var(--elm-radius-xs);
+	background: var(--elm-surface-sunken);
+	color: var(--elm-ink-soft);
+}
+
+.elm-admin__reasons-number,
+.elm-admin__reasons-actor {
+	font-weight: 700;
+	color: inherit;
+}
+
+.elm-admin__reasons-content {
+	min-width: 0;
+}
+
+.elm-admin__reasons-item--pending {
+	border-left-color: var(--elm-warning-500);
+	background: var(--elm-warning-50);
+	color: var(--elm-warning-700);
+}
+
+.elm-admin__reasons-item--approved {
+	border-left-color: var(--elm-success-500);
+	background: var(--elm-success-50);
+	color: var(--elm-success-700);
+}
+
+.elm-admin__reasons-item--rejected {
+	border-left-color: var(--elm-danger-500);
+	background: var(--elm-danger-50);
+	color: var(--elm-danger-700);
+}
+
+.elm-admin__reasons-item--cancelled {
+	border-left-color: var(--elm-n-500);
+	background: var(--elm-n-100);
+	color: var(--elm-n-600);
+}
+
+/* 5.3 Loading / empty / error rows ----------------------------------------- */
+
+.elm-admin .elm-table-state:hover {
+	background: transparent;
+}
+
+.elm-admin .elm-table-state__cell {
+	padding: 20px 14px;
+	color: var(--elm-muted);
+	font-size: var(--elm-text-xs);
+	font-weight: 500;
+	line-height: var(--elm-leading-normal);
+	text-align: center;
+}
+
+.elm-admin .elm-table-state--loading .elm-table-state__cell {
+	position: relative;
+	padding-left: 38px;
+	color: var(--elm-faint);
+}
+
+.elm-admin .elm-table-state--loading .elm-table-state__cell::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 16px;
+	width: 14px;
+	height: 14px;
+	margin-top: -7px;
+	border: 2px solid currentColor;
+	border-top-color: transparent;
+	border-radius: 50%;
+	animation: elm-spin 0.75s linear infinite;
+}
+
+.elm-admin .elm-table-state--error .elm-table-state__cell {
+	background: var(--elm-danger-50);
+	color: var(--elm-danger-700);
+}
+
+@keyframes elm-spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/* 5.4 Employee registry ---------------------------------------------------- */
+
+.elm-admin__employees-reports {
+	margin-top: var(--elm-space-5);
+}
+
+.elm-admin__employees-controls {
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-end;
+	gap: var(--elm-space-3);
+	margin: var(--elm-space-5) 0 var(--elm-space-4);
+	padding: var(--elm-space-4);
+	border: 1px solid var(--elm-line);
+	border-radius: var(--elm-radius-md);
+	background: var(--elm-surface-sunken);
+}
+
+.elm-admin__employees-controls label {
+	display: grid;
+	gap: var(--elm-space-2);
+	min-width: 210px;
+	color: var(--elm-ink-soft);
+	font-size: var(--elm-text-xs);
+	font-weight: 600;
+}
+
+.elm-admin__employees-table :where(td:nth-child(2), td:nth-child(3)) {
+	min-width: 210px;
+}
+
+.elm-admin__employees-table input.regular-text {
+	width: 100%;
+	max-width: none;
+}
+
+.elm-admin__employees-table small {
+	color: var(--elm-muted);
+	line-height: var(--elm-leading-snug);
+}
+
+.elm-admin__entitlements {
+	margin: var(--elm-space-5) 0;
+}
+
+/* ===========================================================================
+   06. REQUEST EDITOR & DIALOGS
+   =========================================================================== */
+
+.elm-admin__edit-overlay {
+	position: fixed;
+	z-index: 100100;
+	inset: 0;
+	display: grid;
+	place-items: center;
+	padding: var(--elm-space-6);
+	background: rgba(15, 23, 42, 0.58);
+	-webkit-backdrop-filter: blur(3px);
+	backdrop-filter: blur(3px);
+}
+
+.elm-admin__edit-dialog {
+	width: min(1040px, calc(100vw - 32px));
+	max-height: calc(100vh - 40px);
+	overflow: auto;
+	overscroll-behavior: contain;
+	border: 1px solid var(--elm-line);
+	border-radius: var(--elm-radius-xl);
+	background: var(--elm-surface);
+	box-shadow: var(--elm-shadow-overlay);
+}
+
+.elm-admin__delete-dialog {
+	width: min(560px, calc(100vw - 32px));
+}
+
+.elm-admin__edit-form {
+	display: grid;
+	gap: var(--elm-space-4);
+	max-width: none;
+	padding: var(--elm-space-6);
+}
+
+.elm-admin__edit-head {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: var(--elm-space-4);
+	padding-bottom: var(--elm-space-3);
+	border-bottom: 1px solid var(--elm-line);
+}
+
+.elm-admin__edit-head h2 {
+	margin: 0;
+	padding: 0;
+	color: var(--elm-ink);
+	font-size: 19px;
+	font-weight: 700;
+	line-height: 1.25;
+}
+
+.elm-admin__edit-close {
+	display: grid;
+	flex: 0 0 auto;
+	place-items: center;
+	width: 36px;
+	height: 36px;
+	border: 1px solid var(--elm-line-strong);
+	border-radius: var(--elm-radius-sm);
+	background: var(--elm-surface);
+	color: var(--elm-muted);
+	font-size: 22px;
+	line-height: 1;
+	cursor: pointer;
+	transition: background-color var(--elm-duration) var(--elm-ease),
+		color var(--elm-duration) var(--elm-ease);
+}
+
+.elm-admin__edit-close:hover {
+	background: var(--elm-n-100);
+	color: var(--elm-ink);
+}
+
+.elm-admin__edit-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: var(--elm-space-4);
+}
+
+.elm-admin__edit-grid label,
+.elm-admin__edit-reason {
+	display: grid;
+	gap: var(--elm-space-2);
+	color: var(--elm-ink-soft);
+	font-size: var(--elm-text-xs);
+	font-weight: 600;
+}
+
+.elm-admin__edit-grid :where(input, select),
+.elm-admin__edit-reason textarea {
+	width: 100%;
+	max-width: none;
+}
+
+.elm-admin__edit-actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: var(--elm-space-2);
+	padding-top: var(--elm-space-3);
+	border-top: 1px solid var(--elm-line);
+}
+
+.elm-admin .elm-admin__edit-medical {
+	display: flex;
+	align-items: center;
+	gap: var(--elm-space-2);
+	color: var(--elm-ink-soft);
+	font-size: var(--elm-text-sm);
+	font-weight: 600;
+}
+
+.elm-admin .elm-admin__edit-medical input {
+	margin: 0;
+}
+
+.elm-admin__edit-feedback {
+	padding: 11px 13px;
+	border: 1px solid var(--elm-line);
+	border-radius: var(--elm-radius-sm);
+	background: var(--elm-surface-sunken);
+	color: var(--elm-ink-soft);
+	font-size: var(--elm-text-xs);
+	font-weight: 600;
+}
+
+.elm-admin__edit-feedback--success {
+	border-color: var(--elm-success-200);
+	background: var(--elm-success-50);
+	color: var(--elm-success-700);
+}
+
+.elm-admin__edit-feedback--error {
+	border-color: var(--elm-danger-200);
+	background: var(--elm-danger-50);
+	color: var(--elm-danger-700);
+}
+
+.elm-admin__delete-summary {
+	margin: 0;
+	padding: 10px 13px;
+	border-left: 3px solid var(--elm-danger-500);
+	border-radius: var(--elm-radius-xs);
+	background: var(--elm-danger-50);
+	color: var(--elm-danger-700);
+	font-weight: 600;
+}
+
+/* 6.1 Date picker inside the editor ---------------------------------------- */
+
+.elm-admin__edit-calendar-section {
+	display: grid;
+	gap: var(--elm-space-3);
+	padding: var(--elm-space-4);
+	border: 1px solid var(--elm-line);
+	border-radius: var(--elm-radius-lg);
+	background: var(--elm-surface-raised);
+}
+
+.elm-admin__edit-calendar-head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--elm-space-3);
+}
+
+.elm-admin__edit-calendars {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: var(--elm-space-5);
+}
+
+.elm-admin__edit-month {
+	min-width: 0;
+}
+
+.elm-admin__edit-month h3 {
+	margin: 0 0 var(--elm-space-2);
+	color: var(--elm-ink-soft);
+	font-size: var(--elm-text-sm);
+	text-align: center;
+}
+
+.elm-admin__edit-calendar {
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 3px;
+	font-size: var(--elm-text-xs);
+}
+
+.elm-admin__edit-calendar th {
+	padding: 5px 2px;
+	color: var(--elm-muted);
+	font-size: var(--elm-text-2xs);
+	font-weight: 600;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.elm-admin__edit-calendar td {
+	height: 36px;
+	padding: 0;
+	text-align: center;
+}
+
+.elm-admin__edit-day {
+	position: relative;
+	display: inline-grid;
+	place-items: center;
+	width: 32px;
+	height: 32px;
+	border: 1px solid transparent;
+	border-radius: 50%;
+	background: var(--elm-surface);
+	color: var(--elm-ink-soft);
+	font: inherit;
+	font-size: var(--elm-text-xs);
+	font-weight: 600;
+	cursor: pointer;
+	transition: background-color var(--elm-duration) var(--elm-ease),
+		border-color var(--elm-duration) var(--elm-ease),
+		color var(--elm-duration) var(--elm-ease);
+}
+
+.elm-admin__edit-day:hover:not(:disabled) {
+	border-color: var(--elm-brand-300);
+	background: var(--elm-brand-50);
+	color: var(--elm-brand-700);
+}
+
+.elm-admin__edit-day.is-nonworking {
+	background: var(--elm-surface-sunken);
+	color: var(--elm-faint);
+}
+
+.elm-admin__edit-day.is-capacity-full {
+	background: var(--elm-surface-sunken);
+	color: var(--elm-faint);
+	text-decoration: line-through;
+}
+
+.elm-admin__edit-day.is-original {
+	box-shadow: inset 0 0 0 1px var(--elm-brand-400);
+}
+
+.elm-admin__edit-day.is-selected {
+	border-color: var(--elm-brand-500);
+	background: var(--elm-brand-500);
+	color: var(--elm-n-0);
+	text-decoration: none;
+	box-shadow: 0 4px 10px rgba(79, 70, 229, 0.26);
+}
+
+.elm-admin__edit-day.is-selected.is-original {
+	box-shadow: inset 0 0 0 1px var(--elm-n-0), 0 4px 10px rgba(79, 70, 229, 0.26);
+}
+
+.elm-admin__edit-day:disabled {
+	opacity: 0.55;
+	cursor: not-allowed;
+}
+
+.elm-admin__edit-selected {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--elm-space-2);
+	min-height: 36px;
+}
+
+.elm-admin__edit-date-chip {
+	padding: 5px 10px;
+	border: 1px solid var(--elm-brand-200);
+	border-radius: var(--elm-radius-pill);
+	background: var(--elm-brand-50);
+	color: var(--elm-brand-700);
+	font: inherit;
+	font-size: var(--elm-text-2xs);
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.elm-admin__edit-selected-empty {
+	color: var(--elm-muted);
+	font-size: var(--elm-text-xs);
+}
+
+/* 6.2 Holiday marker & tooltip --------------------------------------------- */
+
+.elm-admin__holiday-help {
+	position: absolute;
+	z-index: 320;
+	top: -4px;
+	left: -2px;
+	display: grid;
+	place-items: center;
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	background: var(--elm-accent-500);
+	color: var(--elm-n-0);
+	font-size: 9px;
+	font-weight: 700;
+	line-height: 1;
+}
+
+.elm-admin__holiday-help::after {
+	content: attr(data-holiday-name);
+	position: absolute;
+	z-index: 330;
+	bottom: calc(100% + 10px);
+	left: 0;
+	width: max-content;
+	max-width: min(250px, calc(100vw - 46px));
+	padding: 8px 10px;
+	border-radius: var(--elm-radius-sm);
+	background: var(--elm-n-900);
+	color: var(--elm-n-0);
+	font-size: var(--elm-text-2xs);
+	font-weight: 500;
+	line-height: var(--elm-leading-snug);
+	text-align: left;
+	white-space: normal;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(4px);
+	transition: opacity var(--elm-duration) var(--elm-ease),
+		transform var(--elm-duration) var(--elm-ease),
+		visibility var(--elm-duration) var(--elm-ease);
+	box-shadow: var(--elm-shadow-md);
+	pointer-events: none;
+}
+
+.elm-admin__holiday-help:hover::after,
+.elm-admin__edit-day:focus-visible .elm-admin__holiday-help::after {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+}
+
+.elm-admin__edit-day:hover,
+.elm-admin__edit-day:focus-visible {
+	z-index: 310;
+}
+
+/* Scroll-lock while the editor owns the viewport. */
+body.elm-admin-edit-open {
+	overflow: hidden;
+}
+
+/* ===========================================================================
+   07. SETTINGS & HOLIDAY POLICY
+   =========================================================================== */
+
+.elm-admin__settings-hub {
+	overflow: visible;
+}
+
+.elm-admin__settings {
+	display: block;
+	max-width: 1100px;
+}
+
+.elm-admin__settings-group {
+	padding: var(--elm-space-6) 0;
+	border-top: 1px solid var(--elm-line);
+}
+
+.elm-admin__settings-group:first-child {
+	padding-top: 0;
+	border-top: 0;
+}
+
+.elm-admin__settings-head {
+	margin-bottom: var(--elm-space-4);
+}
+
+.elm-admin__settings-head .elm-admin__eyebrow {
+	margin: 0 0 var(--elm-space-1);
+}
+
+.elm-admin__settings-head h2 {
+	margin: 0;
+	padding: 0;
+	color: var(--elm-ink);
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 1.3;
+}
+
+.elm-admin__settings-grid {
+	display: grid;
+	grid-template-columns: minmax(190px, 360px);
+	gap: var(--elm-space-4);
+}
+
+.elm-admin__settings-group > label {
+	display: grid;
+	gap: var(--elm-space-2);
+	color: var(--elm-ink-soft);
+	font-size: var(--elm-text-xs);
+	font-weight: 600;
+}
+
+.elm-admin__settings-group fieldset {
+	margin: 0 0 var(--elm-space-4);
+	padding: 0;
+	border: 0;
+}
+
+.elm-admin__settings-group legend {
+	margin: 0 0 var(--elm-space-2);
+	padding: 0;
+	color: var(--elm-ink-soft);
+	font-size: var(--elm-text-xs);
+	font-weight: 700;
+}
+
+.elm-admin__settings-save {
+	display: flex;
+	justify-content: flex-end;
+	padding-top: var(--elm-space-5);
+	border-top: 1px solid var(--elm-line);
+}
+
+/* 7.1 Public-holiday policy ------------------------------------------------ */
+
+.elm-admin__holiday-policy {
+	display: grid;
+	grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+	gap: var(--elm-space-4);
+	align-items: start;
+}
+
+.elm-admin__holiday-fixed,
+.elm-admin__holiday-movable {
+	padding: var(--elm-space-4);
+	border: 1px solid var(--elm-line);
+	border-radius: var(--elm-radius-lg);
+	background: var(--elm-surface-raised);
+}
+
+.elm-admin__holiday-movable {
+	background: var(--elm-surface);
+}
+
+.elm-admin__holiday-head {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: var(--elm-space-3);
+	margin-bottom: var(--elm-space-3);
+}
+
+.elm-admin__holiday-head h3 {
+	margin: 0;
+	color: var(--elm-ink);
+	font-size: var(--elm-text-base);
+	line-height: 1.35;
+}
+
+.elm-admin__holiday-head p {
+	margin: var(--elm-space-1) 0 0;
+	color: var(--elm-muted);
+	font-size: var(--elm-text-xs);
+	line-height: var(--elm-leading-normal);
+}
+
+.elm-admin__holiday-badge {
+	flex: 0 0 auto;
+	padding: 5px 9px;
+	border-radius: var(--elm-radius-pill);
+	background: var(--elm-success-50);
+	color: var(--elm-success-700);
+	font-size: 10px;
+	font-weight: 700;
+}
+
+.elm-admin__fixed-holiday-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: var(--elm-space-2);
+}
+
+.elm-admin__fixed-holiday {
+	display: flex;
+	align-items: center;
+	gap: var(--elm-space-2);
+	min-width: 0;
+	padding: var(--elm-space-2) 10px;
+	border: 1px solid var(--elm-line);
+	border-radius: var(--elm-radius-sm);
+	background: var(--elm-surface);
+}
+
+.elm-admin__fixed-holiday time {
+	flex: 0 0 auto;
+	min-width: 43px;
+	color: var(--elm-ink-soft);
+	font-size: var(--elm-text-2xs);
+	font-weight: 700;
+	font-variant-numeric: tabular-nums;
+}
+
+.elm-admin__fixed-holiday span {
+	min-width: 0;
+	color: var(--elm-ink-soft);
+	font-size: var(--elm-text-xs);
+	font-weight: 500;
+	line-height: 1.35;
+}
+
+.elm-admin__movable-holiday-grid {
+	display: grid;
+	gap: var(--elm-space-3);
+}
+
+.elm-admin__movable-holiday-grid label {
+	display: grid;
+	gap: var(--elm-space-2);
+	color: var(--elm-ink-soft);
+	font-size: var(--elm-text-xs);
+	font-weight: 600;
+}
+
+.elm-admin__movable-holiday-grid input[type="date"] {
+	width: 100%;
+	max-width: none;
+}
+
+/* ===========================================================================
+   08. RESPONSIVE & MOTION
+   =========================================================================== */
+
+@media (max-width: 1200px) {
+	.elm-admin__entitlement-form {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 960px) {
+	.elm-admin__grid,
+	.elm-admin__grid--reports,
+	.elm-admin__holiday-policy,
+	.elm-admin__edit-calendars,
+	.elm-admin__edit-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.elm-admin__hero {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}
+
+@media (max-width: 782px) {
+	.elm-admin__hero {
+		padding: var(--elm-space-5);
+	}
+
+	.elm-admin__card {
+		padding: var(--elm-space-4);
+	}
+
+	.elm-admin__employees-controls {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.elm-admin__employees-controls label {
+		min-width: 0;
+	}
+
+	.elm-admin__entitlement-form {
+		grid-template-columns: 1fr;
+	}
+
+	.elm-admin__settings-save {
+		justify-content: flex-start;
+	}
+}
+
+@media (max-width: 600px) {
+	.elm-admin__edit-overlay {
+		padding: var(--elm-space-2);
+	}
+
+	.elm-admin__edit-dialog {
+		width: 100%;
+		max-height: calc(100vh - 20px);
+	}
+
+	.elm-admin__edit-form {
+		padding: var(--elm-space-4);
+	}
+
+	.elm-admin__fixed-holiday-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.elm-admin *,
+	.elm-admin *::before,
+	.elm-admin *::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+}

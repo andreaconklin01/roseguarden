@@ -3,7 +3,7 @@
  * Plugin Name: Menaxhimi i Pushimeve të Punonjësve
  * Plugin URI:  https://example.com/employee-leave-manager
  * Description: Menaxhimi i kërkesave për pushim, ditëve të pushimit vjetor, afateve, miratimeve, dokumenteve mjekësore dhe raporteve PDF, me terminologji të përshtatur për Rregulloren (QRK) Nr. 04/2024.
- * Version:     1.6.0
+ * Version:     1.6.1
  * Requires at least: 6.5
  * Requires PHP: 8.1
  * Author:      Custom Development
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'ELM_VERSION', '1.6.0' );
+define( 'ELM_VERSION', '1.6.1' );
 define( 'ELM_DB_VERSION', '1.6.0' );
 define( 'ELM_FILE', __FILE__ );
 define( 'ELM_DIR', plugin_dir_path( __FILE__ ) );

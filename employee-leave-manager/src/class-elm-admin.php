@@ -117,7 +117,7 @@ final class ELM_Admin {
 				<label><?php esc_html_e( 'Punonjësi', 'employee-leave-manager' ); ?><select data-filter-user><option value=""><?php esc_html_e( 'Të gjithë punonjësit', 'employee-leave-manager' ); ?></option></select></label>
 				<label><?php esc_html_e( 'Viti', 'employee-leave-manager' ); ?><input type="number" min="2000" max="2100" value="" placeholder="<?php esc_attr_e( 'Të gjitha vitet', 'employee-leave-manager' ); ?>" data-filter-year></label>
 				<button type="button" class="button button-primary" data-apply-filters><?php esc_html_e( 'Zbato', 'employee-leave-manager' ); ?></button>
-				<a class="button" href="<?php echo esc_url( wp_nonce_url( admin_url( 'admin-post.php?action=elm_export_requests_csv' ), 'elm_export_requests_csv' ) ); ?>"><span class="dashicons dashicons-media-spreadsheet" style="margin-top:3px;"></span> <?php esc_html_e( 'Eksporto CSV', 'employee-leave-manager' ); ?></a>
+				<a class="button" href="<?php echo esc_url( wp_nonce_url( admin_url( 'admin-post.php?action=elm_export_requests_csv' ), 'elm_export_requests_csv' ) ); ?>"><span class="dashicons dashicons-media-spreadsheet" aria-hidden="true"></span> <?php esc_html_e( 'Eksporto CSV', 'employee-leave-manager' ); ?></a>
 			</div>
 			<div class="elm-admin__card"><div class="elm-admin__table-wrap"><table class="widefat fixed striped elm-admin__table"><thead><tr><th><?php esc_html_e( 'ID', 'employee-leave-manager' ); ?></th><th><?php esc_html_e( 'Punonjësi', 'employee-leave-manager' ); ?></th><th><?php esc_html_e( 'Lloji / datat', 'employee-leave-manager' ); ?></th><th><?php esc_html_e( 'Arsyetimet', 'employee-leave-manager' ); ?></th><th><?php esc_html_e( 'Statusi', 'employee-leave-manager' ); ?></th><th><?php esc_html_e( 'Paraqitur më', 'employee-leave-manager' ); ?></th><th><?php esc_html_e( 'Veprimet', 'employee-leave-manager' ); ?></th></tr></thead><tbody data-admin-requests><tr class="elm-table-state elm-table-state--loading"><td class="elm-table-state__cell" colspan="7"><?php esc_html_e( 'Po ngarkohet...', 'employee-leave-manager' ); ?></td></tr></tbody></table></div></div>
 
@@ -418,11 +418,11 @@ final class ELM_Admin {
 				<form method="post">
 					<?php wp_nonce_field( 'elm_save_chief_access' ); ?>
 					<input type="hidden" name="chief_id" value="<?php echo esc_attr( $selected_chief_id ); ?>">
-					<div class="elm-admin__checks" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;margin:18px 0;max-height:520px;overflow:auto;padding:12px;border:1px solid #dcdcde;border-radius:8px;">
+					<div class="elm-admin__checks">
 						<?php if ( ! $employees ) : ?><p><?php esc_html_e( 'Nuk u gjet asnjë punonjës i disponueshëm.', 'employee-leave-manager' ); ?></p><?php endif; ?>
 						<?php foreach ( $employees as $employee ) : ?>
 							<?php if ( (int) $employee->ID === $selected_chief_id ) { continue; } ?>
-							<label style="display:flex;align-items:flex-start;gap:8px;padding:8px;background:#fff;border:1px solid #e2e4e7;border-radius:6px;">
+							<label>
 								<input type="checkbox" name="employee_ids[]" value="<?php echo esc_attr( $employee->ID ); ?>" <?php checked( in_array( (int) $employee->ID, $selected_ids, true ) ); ?>>
 								<span><strong><?php echo esc_html( $employee->display_name ); ?></strong><br><small><?php echo esc_html( $employee->user_email ); ?> - #<?php echo esc_html( $employee->ID ); ?></small></span>
 							</label>

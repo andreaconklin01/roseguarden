@@ -4,7 +4,7 @@ Tags: pushime, punonjës, burime njerëzore, kalendar, raporte pdf
 Requires at least: 6.5
 Tested up to: 6.6
 Requires PHP: 8.1
-Stable tag: 1.6.0
+Stable tag: 1.6.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -216,6 +216,16 @@ Jo. Përkthimi ndryshon vetëm tekstet që shfaqen. Vlerat teknike dhe të dhën
 
 
 == Changelog ==
+
+= 1.6.1 =
+* Ndërfaqja e portalit dhe e panelit administrativ u rindërtua mbi një sistem të vetëm dizajni me variabla CSS (ngjyrat, hapësirat, rrezet, hijet, tipografia dhe lëvizja përcaktohen në një vend të vetëm).
+* Fletët e stilit `portal.css` dhe `admin.css` u rishkruan nga e para dhe u organizuan në seksione të dokumentuara; rregullat e vjetruara dhe të papërdorura u hoqën.
+* U eliminuan pothuajse të gjitha deklaratat `!important` (mbeten vetëm aty ku janë strukturalisht të domosdoshme: fshehja me atributin `hidden`, printimi dhe `prefers-reduced-motion`).
+* U përmirësua qasshmëria: unaza fokusi të dukshme dhe të njëtrajtshme (`:focus-visible`), mbështetje për `prefers-reduced-motion` dhe për modalitetin me kontrast të lartë (`forced-colors`).
+* U përmirësua paraqitja në ekrane të vogla: kartelat e gjendjes, kalendari, tabelat, dritaret modale dhe skedat përshtaten më mirë; teksti i kokës nuk mbivendoset më me sfondin.
+* U shtuan stile printimi për portalin.
+* Stilet e paraqitjes u hoqën nga kodi PHP (atributet `style`) dhe u zhvendosën në fletët e stilit.
+* Nuk ka ndryshime në logjikën e biznesit, në bazën e të dhënave, në REST API, në lejet ose në formularët PDF.
 
 = 1.6.0 =
 * U shtuan njoftimet automatike me email për punonjësit dhe udhëheqësit kur paraqitet, miratohet, refuzohet ose anulohet një kërkesë për pushim ose një kërkesë për +1 ditë. Mund të çaktivizohen ose të përfshijnë edhe email-in e administratorit te Cilësimet.
